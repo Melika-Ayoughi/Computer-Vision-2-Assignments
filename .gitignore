@@ -1,0 +1,8 @@
+**/Data/
+Assignment1/Data
+./Data
+./Data/*
+Data/*
+*/Data/
+*/Data
+*/data.zip

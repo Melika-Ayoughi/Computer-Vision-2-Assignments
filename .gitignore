@@ -6,3 +6,9 @@ Data/*
 */Data/
 */Data
 */data.zip
+
+# Windows default autosave extension
+*.asv
+
+# OSX / *nix default autosave extension
+*.m~

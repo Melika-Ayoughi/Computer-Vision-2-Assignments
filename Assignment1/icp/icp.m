@@ -1,8 +1,7 @@
-function [R, t] = icp(A_1, A_2)
+function [R, t] = icp(A_1, A_2, dimensions)
 
 disp("Start looking for R and t");
 
-dimensions = 2;
 R = eye(dimensions);
 t = zeroes(dimensions);
 epsilon = 1.0e-3;
@@ -12,7 +11,7 @@ while ~finished
     
     [R, t] = icp_iteration(A_1, A_2, R, t);
     
-    if (rms(A_1, A_2, psi, R, t)  < epsilon)
+    if (rms(A_1, A_2, psi, R, t) < epsilon)
        break 
     end
     

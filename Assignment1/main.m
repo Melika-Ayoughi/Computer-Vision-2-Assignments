@@ -1,10 +1,8 @@
 
 
-
-
-% load data
-
-data = 0; % to do
+% 3 * 6400 double
+load('./Data/source.mat')
+load('./Data/target.mat')
 
 dimensions = 0 ; % todo
 

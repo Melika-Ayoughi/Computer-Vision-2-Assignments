@@ -1,9 +1,7 @@
-function error = rms(A_1, A_2, psi, R, t)
-
+function error = rms(A1, A2, R, t)
 
 % TO DO: implement
-error = 0; 
-
-
+transformed_A1 = R* A1 + t;
+error = sqrt(sum(power(transformed_A1 - A2,2))/size(A1,2));
 
 end

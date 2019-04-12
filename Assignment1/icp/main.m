@@ -4,6 +4,5 @@
 load('./Data/source.mat')
 load('./Data/target.mat')
 
-dimensions = 0 ; % todo
-
-[R, t] = icp(A_1, A_2);
+dimensions = 3;  
+[R, t] = icp(source, target, dimensions);

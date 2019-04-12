@@ -1,5 +1,5 @@
 
-% load data
+
 % 3 * 6400 double
 load('./Data/source.mat')
 load('./Data/target.mat')

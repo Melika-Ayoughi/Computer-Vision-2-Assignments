@@ -1,6 +1,0 @@
-function [R, t] = icp(A_1, A_2)
-
-
-
-
-end

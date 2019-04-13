@@ -9,7 +9,7 @@ disp("Start looking for R and t");
 
 R = eye(dimensions);
 t = zeros(dimensions,1);
-epsilon = 1.0e-3;
+epsilon = 0.01;
 
 finished = false;
 while ~finished
@@ -21,7 +21,6 @@ while ~finished
     end
     
     [R, t] = icp_iteration(matches(1:3,:), matches(4:6,:));
-    size(R)
     A1 = R*A1 +t;    
 end
 

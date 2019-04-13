@@ -8,21 +8,22 @@ function [R, t] = icp(A1, A2, dimensions)
 disp("Start looking for R and t");
 
 R = eye(dimensions);
-t = zeroes(dimensions);
+t = zeros(dimensions,1);
 epsilon = 1.0e-3;
 
 finished = false;
 while ~finished
     
-    [R, t] = icp_iteration(A1, A2, R, t);
-    [matches] = find_match(A1, A2, R, t);
+    [matches] = find_match(A1, A2);
     
     if (rms(matches(1:3,:), matches(4:6,:), R, t) < epsilon)
        break 
     end
     
+    [R, t] = icp_iteration(matches(1:3,:), matches(4:6,:));
+    size(R)
+    A1 = R*A1 +t;    
 end
 
 disp("Found an appropiate R and t");
-
 end

@@ -14,9 +14,17 @@ pcd_normals = readPcd("./Data/data/00000000"+index_string+"_normal.pcd");
 pcd = pcd(:, 1:3)';
 pcd_normals = pcd_normals(:, 1:3)';
 
+% filter out 3th dimension is larger than 1
+indices = find(pcd(3, :)<1);
+pcd = pcd(:, indices);
+pcd_normals = pcd_normals(:, indices);
+
 % filter out nan values
-pcd(isnan(pcd)) = 0;
-pcd_normals(isnan(pcd)) = 0;
+indices = find(sum(isnan(pcd_normals), 1)<1);
+pcd = pcd(:, indices);
+pcd_normals = pcd_normals(:, indices);
+
+scatter3(pcd(1,:),pcd(2,:),pcd(3,:),'blue');hold;
 
 % put ins truct
 substruct = struct();

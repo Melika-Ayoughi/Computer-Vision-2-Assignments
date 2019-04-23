@@ -74,10 +74,12 @@ for i = 1:numel(methods)
             
             % plot
             d = R*source +t;
-            figure(i+1)
-            scatter3(target(1,:),target(2,:),target(3,:),'blue');hold;
-            scatter3(d(1,:),d(2,:),d(3,:),'green');
-            title("after with method-"+strrep(method, "_", " ") + " noise-"+noise+" stability-"+stability)
+            figz = figure(i+1);
+            scatter3(target(1,:), target(2,:), target(3,:),'blue');hold;
+            scatter3(d(1,:), d(2,:), d(3,:),'green');
+            figure_title = "after with method-"+strrep(method, "_", " ") + " noise-"+noise+" stability-"+stability;
+            title(figure_title)
+            saveas(figz, "./results_icp/"+ figure_title +".png");
             
         end
     end

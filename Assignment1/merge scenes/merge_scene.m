@@ -1,4 +1,18 @@
 function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx, plot)
+ % MERGE_SCENE		 [add function description here]
+ % INPUTS 
+ %			f1 = ..
+ %			f2 = ..
+ %			eps = ..
+ %			method = ..
+ %			sample_percentage = ..
+ %			f1_normals = ..
+ %			f2_normals = ..
+ %			step = ..
+ %			idx = ..
+ % OUTPUTS 
+ %			f1f2 = ..
+ %			f1f2_normals = ..
 
 
 % disp('idx = ' + string(idx))

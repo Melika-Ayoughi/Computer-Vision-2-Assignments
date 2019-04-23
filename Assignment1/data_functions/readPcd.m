@@ -1,4 +1,11 @@
-function data = readPcd(fname)
+function data = readPcd(fname)	 % DOCSTRING_GENERATED
+ % READPCD		 [add function description here]
+ % INPUTS 
+ %			fname = ..
+ % OUTPUTS 
+ %			data = ..
+
+
 % Read PCD data
 % fname - Path to the PCD file
 % data - Nx6 matrix where each row is a point, with fields x y z rgb imX imY. x, y, z are the 3D coordinates of the point, rgb is the color of the point packed into a float (unpack using unpackRGBFloat), imX and imY are the horizontal and vertical pixel locations of the point in the original Kinect image.

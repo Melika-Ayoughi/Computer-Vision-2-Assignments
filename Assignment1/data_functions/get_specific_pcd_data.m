@@ -1,4 +1,11 @@
-function substruct = get_specific_pcd_data(ind)
+function substruct = get_specific_pcd_data(ind)	 % DOCSTRING_GENERATED
+ % GET_SPECIFIC_PCD_DATA		 [add function description here]
+ % INPUTS 
+ %			ind = ..
+ % OUTPUTS 
+ %			substruct = ..
+
+
 
 % get richt index in string format
 index_string = string(ind-1);

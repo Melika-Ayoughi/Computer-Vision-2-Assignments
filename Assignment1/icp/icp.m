@@ -25,7 +25,7 @@ iterations = 0;
 finished = false;
 while ~finished
     
-    iterations = iterations + 1;
+    iterations = iterations + 1
     
     % get sample for iteration
     if (strcmp(method, "all_points") || strcmp(method, "uniform_subsamp"))

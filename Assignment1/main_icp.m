@@ -24,17 +24,16 @@ scatter3(target(1,:),target(2,:),target(3,:),'blue');
 title("before")
 
 % define constants
-epsilon = 0.0055;
+epsilon = 0.000055;
 sample_percentage = 0.5;
 
 % lists to loop through for experiments
 stabilities = [0]; % TO DO - stability is about convergence of the algorithm dependent on initial condition.
 noise_levels = [0]; % TO DO - tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
-methods = fliplr(["random_iterative_subsamp", "uniform_subsamp", "informed_iterative_subsamp"]); 
+methods = fliplr(["random_iterative_subsamp", "all_points", "informed_iterative_subsamp"]); 
 
 % output collecter
 data = [];
-
 
 for i = 1:numel(methods)
     

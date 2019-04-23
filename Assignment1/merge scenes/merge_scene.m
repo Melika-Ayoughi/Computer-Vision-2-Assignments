@@ -1,35 +1,47 @@
-function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx)
+function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx, plot)
 
-% merge_scene(frames, frames_normals, rate, iterative_merge, reference, sampling, selection, matching, rejection, weighting, plot, name)
 
-%Get two consecutive frames of the given data
+% disp('idx = ' + string(idx))
+% disp('step = ' + string(step))
 
-%get R and t (define camera movement between A1 (base point cloud) and A2
-%(target point cloud))
-%Using the estimated camera poses, merge the point-clouds of all the scenes into one point-cloud
-%Visualize the result
+%Get frame at previous step
+previous_f = get_specific_pcd_data(idx - step);
+p_f = previous_f.pcd;
+p_f_normals = previous_f.normals;
 
-if step == 1
-    %Get transformation between f1 and f2
-    [R, t, ~, ~] = icp(f1,f2, eps, method, sample_percentage, f1_normals, f2_normals);
+%Get transformation between f2 and previous step
+[R, t, ~, ~] = icp(p_f,f2, eps, method, sample_percentage, p_f_normals, f2_normals);
 
-    %Translate f1 and merge with f2 along the column axis
-    f1f2 = [R*f1 + t, f2];
-    f1f2_normals = [R*f1_normals, f2_normals];
+%Get transformed f1 point cloud
+t_f1 = R*f1 + t;
+
+%Translate f1 and merge with f2 along the column axis
+f1f2 = [t_f1, f2];
+f1f2_normals = [R*f1_normals, f2_normals];
+
     
-else
+%Visualize merging
+if plot == true
     
-    %Get frame at previous step
-    previous_f = get_specific_pcd_data(idx - step);
-    p_f = previous_f.pcd;
-    p_f_normals = previous_f.normals;
+    f1 = figure();
+
+    X1 = t_f1(1,:);
+    Y1 = t_f1(2,:);
+    Z1 = t_f1(3,:);
     
-    %Get transformation between f2 and previous step
-    [R, t, ~, ~] = icp(p_f,f2, eps, method, sample_percentage, p_f_normals, f2_normals);
+    X2 = f2(1,:);
+    Y2 = f2(2,:);
+    Z2 = f2(3,:);    
 
-    %Translate f1 and merge with f2 along the column axis
-    f1f2 = [R*f1 + t, f2];
-    f1f2_normals = [R*f1_normals, f2_normals];
+    axis equal
+    scatter3(X1,Y1,Z1, 1, 'red', 'filled');
+    axis equal
+    hold on
+    axis equal
+    scatter3(X2,Y2,Z2, 1, 'blue', 'filled');
+    axis equal
+    
+    t1 = sgtitle('Merged point-clouds of two frames');
 
-
+%     saveas(gcf,get_path("results") + 'F1.png');
 end

@@ -24,9 +24,8 @@ scatter3(target(1,:),target(2,:),target(3,:),'blue');
 title("before")
 
 % define constants
-epsilon = 0.000055;
-sample_percentage = 0.5;
-
+epsilon = 0.0055;
+sample_percentage = 0.4;
 
 % lists to loop through for experiments
 noise_levels = [0, 1, 2]; % tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
@@ -44,12 +43,11 @@ for i = 1:numel(methods)
     for j = 1:3 %looping though stabilities        
         
         new_source = add_instability(source, stability_R(j:j+2,:), stability_t(j:j+2,:));
-        j = j + 2;
         
         for k = 1:numel(noise_levels) %looping though noises
     
             noise = noise_levels(k);
-            new_source = add_noise(source, 0, noise);
+            new_source = add_noise(new_source, 0, noise);
             
             disp("Started: " + method + " noise:" + noise + " stability:" + stability)
             
@@ -67,6 +65,7 @@ for i = 1:numel(methods)
             local_struct.stability = stability;
             local_struct.noise = noise;
             local_struct.method = method;
+            
             
             % save dictionary in final data output table
             data = [data, local_struct];

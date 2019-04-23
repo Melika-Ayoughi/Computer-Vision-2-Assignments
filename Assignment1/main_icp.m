@@ -63,9 +63,11 @@ for i = 1:numel(methods)
             local_struct.time = time;
             local_struct.iterations = iterations;
             local_struct.error = error_final;
-            local_struct.stability = stability;
+            local_struct.stability_t = stability_t;
             local_struct.noise = noise;
             local_struct.method = method;
+            local_struct.stability_R = stability_R;
+            
             
             % save dictionary in final data output table
             data = [data, local_struct];

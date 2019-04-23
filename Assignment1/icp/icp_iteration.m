@@ -1,4 +1,13 @@
-function [R, t] = icp_iteration(A_1, A_2)
+function [R, t] = icp_iteration(A_1, A_2)	 % DOCSTRING_GENERATED
+ % ICP_ITERATION		 [Does one ICP iteration]
+ % INPUTS 
+ %			A_1 = set 1
+ %			A_2 = set 2
+ % OUTPUTS 
+ %			R = found rotation
+ %			t = found translation
+
+
 
 centroid_1 = mean(A_1, 2);
 centroid_2 = mean(A_2, 2);

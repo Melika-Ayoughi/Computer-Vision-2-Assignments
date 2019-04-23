@@ -1,4 +1,20 @@
-function [R_final, t_final, error, iterations] = icp(A1, A2, epsilon, method, sample_percentage, source_normals, target_normals)
+function [R_final, t_final, error, iterations] = icp(A1, A2, epsilon, method, sample_percentage, source_normals, target_normals)	 % DOCSTRING_GENERATED
+ % ICP		 [implements the icp algorithm]
+ % INPUTS 
+ %			A1 = pcd 1
+ %			A2 = pcd2
+ %			epsilon = threshold
+ %			method = sample method
+ %			sample_percentage = ..
+ %			source_normals = ..
+ %			target_normals = ..
+ % OUTPUTS 
+ %			R_final = ..
+ %			t_final = ..
+ %			error = ..
+ %			iterations = ..
+
+
 
  
 disp("Start looking for R and t");

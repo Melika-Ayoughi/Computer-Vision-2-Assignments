@@ -31,7 +31,8 @@ sample_percentage = 0.5;
 % lists to loop through for experiments
 noise_levels = [0, 1, 2]; % tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
 methods = fliplr(["random_iterative_subsamp", "all_points", "informed_iterative_subsamp"]); 
-
+stability_R = [eye(3); randn(3,3); randn(3,3)];
+stability_t = [zeros(3,1); randn(3,1); randn(3,1)];
 
 % output collecter
 data = [];
@@ -40,11 +41,10 @@ for i = 1:numel(methods)
     
     method = methods(i); 
     new_source = [];
-    for j = 1:3 %looping though stabilities
+    for j = 1:3 %looping though stabilities        
         
-        stability_R = randn(3,3);
-        stability_t = randn(3,1);
-        new_source = add_instability(source, stability_R, stability_t);
+        new_source = add_instability(source, stability_R(j:j+2,:), stability_t(j:j+2,:));
+        j = j + 2;
         
         for k = 1:numel(noise_levels) %looping though noises
     

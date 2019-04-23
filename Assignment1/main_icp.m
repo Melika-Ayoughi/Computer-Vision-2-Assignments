@@ -30,9 +30,9 @@ sample_percentage = 0.4;
 
 % lists to loop through for experiments
 noise_levels = [0];%, 1, 2]; % tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
-methods = ["uniform_subsamp"];%, "random_iterative_subsamp", "informed_iterative_subsamp", "all_points"]; 
-stability_R = [eye(3); [1,0,0;0,0.7,-0.7;0,0.7,0.7]; [0.7,0,0.7;0,1,0;-0.7,0,0.7]; [0.7,-0.7,0;0.7,0.7,0;0,0,1]; [1,0,0;0,0,-1;0,1,0]; [0,0,1;0,1,0;-1,0,0]; [0,-1,0;1,0,0;0,0,1]; [1,0,0;0,-1,0;0,0,-1]; [-1,0,0;0,1,0;0,0,-1]; [-1,0,0;0,-1,0;0,0,1]]; %rotate along x,y,z, 45, 90, 180 degrees
-stability_t = [zeros(3,1); ones(3,1); [1;0;0]; [0;1;0]; [0;0;1]];
+methods = ["uniform_subsamp", "random_iterative_subsamp", "informed_iterative_subsamp", "all_points"]; 
+stability_R = [eye(3)];%; [1,0,0;0,0.7,-0.7;0,0.7,0.7]; [0.7,0,0.7;0,1,0;-0.7,0,0.7]; [0.7,-0.7,0;0.7,0.7,0;0,0,1]; [1,0,0;0,0,-1;0,1,0]; [0,0,1;0,1,0;-1,0,0]; [0,-1,0;1,0,0;0,0,1]; [1,0,0;0,-1,0;0,0,-1]; [-1,0,0;0,1,0;0,0,-1]; [-1,0,0;0,-1,0;0,0,1]]; %rotate along x,y,z, 45, 90, 180 degrees
+stability_t = [zeros(3,1)];%; ones(3,1); [1;0;0]; [0;1;0]; [0;0;1]];
 
 % output collecter
 data = [];

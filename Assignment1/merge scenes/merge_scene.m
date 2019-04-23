@@ -1,22 +1,19 @@
 function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx, plot)
- % MERGE_SCENE		 [add function description here]
+ % MERGE_SCENE		 [Merges two frames into one]
  % INPUTS 
- %			f1 = ..
- %			f2 = ..
- %			eps = ..
- %			method = ..
+ %			f1 = base frame point cloud
+ %			f2 = target frame point cloud
+ %			eps = threshold for ICP
+ %			method = sampling method
  %			sample_percentage = ..
- %			f1_normals = ..
- %			f2_normals = ..
- %			step = ..
- %			idx = ..
+ %			f1_normals = base frame normals
+ %			f2_normals = target frame normals
+ %			step = sampling step size
+ %			idx = index of target frame
  % OUTPUTS 
- %			f1f2 = ..
- %			f1f2_normals = ..
+ %			f1f2 = merged point clouds of f1 and f2
+ %			f1f2_normals = normals of merged f1 and f2
 
-
-% disp('idx = ' + string(idx))
-% disp('step = ' + string(step))
 
 %Get frame at previous step
 previous_f = get_specific_pcd_data(idx - step);

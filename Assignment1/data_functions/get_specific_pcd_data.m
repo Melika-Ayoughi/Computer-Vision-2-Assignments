@@ -24,8 +24,6 @@ indices = find(sum(isnan(pcd_normals), 1)<1);
 pcd = pcd(:, indices);
 pcd_normals = pcd_normals(:, indices);
 
-scatter3(pcd(1,:),pcd(2,:),pcd(3,:),'blue');hold;
-
 % put ins truct
 substruct = struct();
 substruct.pcd = pcd;

@@ -46,6 +46,7 @@ while ~finished
     
     % check exit condition
     error = rms(matches(1:3,:), matches(4:6,:), R, t);
+    
     if (mean(error) < epsilon)
        break 
     end
@@ -60,6 +61,8 @@ while ~finished
     % and data
     A1 = R*A1 +t;
     source_normals = R*source_normals;
+    
+    disp("progress information: error ="+mean(error)+ " in iteration="+iterations);
 end
 
 disp("Found an appropiate R and t");

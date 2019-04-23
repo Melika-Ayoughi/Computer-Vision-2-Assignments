@@ -1,4 +1,12 @@
-function [matches] = find_match(A1, A2)
+function [matches] = find_match(A1, A2)	 % DOCSTRING_GENERATED
+ % FIND_MATCH		 [finds best match given two point clouds]
+ % INPUTS 
+ %			A1 = ..
+ %			A2 = ..
+ % OUTPUTS 
+ %			matches = ..
+
+
 matches = zeros(6, size(A1,2));
 
 for i = 1:size(A1,2)

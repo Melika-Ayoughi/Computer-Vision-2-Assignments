@@ -16,7 +16,7 @@ f2_normals = frame2.normals;
 
 %Parameters
 method = "uniform_subsamp";
-epsilon = 0.0055;
+epsilon = 0.00025;
 sample_percentage = 0.1;
 s_rate = 1;
 

@@ -25,7 +25,7 @@ scatter3(target(1,:),target(2,:),target(3,:),'blue');
 title("before")
 
 % define constants
-epsilon = 0.00055;
+epsilon = 0.00025;
 sample_percentage = 0.4;
 
 % lists to loop through for experiments

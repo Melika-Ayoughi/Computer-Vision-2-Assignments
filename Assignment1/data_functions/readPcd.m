@@ -7,6 +7,7 @@ function data = readPcd(fname)
 
 fid = fopen(fname,'rt');
 
+
 isBinary = false;
 nPts = 0;
 nDims = -1;

@@ -1,12 +1,12 @@
 
 
 % just an example for loading the pcd files from data.
-pcds_data = all_pcd_data(); % commented out bc slow
+% pcds_data = all_pcd_data(); % commented out bc slow
 
-% old data
-% 3 * 6400 double
-load('./Data/source.mat');
-load('./Data/target.mat');
+% % old data
+% % 3 * 6400 double
+% load('./Data/source.mat');
+% load('./Data/target.mat');
 
 
 % take two random pictures
@@ -66,7 +66,6 @@ for i = 1:numel(methods)
             local_struct.stability = stability;
             local_struct.noise = noise;
             local_struct.method = method;
-            
             
             % save dictionary in final data output table
             data = [data, local_struct];

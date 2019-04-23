@@ -8,6 +8,7 @@
 % load('./Data/source.mat');
 % load('./Data/target.mat');
 
+
 % take two random pictures
 random_attempt_indices = randsample(100, 2);
 source_total = get_specific_pcd_data(random_attempt_indices(1));

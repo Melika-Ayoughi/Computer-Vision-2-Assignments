@@ -1,12 +1,12 @@
 
 
 % just an example for loading the pcd files from data.
-% pcds_data = all_pcd_data(); % commented out bc slow
+pcds_data = all_pcd_data(); % commented out bc slow
 
 % old data
 % 3 * 6400 double
-% load('./Data/source.mat');
-% load('./Data/target.mat');
+load('./Data/source.mat');
+load('./Data/target.mat');
 
 % take two random pictures
 random_attempt_indices = randsample(100, 2);
@@ -27,32 +27,34 @@ title("before")
 epsilon = 0.0055;
 sample_percentage = 0.1;
 
+
 % lists to loop through for experiments
-stabilities = [0]; % TO DO - stability is about convergence of the algorithm dependent on initial condition.
-noise_levels = [0]; % TO DO - tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
+noise_levels = [0, 1, 2]; % tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
 methods = fliplr(["all_points", "random_iterative_subsamp", "uniform_subsamp", "informed_iterative_subsamp"]); 
 
 % output collecter
 data = [];
 
-
 for i = 1:numel(methods)
     
     method = methods(i); 
-    
-    for j = 1:numel(stabilities)
+    new_source = [];
+    for j = 1:3 %looping though stabilities
         
-        stability = stabilities(j); % TO DO: 
+        stability_R = randn(3,3);
+        stability_t = randn(3,1);
+        new_source = add_instability(source, stability_R, stability_t);
         
-        for k = 1:numel(noise_levels)
+        for k = 1:numel(noise_levels) %looping though noises
     
-            noise = noise_levels(k); % TO DO: 
+            noise = noise_levels(k);
+            new_source = add_noise(source, 0, noise);
             
             disp("Started: " + method + " noise:" + noise + " stability:" + stability)
             
             tic % starts counter
             
-            [R, t, error_final, iterations] = icp(source, target, epsilon, method, sample_percentage, source_normals, target_normals);
+            [R, t, error_final, iterations] = icp(new_source, target, epsilon, method, sample_percentage, source_normals, target_normals);
             
             time = toc;
             

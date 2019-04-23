@@ -7,8 +7,8 @@ if (ind < 11)
 end
 
 % get files
-pcd = readPcd("./Data/data/00000000"+index_string+".pcd");
-pcd_normals = readPcd("./Data/data/00000000"+index_string+"_normal.pcd");
+pcd = readPcd("./Data/data/data/00000000"+index_string+".pcd");
+pcd_normals = readPcd("./Data/data/data/00000000"+index_string+"_normal.pcd");
 
 % disregard 4th dimension
 pcd = pcd(:, 1:3)';

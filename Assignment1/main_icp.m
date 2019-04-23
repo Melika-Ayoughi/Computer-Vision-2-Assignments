@@ -25,12 +25,12 @@ scatter3(target(1,:),target(2,:),target(3,:),'blue');
 title("before")
 
 % define constants
-epsilon = 0.0055;
+epsilon = 0.00055;
 sample_percentage = 0.4;
 
 % lists to loop through for experiments
 noise_levels = [0, 1, 2]; % tolerance to noise is about convergence of the algorithm with input data with noise. You can imagine data is captured by a sensor. In the ideal case you will obtain exact point cloud, however sensor is not precise, therefore there will be noise in measurement. Therefore we ask you to evaluate how ICP is robust against those kind of issuses.
-methods = fliplr(["random_iterative_subsamp", "all_points", "informed_iterative_subsamp"]); 
+methods = ["random_iterative_subsamp", "uniform_subsamp", "informed_iterative_subsamp", "all_points"]; 
 stability_R = [eye(3); randn(3,3); randn(3,3)];
 stability_t = [zeros(3,1); randn(3,1); randn(3,1)];
 
@@ -41,7 +41,7 @@ for i = 1:numel(methods)
     
     method = methods(i); 
     new_source = [];
-    for j = 1:3 %looping though stabilities        
+    for j = 1:(size(stability_R, 1)/3) %looping though stabilities        
         
         new_source = add_instability(source, stability_R(j:j+2,:), stability_t(j:j+2,:));
         
@@ -62,18 +62,17 @@ for i = 1:numel(methods)
             local_struct = struct();
             local_struct.time = time;
             local_struct.iterations = iterations;
-            local_struct.error = error_final;
+            local_struct.error = mean(error_final);
             local_struct.stability_t = stability_t;
             local_struct.noise = noise;
             local_struct.method = method;
             local_struct.stability_R = stability_R;
             
-            
             % save dictionary in final data output table
             data = [data, local_struct];
             
             % plot
-            d = R*source +t;
+            d = R * source + t;
             figz = figure(i+1);
             scatter3(target(3,:), target(1,:), target(2,:),'blue');hold;
             scatter3(d(3,:), d(1,:), d(2,:),'green');hold;

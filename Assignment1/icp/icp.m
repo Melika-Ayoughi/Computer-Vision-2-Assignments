@@ -25,7 +25,7 @@ iterations = 0;
 finished = false;
 while ~finished
     
-    iterations = iterations + 1
+    iterations = iterations + 1;
     
     % get sample for iteration
     if (strcmp(method, "all_points") || strcmp(method, "uniform_subsamp"))
@@ -46,7 +46,7 @@ while ~finished
     
     % check exit condition
     error = rms(matches(1:3,:), matches(4:6,:), R, t);
-    if (error < epsilon)
+    if (mean(error) < epsilon)
        break 
     end
     

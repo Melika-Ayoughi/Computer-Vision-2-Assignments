@@ -11,7 +11,8 @@ elseif (strcmp(method, "informed"))
     squared = normals .^ 2;
     summed_gradients = sum(squared, 1);
     magnitudes = summed_gradients .^ 0.5;
-    [~, indices] = maxk(magnitudes ,sample_size);
+    [~, indices] = maxk(magnitudes, sample_size);
+    
     
 else
     error("wrong keyword in subsampling: "+method);

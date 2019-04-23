@@ -16,8 +16,8 @@ f2_normals = frame2.normals;
 
 %Parameters
 method = "uniform_subsamp";
-epsilon = 0.00025;
-sample_percentage = 0.5;
+epsilon = 0.00002;
+sample_percentage = 0.15;
 s_rate = 1;
 N = 100; %Total number of images
 

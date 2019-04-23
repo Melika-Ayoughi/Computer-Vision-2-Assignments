@@ -30,7 +30,7 @@ t = t_final;
 % if this method is called use some subsampling
 if (strcmp(method, "uniform_subsamp"))
     A1 = subsample(A1, sample_percentage, "uniform", 0);
-    A2 = subsample(A1, sample_percentage, "uniform", 0);
+%     A2 = subsample(A1, sample_percentage, "uniform", 0);
 end
 
 iterations = 0;
@@ -38,17 +38,17 @@ finished = false;
 while ~finished
     
     iterations = iterations + 1;
-    
+    A2_local = A2;
     % get sample for iteration
     if (strcmp(method, "all_points") || strcmp(method, "uniform_subsamp"))
         A1_local = A1;
-        A2_local = A2;
+        
     elseif(strcmp(method, "random_iterative_subsamp"))
         A1_local = subsample(A1, sample_percentage, "uniform", 0);
-        A2_local = subsample(A2, sample_percentage, "uniform", 0);
+%         A2_local = subsample(A2, sample_percentage, "uniform", 0);
     elseif(strcmp(method, "informed_iterative_subsamp"))
         A1_local = subsample(A1, sample_percentage, "informed", source_normals);
-        A2_local = subsample(A2, sample_percentage, "informed", target_normals);
+%         A2_local = subsample(A2, sample_percentage, "informed", target_normals);
     else
         error("wrong keyword in sample method: "+method);
     end
@@ -58,7 +58,7 @@ while ~finished
     matches = filter_bad_points(matches, R, t);
     
     % check exit condition
-    error = rms(matches(1:3,:), matches(4:6,:), R, t);
+    
     
 %     if (mean(error) < epsilon)
 %        break 
@@ -71,6 +71,7 @@ while ~finished
     R_final = R * R_final;
     t_final = R * t_final + t;
     
+    error = rms(matches(1:3,:), matches(4:6,:), R, t);
     if (mean(error) < epsilon)
        break 
     end    

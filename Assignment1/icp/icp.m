@@ -55,6 +55,7 @@ while ~finished
     
     % find matches for every point
     [matches] = find_match(A1_local, A2_local);
+    matches = filter_bad_points(matches, R, t);
     
     % check exit condition
     error = rms(matches(1:3,:), matches(4:6,:), R, t);

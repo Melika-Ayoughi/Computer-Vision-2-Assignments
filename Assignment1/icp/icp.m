@@ -59,9 +59,9 @@ while ~finished
     % check exit condition
     error = rms(matches(1:3,:), matches(4:6,:), R, t);
     
-    if (mean(error) < epsilon)
-       break 
-    end
+%     if (mean(error) < epsilon)
+%        break 
+%     end
     
     % do iteration
     [R, t] = icp_iteration(matches(1:3,:), matches(4:6,:));
@@ -69,6 +69,10 @@ while ~finished
     % update global parameters 
     R_final = R * R_final;
     t_final = R * t_final + t;
+    
+    if (mean(error) < epsilon)
+       break 
+    end    
     
     % and data
     A1 = R*A1 +t;

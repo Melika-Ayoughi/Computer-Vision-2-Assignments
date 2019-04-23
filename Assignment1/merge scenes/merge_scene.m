@@ -34,7 +34,7 @@ f1f2_normals = [R*f1_normals, f2_normals];
 %Visualize merging
 if plot == true
     
-    f1 = figure();
+    f1 = figure(1);
 
     X1 = t_f1(1,:);
     Y1 = t_f1(2,:);

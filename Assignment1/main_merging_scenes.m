@@ -26,13 +26,9 @@ N = 100; %Total number of images
 [m1,m1_normals] = merge_scene(f1,f2, epsilon, method, sample_percentage, f1_normals, f2_normals, s_rate, idx, true);
 
 
-%Get first frame point cloud and normals
-current_f = f1;
-current_f_normals = f1_normals;
-
 
 %Get final merged point clouds
-[f_pc, ~] =  iterative_merging(current_f, epsilon, method, sample_percentage, current_f_normals, s_rate,N);
+[f_pc, ~] =  iterative_merging(epsilon, method, sample_percentage, s_rate,N);
 
 
 %Plot merged scene
@@ -53,15 +49,12 @@ t2 = sgtitle('Merged point-clouds of all the frames');
 
 %Q3.1 (b)
 
-%Get first frame point cliud and normals
-current_f = f1;
-current_f_normals = f1_normals;
 
 %Set sampling rate
 s_rate = 2;
 
 %Get final merged point clouds
-[f_pc, ~] =  iterative_merging(current_f, epsilon, method, sample_percentage, current_f_normals, s_rate,N);
+[f_pc, ~] =  iterative_merging(epsilon, method, sample_percentage, s_rate,N);
 
 
 %Plot merged scene

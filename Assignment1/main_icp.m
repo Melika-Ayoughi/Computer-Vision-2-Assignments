@@ -44,7 +44,6 @@ for i = 1:numel(methods)
     for j = 1:3 %looping though stabilities        
         
         new_source = add_instability(source, stability_R(j:j+2,:), stability_t(j:j+2,:));
-        j = j + 2;
         
         for k = 1:numel(noise_levels) %looping though noises
     
@@ -64,9 +63,11 @@ for i = 1:numel(methods)
             local_struct.time = time;
             local_struct.iterations = iterations;
             local_struct.error = error_final;
-            local_struct.stability = stability;
+            local_struct.stability_t = stability_t;
             local_struct.noise = noise;
             local_struct.method = method;
+            local_struct.stability_R = stability_R;
+            
             
             % save dictionary in final data output table
             data = [data, local_struct];

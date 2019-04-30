@@ -1,4 +1,15 @@
-function [recall, precision, info] = vl_pr(labels, scores, varargin)
+function [recall, precision, info] = vl_pr(labels, scores, varargin)	 % DOCSTRING_GENERATED
+ % VL_PR		 [add function description here]
+ % INPUTS 
+ %			labels = ..
+ %			scores = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			recall = ..
+ %			precision = ..
+ %			info = ..
+
+
 %VL_PR   Precision-recall curve.
 %   [RECALL, PRECISION] = VL_PR(LABELS, SCORES) computes the
 %   precision-recall (PR) curve. LABELS are the ground truth labels,

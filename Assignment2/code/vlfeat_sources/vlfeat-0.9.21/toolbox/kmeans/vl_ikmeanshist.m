@@ -1,4 +1,12 @@
-function h = vl_ikmeanshist(K,asgn)
+function h = vl_ikmeanshist(K,asgn)	 % DOCSTRING_GENERATED
+ % VL_IKMEANSHIST		 [add function description here]
+ % INPUTS 
+ %			K = ..
+ %			asgn = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_IKMEANSHIST  Compute histogram of quantized data
 %  H = VL_IKMEANSHIST(K,ASGN) computes the histogram of the IKM clusters
 %  activated by cluster assignments ASGN.

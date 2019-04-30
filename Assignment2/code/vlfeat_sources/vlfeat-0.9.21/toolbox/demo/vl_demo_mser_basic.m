@@ -1,4 +1,12 @@
-% VL_DEMO_MSER_BASIC  Demo: MSER: basic functionality
+% VL_DEMO_MSER_BASIC  Demo: MSER: basic functionality	 % DOCSTRING_GENERATED
+ % FUNCTIONALITY
+		 [add function description here]
+ % INPUTS 
+ %			%VL_DEMO_MSER_BASICDemo:MSER:basicfunctionality
+ = ..
+ % OUTPUTS 
+
+
 
 pfx = fullfile(vl_root,'figures','demo') ;
 randn('state',0) ;

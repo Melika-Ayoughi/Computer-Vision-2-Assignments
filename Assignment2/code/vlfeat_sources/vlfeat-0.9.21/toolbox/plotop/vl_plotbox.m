@@ -1,4 +1,13 @@
-function [h, t] = vl_plotbox(boxes, varargin)
+function [h, t] = vl_plotbox(boxes, varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTBOX		 [add function description here]
+ % INPUTS 
+ %			boxes = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			h = ..
+ %			t = ..
+
+
 % VL_PLOTBOX  Plot boxes
 %   VL_PLOTBOX(BOX) plots a box specified by the 4-dimensional column
 %   vector BOXES = [XMIN YMIN XMAX YMAX]'. If BOXES is a 4 x N matrix,

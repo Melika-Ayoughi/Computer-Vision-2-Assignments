@@ -1,4 +1,12 @@
-function vl_demo_aib
+function vl_demo_aib	 % DOCSTRING_GENERATED
+ % VL_DEMO_AIB
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_aib
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_AIB  Test Agglomerative Information Bottleneck (AIB)
 
 D   = 4 ;

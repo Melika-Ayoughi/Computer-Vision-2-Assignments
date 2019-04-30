@@ -1,4 +1,10 @@
-function vl_compile(compiler)
+function vl_compile(compiler)	 % DOCSTRING_GENERATED
+ % VL_COMPILE		 [add function description here]
+ % INPUTS 
+ %			compiler = ..
+ % OUTPUTS 
+
+
 % VL_COMPILE  Compile VLFeat MEX files
 %   VL_COMPILE() uses MEX() to compile VLFeat MEX files. This command
 %   works only under Windows and is used to re-build problematic

@@ -1,4 +1,15 @@
-function [x1,x2]=vl_witps(xp1,xp2,Y,Yp)
+function [x1,x2]=vl_witps(xp1,xp2,Y,Yp)	 % DOCSTRING_GENERATED
+ % VL_WITPS		 [add function description here]
+ % INPUTS 
+ %			xp1 = ..
+ %			xp2 = ..
+ %			Y = ..
+ %			Yp = ..
+ % OUTPUTS 
+ %			x1 = ..
+ %			x2 = ..
+
+
 % VL_WITPS  Inverse thin-plate spline warping
 %   [X1,X2]=VL_WITPS(XP1,XP2,Y,Yp) computes the inverse thin-plate spline
 %   (TPS) warp of the points XP1,XP2.

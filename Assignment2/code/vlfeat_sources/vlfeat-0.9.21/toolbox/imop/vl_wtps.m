@@ -1,4 +1,13 @@
-function [xp1,xp2]=vl_wtps(phi,Yp)
+function [xp1,xp2]=vl_wtps(phi,Yp)	 % DOCSTRING_GENERATED
+ % VL_WTPS		 [add function description here]
+ % INPUTS 
+ %			phi = ..
+ %			Yp = ..
+ % OUTPUTS 
+ %			xp1 = ..
+ %			xp2 = ..
+
+
 % VL_WTPS  Thin-plate spline warping
 %   [XP1,XP2]=VL_WTPS(PHI,YP) computes the thin-plate spline (TPS)
 %   specified by the basis PHI and the warped control point Yp.

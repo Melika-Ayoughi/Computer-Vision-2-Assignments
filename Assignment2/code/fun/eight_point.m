@@ -1,4 +1,13 @@
-function [F] = eight_point(picture_1, picture_2, method)
+function [F] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
+ % EIGHT_POINT		 [Does eight oint algorithm]
+ % INPUTS 
+ %			picture_1 = ..
+ %			picture_2 = ..
+ %			method = ..
+ % OUTPUTS 
+ %			F = ..
+
+
 
 % find points
 [frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512))) ;
@@ -8,29 +17,34 @@ function [F] = eight_point(picture_1, picture_2, method)
 [frame_1,descriptors_1] = filter_feature_points(frame_1 ,descriptors_1);
 [frame_2,descriptors_2] = filter_feature_points(frame_2 ,descriptors_2);
 
+% match
 [matches, scores] = vl_ubcmatch(descriptors_1, descriptors_2) ; % todo: maybe we can use the scores for something about filtering???
 
+% init A
 A = zeros(size(matches,2), 9);
 
-
+% get T matrices if normalized
 if (strcmp(method, "normalized"))
 
     [T_1, T_2] = find_T_matrix(matches, frame_1, frame_2);
 
 end
 
+
 for i = 1:size(matches,2)
     
+    % find points from matches
     match_index_1 = matches(1, i);
-    match_index_2 = matches(2, i);
-    
+    match_index_2 = matches(2, i); 
     x_1 = frame_1(1, match_index_1);
     y_1 = frame_1(2, match_index_1);
     x_2 = frame_2(1, match_index_2);
     y_2 = frame_2(2, match_index_2);
     
+    % translate and rotate if needed
     if (strcmp(method, "normalized"))
         
+       
         p_1 = T_1 * [x_1; y_1; 1]; % TODO: row or column vector?
         p_2 = T_2 * [x_2; y_2; 1];
 
@@ -41,10 +55,21 @@ for i = 1:size(matches,2)
         
     end
     
+    % get A matrix entry
     A(i,:) = [x_1*x_2, x_1*y_2, x_1, y_1*x_2, y_1*y_2, y_1, x_2, y_2, 1];
     
 end
 
+% get actual matrix
 F = fun_matrix(A, method);
+
+% denormalize if needed
+if (strcmp(method, "normalized"))
+
+    F = T_2' * F * T_1;
+
+end
+
+% TODO: is there more?
 
 end

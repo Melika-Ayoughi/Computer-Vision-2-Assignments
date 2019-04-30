@@ -1,4 +1,12 @@
-function J=vl_rgb2xyz(I,ws)
+function J=vl_rgb2xyz(I,ws)	 % DOCSTRING_GENERATED
+ % VL_RGB2XYZ		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			ws = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_RGB2XYZ  Convert RGB color space to XYZ
 %   J=VL_RGB2XYZ(I) converts the CIE RGB image I to the image J in
 %   CIE XYZ format. CIE RGB has a white point of R=G=B=1.0

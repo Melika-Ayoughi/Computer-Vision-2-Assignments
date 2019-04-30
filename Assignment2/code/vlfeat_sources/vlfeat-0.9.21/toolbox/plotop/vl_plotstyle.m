@@ -1,4 +1,11 @@
-function style = vl_plotstyle(index)
+function style = vl_plotstyle(index)	 % DOCSTRING_GENERATED
+ % VL_PLOTSTYLE		 [add function description here]
+ % INPUTS 
+ %			index = ..
+ % OUTPUTS 
+ %			style = ..
+
+
 % VL_PLOTSTYLES  Get a plot style
 %   STYLES = VL_PLOTSTYLE(INDEX) returns a cell array of PLOT() options
 %   for the color/line style of index INDEX. The available styles are

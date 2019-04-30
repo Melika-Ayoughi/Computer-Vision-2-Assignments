@@ -1,4 +1,12 @@
-function h = vl_plotframe(frames,varargin)
+function h = vl_plotframe(frames,varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTFRAME		 [add function description here]
+ % INPUTS 
+ %			frames = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_PLOTFRAME  Plot a geometric frame
 %  VL_PLOTFRAME(FRAME) plots the feature frame FRAME. The frame can be
 %  either a 2D point, a circle, an oriented circle, an ellipse, or an

@@ -1,4 +1,12 @@
-% VL_DEMO_QUICKSHIFT  Demo: Quick shift: basic functionality
+% VL_DEMO_QUICKSHIFT  Demo: Quick shift: basic functionality	 % DOCSTRING_GENERATED
+ % FUNCTIONALITY
+		 [add function description here]
+ % INPUTS 
+ %			%VL_DEMO_QUICKSHIFTDemo:Quickshift:basicfunctionality
+ = ..
+ % OUTPUTS 
+
+
 
 pfx = fullfile(vl_root,'figures','demo') ;
 randn('state',0) ;

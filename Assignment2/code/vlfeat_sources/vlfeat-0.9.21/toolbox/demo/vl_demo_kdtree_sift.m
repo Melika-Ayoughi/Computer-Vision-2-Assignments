@@ -1,4 +1,12 @@
-function vl_demo_kdtree_sift
+function vl_demo_kdtree_sift	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE_SIFT
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_kdtree_sift
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_KDTREE_SIFT
 %   Demonstrates the use of a kd-tree forest to match SIFT
 %   features. If FLANN is present, this function runs a comparison

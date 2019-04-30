@@ -1,4 +1,11 @@
-function feature_points = generate_feature_points(imgs)
+function feature_points = generate_feature_points(imgs)	 % DOCSTRING_GENERATED
+ % GENERATE_FEATURE_POINTS		 [get feature points for all imgs (unused)]
+ % INPUTS 
+ %			imgs = ..
+ % OUTPUTS 
+ %			feature_points = ..
+
+
 
 
 

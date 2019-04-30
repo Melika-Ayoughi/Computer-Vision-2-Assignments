@@ -1,4 +1,12 @@
-function J=vl_xyz2luv(I,il)
+function J=vl_xyz2luv(I,il)	 % DOCSTRING_GENERATED
+ % VL_XYZ2LUV		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			il = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_XYZ2LUV  Convert XYZ color space to LUV
 %   J = VL_XYZ2LUV(I) converts the image I in XYZ format to the image J
 %   in Luv format.

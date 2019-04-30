@@ -1,4 +1,13 @@
-function [filtered_matches] = filter_bad_points(matches, R, t)
+function [filtered_matches] = filter_bad_points(matches, R, t)	 % DOCSTRING_GENERATED
+ % FILTER_BAD_POINTS		 [add function description here]
+ % INPUTS 
+ %			matches = ..
+ %			R = ..
+ %			t = ..
+ % OUTPUTS 
+ %			filtered_matches = ..
+
+
 %FILTER_BAD_POINTS Summary of this function goes here
 %   Detailed explanation goes here
 matches(1:3,:) = R * matches(1:3,:) + t;

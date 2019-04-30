@@ -1,4 +1,10 @@
-function vl_printsize(varargin)
+function vl_printsize(varargin)	 % DOCSTRING_GENERATED
+ % VL_PRINTSIZE		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % VL_PRINTSIZE  Set the printing size of a figure
 %   VL_PRINTSIZE(R) adjusts the PaperPosition property of the current
 %   figure to make the figure paper width equal to R times the width

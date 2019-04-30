@@ -1,4 +1,10 @@
-function vl_demo_print(varargin)
+function vl_demo_print(varargin)	 % DOCSTRING_GENERATED
+ % VL_DEMO_PRINT		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_PRINT
 %   VL_DEMO_PRINT(NAME) prints the current figure to the documentation
 %   directory with the specified filename, assuming that the global

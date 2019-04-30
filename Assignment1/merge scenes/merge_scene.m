@@ -1,4 +1,21 @@
-function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx, plot)
+function[f1f2, f1f2_normals] = merge_scene(f1, f2, eps, method, sample_percentage, f1_normals, f2_normals, step, idx, plot)	 % DOCSTRING_GENERATED
+ % MERGE_SCENE		 [add function description here]
+ % INPUTS 
+ %			f1 = ..
+ %			f2 = ..
+ %			eps = ..
+ %			method = ..
+ %			sample_percentage = ..
+ %			f1_normals = ..
+ %			f2_normals = ..
+ %			step = ..
+ %			idx = ..
+ %			plot = ..
+ % OUTPUTS 
+ %			f1f2 = ..
+ %			f1f2_normals = ..
+
+
  % MERGE_SCENE		 [Merges two frames into one]
  % INPUTS 
  %			f1 = base frame point cloud

@@ -1,4 +1,11 @@
-function y = vl_gaussian(x)
+function y = vl_gaussian(x)	 % DOCSTRING_GENERATED
+ % VL_GAUSSIAN		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_GAUSSIAN  Standard Gaussian density function
 %   Y=VL_GAUSSIAN(X) computes the standard (zero mean, unit variance)
 %   Gaussian density.

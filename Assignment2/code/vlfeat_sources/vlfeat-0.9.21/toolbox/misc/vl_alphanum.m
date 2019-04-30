@@ -1,4 +1,12 @@
-function [strings, perm] = vl_alphanum(strings)
+function [strings, perm] = vl_alphanum(strings)	 % DOCSTRING_GENERATED
+ % VL_ALPHANUM		 [add function description here]
+ % INPUTS 
+ %			strings = ..
+ % OUTPUTS 
+ %			strings = ..
+ %			perm = ..
+
+
 % VL_ALPHANUM  Sort strings using the Alphanum algorithm
 %   STRINGS = VL_ALPHANUM(STRINGS) sorts the cell array of strings
 %   STRINGS by using the Alphanum algorithm [1]. [STRINGS,PERM] =

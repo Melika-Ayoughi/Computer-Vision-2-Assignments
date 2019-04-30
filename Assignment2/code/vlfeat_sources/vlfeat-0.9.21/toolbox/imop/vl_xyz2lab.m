@@ -1,4 +1,12 @@
-function J=vl_xyz2lab(I,il)
+function J=vl_xyz2lab(I,il)	 % DOCSTRING_GENERATED
+ % VL_XYZ2LAB		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			il = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_XYZ2LAB  Convert XYZ color space to LAB
 %   J = VL_XYZ2LAB(I) converts the image from XYZ format to LAB format.
 %

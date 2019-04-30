@@ -1,4 +1,12 @@
-function h=vl_plotpoint(V,varargin)
+function h=vl_plotpoint(V,varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTPOINT		 [add function description here]
+ % INPUTS 
+ %			V = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_PLOTPOINT  Plot 2 or 3 dimensional points
 %   VL_PLOTPOINT(V) plots the 2 or 3 dimensional points V. V is a 2xK or
 %   3xK array, with one point per column.

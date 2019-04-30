@@ -1,4 +1,11 @@
-function H = vl_hat(om)
+function H = vl_hat(om)	 % DOCSTRING_GENERATED
+ % VL_HAT		 [add function description here]
+ % INPUTS 
+ %			om = ..
+ % OUTPUTS 
+ %			H = ..
+
+
 % VL_HAT  Hat operator
 %   H = VL_HAT(OM) returns the skew symmetric matrix by taking the "hat"
 %   of the 3D vector OM.

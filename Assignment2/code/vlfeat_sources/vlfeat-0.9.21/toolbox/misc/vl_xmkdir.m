@@ -1,4 +1,11 @@
-function vl_xmkdir(path, varargin)
+function vl_xmkdir(path, varargin)	 % DOCSTRING_GENERATED
+ % VL_XMKDIR		 [add function description here]
+ % INPUTS 
+ %			path = ..
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % VL_XMKDIR  Create a directory recursively.
 %   VL_XMKDIR(PATH) creates all directory specified by PATH if they
 %   do not exist (existing directories are skipped).

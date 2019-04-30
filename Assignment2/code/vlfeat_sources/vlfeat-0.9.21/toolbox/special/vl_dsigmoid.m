@@ -1,4 +1,11 @@
-function y = vl_dsigmoid(x)
+function y = vl_dsigmoid(x)	 % DOCSTRING_GENERATED
+ % VL_DSIGMOID		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_DSIGMOID  Derivative of the sigmoid function
 %   Y = VL_DSIGMOID(X) returns the derivative of VL_SIGMOID(X). This is
 %   calculated as - VL_SIGMOID(X) * (1 - VL_SIGMOID(X)).

@@ -1,4 +1,13 @@
-function [dWx,dWy] = vl_dwaffine(x,y)
+function [dWx,dWy] = vl_dwaffine(x,y)	 % DOCSTRING_GENERATED
+ % VL_DWAFFINE		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ %			y = ..
+ % OUTPUTS 
+ %			dWx = ..
+ %			dWy = ..
+
+
 % VL_DWAFFINE  Derivative of an affine warp
 %   [DWX,DWY]=VL_DWAFFINE(X,Y) returns the derivative of the 2-D affine
 %   warp [WX; WY] = [A T] [X; Y] with respect to the parameters A,T

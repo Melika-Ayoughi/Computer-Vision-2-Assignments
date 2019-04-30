@@ -1,4 +1,13 @@
-function [wI,wIx,wIy] = vl_imwbackward(varargin)
+function [wI,wIx,wIy] = vl_imwbackward(varargin)	 % DOCSTRING_GENERATED
+ % VL_IMWBACKWARD		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			wI = ..
+ %			wIx = ..
+ %			wIy = ..
+
+
 % VL_IMWBACKWARD  Image backward warping
 %   J = VL_IMWBACKWARD(I, X, Y) returns the values of image I at
 %   locations X,Y. X and Y are real matrices of arbitrary but

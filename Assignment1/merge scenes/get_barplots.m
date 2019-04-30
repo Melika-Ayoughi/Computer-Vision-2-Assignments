@@ -1,4 +1,10 @@
-function [] = get_barplots()
+function [] = get_barplots()	 % DOCSTRING_GENERATED
+ % GET_BARPLOTS		 [add function description here]
+ % INPUTS 
+ % OUTPUTS 
+ %			 = ..
+
+
 
 figure
 

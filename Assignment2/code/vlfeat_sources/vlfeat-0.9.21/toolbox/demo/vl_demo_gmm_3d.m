@@ -1,4 +1,12 @@
-function vl_demo_gmm_3d
+function vl_demo_gmm_3d	 % DOCSTRING_GENERATED
+ % VL_DEMO_GMM_3D
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_gmm_3d
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_GMM_3D   Show how to initialize GMM learning with a custom set of modes
 
 %% Initialize points clustered in 3D

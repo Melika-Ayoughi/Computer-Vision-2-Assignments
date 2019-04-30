@@ -1,4 +1,12 @@
-function vl_noprefix
+function vl_noprefix	 % DOCSTRING_GENERATED
+ % VL_NOPREFIX
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_noprefix
+ = ..
+ % OUTPUTS 
+
+
 % VL_NOPREFIX  Create a prefix-less version of VLFeat commands
 %   VL_NOPREFIX() creats prefix-less stubs for VLFeat functions
 %   (e.g. SIFT for VL_SIFT). This function is seldom used as the stubs

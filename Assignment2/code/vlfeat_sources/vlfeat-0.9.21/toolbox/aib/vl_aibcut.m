@@ -1,4 +1,14 @@
-function [cut, map, short] = vl_aibcut(parents, n)
+function [cut, map, short] = vl_aibcut(parents, n)	 % DOCSTRING_GENERATED
+ % VL_AIBCUT		 [add function description here]
+ % INPUTS 
+ %			parents = ..
+ %			n = ..
+ % OUTPUTS 
+ %			cut = ..
+ %			map = ..
+ %			short = ..
+
+
 % VL_AIBCUT  Cut VL_AIB tree
 %  CUT = VL_AIBCUT(PARENTS, N) cuts the binary merge tree PARENTS and
 %  returns a cut CUT of N nodes. The format of PARENTS is the same

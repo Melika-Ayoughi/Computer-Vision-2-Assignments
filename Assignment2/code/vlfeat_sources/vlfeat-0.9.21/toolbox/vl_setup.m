@@ -1,4 +1,11 @@
-function path = vl_setup(varargin)
+function path = vl_setup(varargin)	 % DOCSTRING_GENERATED
+ % VL_SETUP		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			path = ..
+
+
 % VL_SETUP Add VLFeat Toolbox to the path
 %   PATH = VL_SETUP() adds the VLFeat Toolbox to MATLAB path and
 %   returns the path PATH to the VLFeat package.

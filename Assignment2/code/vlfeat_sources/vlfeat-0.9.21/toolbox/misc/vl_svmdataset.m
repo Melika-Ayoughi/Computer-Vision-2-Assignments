@@ -1,4 +1,12 @@
-function dataset = vl_svmdataset(x, varargin)
+function dataset = vl_svmdataset(x, varargin)	 % DOCSTRING_GENERATED
+ % VL_SVMDATASET		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			dataset = ..
+
+
 % VL_SVMDATASET  Construct advanced SVM dataset structure
 %   DATASET = VL_SVMDATASET(X) wraps the matrix X into a dataset
 %   structure. All the formats supported by VL_SVMTRAIN() are

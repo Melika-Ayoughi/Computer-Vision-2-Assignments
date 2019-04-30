@@ -1,4 +1,12 @@
-function imdb = setupFMD(datasetDir, varargin)
+function imdb = setupFMD(datasetDir, varargin)	 % DOCSTRING_GENERATED
+ % SETUPFMD		 [add function description here]
+ % INPUTS 
+ %			datasetDir = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			imdb = ..
+
+
 % SETUPSCENE67    Setup Flickr Material Dataset
 %    This is similar to SETUPCALTECH101(), with modifications to setup
 %    the Flickr Material Dataset accroding to the standard

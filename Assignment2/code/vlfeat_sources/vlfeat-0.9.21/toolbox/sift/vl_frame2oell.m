@@ -1,4 +1,11 @@
-function eframes = vl_frame2oell(frames)
+function eframes = vl_frame2oell(frames)	 % DOCSTRING_GENERATED
+ % VL_FRAME2OELL		 [add function description here]
+ % INPUTS 
+ %			frames = ..
+ % OUTPUTS 
+ %			eframes = ..
+
+
 % VL_FRAMES2OELL   Convert a geometric frame to an oriented ellipse
 %   EFRAME = VL_FRAME2OELL(FRAME) converts the generic FRAME to an
 %   oriented ellipses EFRAME. FRAME and EFRAME can be matrices, with

@@ -1,4 +1,12 @@
-function J = vl_imarraysc(A, varargin)
+function J = vl_imarraysc(A, varargin)	 % DOCSTRING_GENERATED
+ % VL_IMARRAYSC		 [add function description here]
+ % INPUTS 
+ %			A = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMARRAYSC  Scale and flattens image array
 %   J=VL_IMARRAYSC(A) constructs an image mosaic similar to
 %   J=VL_IMARRAY(A), but it rescales the range of each image in the

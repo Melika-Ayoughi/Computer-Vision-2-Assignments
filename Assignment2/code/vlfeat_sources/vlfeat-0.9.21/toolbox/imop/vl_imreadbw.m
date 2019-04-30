@@ -1,4 +1,12 @@
-function I = vl_imreadgray(file,varargin)
+function I = vl_imreadgray(file,varargin)	 % DOCSTRING_GENERATED
+ % VL_IMREADGRAY		 [add function description here]
+ % INPUTS 
+ %			file = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			I = ..
+
+
 % VL_IMREADGRAY  Reads an image as gray-scale
 %   I=VL_IMREADGRAY(FILE) reads the image from file FILE and converts the
 %   result to a gray scale image (DOUBLE storage class ranging in

@@ -1,4 +1,12 @@
-function imdb = setupVoc(datasetDir, varargin)
+function imdb = setupVoc(datasetDir, varargin)	 % DOCSTRING_GENERATED
+ % SETUPVOC		 [add function description here]
+ % INPUTS 
+ %			datasetDir = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			imdb = ..
+
+
 % SETUPVOC    Setup PASCAL VOC data
 %   IMDB = SETUPVOC(DATASETDIR, 'EDITION', '2007') setups the
 %   PASCAL VOC 2007 data. This is similar to SETUPGENERIC(), but adapted

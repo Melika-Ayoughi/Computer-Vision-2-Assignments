@@ -1,4 +1,13 @@
-function v = vl_matlabversion
+function v = vl_matlabversion	 % DOCSTRING_GENERATED
+ % VL_MATLABVERSION
+		 [add function description here]
+ % INPUTS 
+ %			functionv=vl_matlabversion
+ = ..
+ % OUTPUTS 
+ %			v = ..
+
+
 % VL_MATLABVERSION  Return MATLAB version as an integer
 %   V = VL_MATLABVERSION() returns MATLAB version encoded as an
 %   ingeger value. MATLAB version string has the format

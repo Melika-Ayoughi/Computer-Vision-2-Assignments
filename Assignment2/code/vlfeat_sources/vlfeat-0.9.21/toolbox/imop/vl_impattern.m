@@ -1,4 +1,11 @@
-function im = vl_impattern(varargin)
+function im = vl_impattern(varargin)	 % DOCSTRING_GENERATED
+ % VL_IMPATTERN		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			im = ..
+
+
 % VL_IMPATTERN Generate an image from a stock pattern
 %   IM=VLPATTERN(NAME) returns an instance of the specified
 %   pattern. These stock patterns are useful for testing algoirthms.

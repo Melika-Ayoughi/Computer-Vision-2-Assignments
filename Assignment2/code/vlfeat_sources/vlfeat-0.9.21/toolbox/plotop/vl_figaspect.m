@@ -1,4 +1,10 @@
-function vl_figaspect(a)
+function vl_figaspect(a)	 % DOCSTRING_GENERATED
+ % VL_FIGASPECT		 [add function description here]
+ % INPUTS 
+ %			a = ..
+ % OUTPUTS 
+
+
 % VL_FIGASPECT  Set figure aspect ratio
 %   VL_FIGASPECT(A) sets the current figure aspect ratio to A. It
 %   leaves the length of the shortest side unaltered. Both the

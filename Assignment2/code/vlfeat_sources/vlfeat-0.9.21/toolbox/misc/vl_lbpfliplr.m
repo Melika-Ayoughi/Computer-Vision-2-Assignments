@@ -1,4 +1,11 @@
-function f = vl_lbpfliplr(f)
+function f = vl_lbpfliplr(f)	 % DOCSTRING_GENERATED
+ % VL_LBPFLIPLR		 [add function description here]
+ % INPUTS 
+ %			f = ..
+ % OUTPUTS 
+ %			f = ..
+
+
 % VL_LBPFLIPLR  Flip LBP features left-right
 %   F = VL_LBPFLIPLR(F) flips the LBP features F from left to
 %   right.

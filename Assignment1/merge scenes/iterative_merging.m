@@ -1,4 +1,16 @@
-function [current_f, current_f_normals] = iterative_merging(epsilon, method, sample_percentage, step, N)
+function [current_f, current_f_normals] = iterative_merging(epsilon, method, sample_percentage, step, N)	 % DOCSTRING_GENERATED
+ % ITERATIVE_MERGING		 [add function description here]
+ % INPUTS 
+ %			epsilon = ..
+ %			method = ..
+ %			sample_percentage = ..
+ %			step = ..
+ %			N = ..
+ % OUTPUTS 
+ %			current_f = ..
+ %			current_f_normals = ..
+
+
  % MERGE_SCENE		 [Iterates through frames according to specified sampling step size and merges all frames]
  % INPUTS 
  %			current_f = starting base frame point cloud

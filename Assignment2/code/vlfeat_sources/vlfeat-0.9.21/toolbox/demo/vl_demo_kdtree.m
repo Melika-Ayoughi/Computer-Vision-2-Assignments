@@ -1,4 +1,12 @@
-function vl_demo_kdtree
+function vl_demo_kdtree	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_kdtree
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_KDTREE
 %   Demonstrates the construction of a kd-tree for uniformly
 %   distributed 2-D data and data distributed on a circle. Both the

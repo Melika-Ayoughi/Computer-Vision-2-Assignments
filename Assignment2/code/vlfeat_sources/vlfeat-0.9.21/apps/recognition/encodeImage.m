@@ -1,4 +1,13 @@
-function descrs = encodeImage(encoder, im, varargin)
+function descrs = encodeImage(encoder, im, varargin)	 % DOCSTRING_GENERATED
+ % ENCODEIMAGE		 [add function description here]
+ % INPUTS 
+ %			encoder = ..
+ %			im = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			descrs = ..
+
+
 % ENCODEIMAGE   Apply an encoder to an image
 %   DESCRS = ENCODEIMAGE(ENCODER, IM) applies the ENCODER
 %   to image IM, returning a corresponding code vector PSI.

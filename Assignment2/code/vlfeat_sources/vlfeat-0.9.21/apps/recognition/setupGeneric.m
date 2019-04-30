@@ -1,4 +1,12 @@
-function imdb = setupGeneric(datasetDir, varargin)
+function imdb = setupGeneric(datasetDir, varargin)	 % DOCSTRING_GENERATED
+ % SETUPGENERIC		 [add function description here]
+ % INPUTS 
+ %			datasetDir = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			imdb = ..
+
+
 % SETUPGENERIC   Setup a Caltech-101-like dataset
 %    IMDB = SETUPGENERIC(DATASETDIR) initializes a IMDB structure
 %    representing the dataset located at DATASETDIR. The dataset

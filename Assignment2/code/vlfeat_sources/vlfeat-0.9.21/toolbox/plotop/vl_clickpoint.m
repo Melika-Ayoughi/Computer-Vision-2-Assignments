@@ -1,4 +1,13 @@
-function sel = vl_clickpoint(V,N,varargin)
+function sel = vl_clickpoint(V,N,varargin)	 % DOCSTRING_GENERATED
+ % VL_CLICKPOINT		 [add function description here]
+ % INPUTS 
+ %			V = ..
+ %			N = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			sel = ..
+
+
 % VL_CLICKPOINT  Select a point by clicking
 %   SEL = VL_CLICKPOINT(V) let the user vl_click a point in the current
 %   figure and returns the index v of the closest point (in Euclidean

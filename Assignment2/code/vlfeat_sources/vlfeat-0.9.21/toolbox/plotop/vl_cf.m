@@ -1,4 +1,11 @@
-function h = vl_cf(h0)
+function h = vl_cf(h0)	 % DOCSTRING_GENERATED
+ % VL_CF		 [add function description here]
+ % INPUTS 
+ %			h0 = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_CF Creates a copy of a figure
 %   VL_CF() creates a copy of the current figure and returns VL_CF(H0)
 %   creates a copy of the figure(s) whose handle is H0.  H =

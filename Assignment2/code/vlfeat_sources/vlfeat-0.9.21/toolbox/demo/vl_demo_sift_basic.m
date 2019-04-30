@@ -1,4 +1,12 @@
-% VL_DEMO_SIFT_BASIC  Demo: SIFT: basic functionality
+% VL_DEMO_SIFT_BASIC  Demo: SIFT: basic functionality	 % DOCSTRING_GENERATED
+ % FUNCTIONALITY
+		 [add function description here]
+ % INPUTS 
+ %			%VL_DEMO_SIFT_BASICDemo:SIFT:basicfunctionality
+ = ..
+ % OUTPUTS 
+
+
 
 pfx = fullfile(vl_root,'figures','demo') ;
 randn('state',0) ;

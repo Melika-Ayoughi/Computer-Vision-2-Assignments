@@ -1,4 +1,14 @@
-function [phi,S] = vl_tps(x1,x2,Y)
+function [phi,S] = vl_tps(x1,x2,Y)	 % DOCSTRING_GENERATED
+ % VL_TPS		 [add function description here]
+ % INPUTS 
+ %			x1 = ..
+ %			x2 = ..
+ %			Y = ..
+ % OUTPUTS 
+ %			phi = ..
+ %			S = ..
+
+
 % VL_TPS  Compute the thin-plate spline basis
 %   PHI=VL_TPS(X1,X2,Y) returns the basis PHI of a thin-plate spline
 %   (TPS) defined on the domain X1,X2 with control points Y.

@@ -1,4 +1,11 @@
-function y = vl_ddgaussian(x)
+function y = vl_ddgaussian(x)	 % DOCSTRING_GENERATED
+ % VL_DDGAUSSIAN		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_DDGAUSSIAN Second derivative of the Gaussian density function
 %   Y=VL_DDGAUSSIAN(X) computes the second derivative of the standard
 %   Gaussian density.

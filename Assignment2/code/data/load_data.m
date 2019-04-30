@@ -1,4 +1,13 @@
-function imgs = load_data(directory, number, start)
+function imgs = load_data(directory, number, start)	 % DOCSTRING_GENERATED
+ % LOAD_DATA		 [add function description here]
+ % INPUTS 
+ %			directory = ..
+ %			number = ..
+ %			start = ..
+ % OUTPUTS 
+ %			imgs = ..
+
+
 
 imgs = zeros(number, 480, 512);
 

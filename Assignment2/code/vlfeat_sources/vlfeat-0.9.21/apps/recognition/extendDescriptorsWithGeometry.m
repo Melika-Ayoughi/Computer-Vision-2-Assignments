@@ -1,4 +1,13 @@
-function descrs = extendDescriptorsWithGeometry(type, frames, descrs)
+function descrs = extendDescriptorsWithGeometry(type, frames, descrs)	 % DOCSTRING_GENERATED
+ % EXTENDDESCRIPTORSWITHGEOMETRY		 [add function description here]
+ % INPUTS 
+ %			type = ..
+ %			frames = ..
+ %			descrs = ..
+ % OUTPUTS 
+ %			descrs = ..
+
+
 % EXTENDDESCRIPTORSWITHGEOMETRY  Extend feature descriptors with geometric components
 %    DESCRS = EXTENDDESCRIPTORSWITHGEOMETRY(TYPE, FRAMES, DESCRS)
 %    extends the descriptorss DESCRS with either nothing (TYPE =

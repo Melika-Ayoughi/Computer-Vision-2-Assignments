@@ -1,4 +1,13 @@
-function hist = vl_aibcuthist(map, x, varargin)
+function hist = vl_aibcuthist(map, x, varargin)	 % DOCSTRING_GENERATED
+ % VL_AIBCUTHIST		 [add function description here]
+ % INPUTS 
+ %			map = ..
+ %			x = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			hist = ..
+
+
 % VL_AIBCUTHIST Compute a histogram by using an AIB compressed alphabet
 %  HIST = VL_AIBCUTHIST(MAP, X) computes the histogram of the data X
 %  using the compressed alphabet specified by a cut MAP of the AIB

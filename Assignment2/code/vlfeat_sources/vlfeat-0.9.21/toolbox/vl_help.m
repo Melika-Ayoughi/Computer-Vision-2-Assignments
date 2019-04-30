@@ -1,4 +1,11 @@
-function vl_help(topic, varargin)
+function vl_help(topic, varargin)	 % DOCSTRING_GENERATED
+ % VL_HELP		 [add function description here]
+ % INPUTS 
+ %			topic = ..
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % VL_HELP   VLFeat toolbox builtin help
 %   VL_HELP('doc') displays the HTML documentation in MATLAB
 %   web-browser. VL_HELP('vl_function') displays the HTML

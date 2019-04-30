@@ -1,4 +1,14 @@
-function [U,dU,delta]=vl_tpsu(X,Y)
+function [U,dU,delta]=vl_tpsu(X,Y)	 % DOCSTRING_GENERATED
+ % VL_TPSU		 [add function description here]
+ % INPUTS 
+ %			X = ..
+ %			Y = ..
+ % OUTPUTS 
+ %			U = ..
+ %			dU = ..
+ %			delta = ..
+
+
 % VL_TPSU  Compute the U matrix of a thin-plate spline transformation
 %   U=VL_TPSU(X,Y) returns the matrix
 %

@@ -1,4 +1,13 @@
-function [err,msg] = vl_demo_cmd(name, args)
+function [err,msg] = vl_demo_cmd(name, args)	 % DOCSTRING_GENERATED
+ % VL_DEMO_CMD		 [add function description here]
+ % INPUTS 
+ %			name = ..
+ %			args = ..
+ % OUTPUTS 
+ %			err = ..
+ %			msg = ..
+
+
 % DEMO_CMD: Demo: Command line utility
 
 ext = '' ;

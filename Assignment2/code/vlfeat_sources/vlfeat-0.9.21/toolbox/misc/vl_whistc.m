@@ -1,4 +1,14 @@
-function h = vl_whistc(x, w, edges, dim)
+function h = vl_whistc(x, w, edges, dim)	 % DOCSTRING_GENERATED
+ % VL_WHISTC		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ %			w = ..
+ %			edges = ..
+ %			dim = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_WHISTC Weighted histogram
 %   H = VL_WHISTC(X,W,EDGES) behaves exactly like HISTC(X,EDGES), but
 %   weights the samples X by W. Samples that have NaN weight are

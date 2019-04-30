@@ -1,4 +1,12 @@
-function mosaic = sift_mosaic(im1, im2)
+function mosaic = sift_mosaic(im1, im2)	 % DOCSTRING_GENERATED
+ % SIFT_MOSAIC		 [add function description here]
+ % INPUTS 
+ %			im1 = ..
+ %			im2 = ..
+ % OUTPUTS 
+ %			mosaic = ..
+
+
 % SIFT_MOSAIC Demonstrates matching two images using SIFT and RANSAC
 %
 %   SIFT_MOSAIC demonstrates matching two images based on SIFT

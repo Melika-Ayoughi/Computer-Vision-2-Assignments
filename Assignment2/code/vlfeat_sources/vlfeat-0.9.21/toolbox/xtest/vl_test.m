@@ -1,4 +1,11 @@
-function results = vl_test(varargin)
+function results = vl_test(varargin)	 % DOCSTRING_GENERATED
+ % VL_TEST		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			results = ..
+
+
 % VL_TEST  Run test suite
 %  RESULTS = VL_TEST() runs all VLFeat test suites. The tests
 %  verify that VLFeat is working correctly.

@@ -1,4 +1,12 @@
-function imdb = setupScene67(datasetDir, varargin)
+function imdb = setupScene67(datasetDir, varargin)	 % DOCSTRING_GENERATED
+ % SETUPSCENE67		 [add function description here]
+ % INPUTS 
+ %			datasetDir = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			imdb = ..
+
+
 % SETUPSCENE67    Setup MIT Scene 67 dataset
 %    This is similar to SETUPGENERIC(), with modifications to setup
 %    MIT Scene 67 according to the standard evaluation protocols. The

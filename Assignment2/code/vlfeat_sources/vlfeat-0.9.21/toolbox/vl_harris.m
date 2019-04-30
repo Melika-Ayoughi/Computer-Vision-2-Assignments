@@ -1,4 +1,14 @@
-function [H,details] = vl_harris(I,si,alpha)
+function [H,details] = vl_harris(I,si,alpha)	 % DOCSTRING_GENERATED
+ % VL_HARRIS		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			si = ..
+ %			alpha = ..
+ % OUTPUTS 
+ %			H = ..
+ %			details = ..
+
+
 % VL_HARRIS  Harris corner strength
 %  H = VL_HARRIS(I,SI) computes the Harris corner strength of the image I
 %  at ``integration'' scale SI.

@@ -1,4 +1,11 @@
-function om = vl_ihat( H )
+function om = vl_ihat( H )	 % DOCSTRING_GENERATED
+ % VL_IHAT		 [add function description here]
+ % INPUTS 
+ %			H = ..
+ % OUTPUTS 
+ %			om = ..
+
+
 % VL_IHAT Inverse vl_hat operator
 %   OM = VL_IHAT(H) returns a vector OM such that VL_HAT(OM) = H.
 %   H hast to be 3x3 skew-symmetric.

@@ -1,4 +1,9 @@
-function experiments()
+function experiments()	 % DOCSTRING_GENERATED
+ % EXPERIMENTS		 [add function description here]
+ % INPUTS 
+ % OUTPUTS 
+
+
 % EXPERIMENTS   Run image classification experiments
 %    The experimens download a number of benchmark datasets in the
 %    'data/' subfolder. Make sure that there are several GBs of

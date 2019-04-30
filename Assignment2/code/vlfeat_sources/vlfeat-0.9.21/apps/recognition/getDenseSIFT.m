@@ -1,4 +1,12 @@
-function features = getDenseSIFT(im, varargin)
+function features = getDenseSIFT(im, varargin)	 % DOCSTRING_GENERATED
+ % GETDENSESIFT		 [add function description here]
+ % INPUTS 
+ %			im = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			features = ..
+
+
 % GETDENSESIFT   Extract dense SIFT features
 %   FEATURES = GETDENSESIFT(IM) extract dense SIFT features from
 %   image IM.

@@ -1,4 +1,12 @@
-function J = vl_imarray(A,varargin)
+function J = vl_imarray(A,varargin)	 % DOCSTRING_GENERATED
+ % VL_IMARRAY		 [add function description here]
+ % INPUTS 
+ %			A = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMARRAY  Flattens image array
 %   J=VL_IMARRAY(A) creates a mosaic J from the array of images A. A
 %   can be either a M*N*K array, storing one gray-scale image per

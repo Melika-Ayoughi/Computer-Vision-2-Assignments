@@ -1,4 +1,14 @@
-function [Iseg labels map gaps E] = vl_quickseg(I, ratio, kernelsize, maxdist)
+function [Iseg labels map gaps E] = vl_quickseg(I, ratio, kernelsize, maxdist)	 % DOCSTRING_GENERATED
+ % VL_QUICKSEG		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			ratio = ..
+ %			kernelsize = ..
+ %			maxdist = ..
+ % OUTPUTS 
+ %			IseglabelsmapgapsE = ..
+
+
 % VL_QUICKSEG Produce a quickshift segmentation of a grayscale or color image
 %   [ISEG LABELS MAPS GAPS E] = VL_QUICKSEG(I, RATIO, KERNELSIZE, MAXDIST)
 %

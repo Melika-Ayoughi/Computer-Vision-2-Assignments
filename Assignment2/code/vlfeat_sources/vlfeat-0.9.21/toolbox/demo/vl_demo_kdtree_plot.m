@@ -1,4 +1,14 @@
-function h = vl_demo_kdtree_plot(kdtree, nodeIndex, xlim, ylim)
+function h = vl_demo_kdtree_plot(kdtree, nodeIndex, xlim, ylim)	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE_PLOT		 [add function description here]
+ % INPUTS 
+ %			kdtree = ..
+ %			nodeIndex = ..
+ %			xlim = ..
+ %			ylim = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_DEMO_KDTREE_PLOT
 
 % Copyright (C) 2007-12 Andrea Vedaldi and Brian Fulkerson.

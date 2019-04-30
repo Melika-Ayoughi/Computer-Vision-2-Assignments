@@ -2,8 +2,6 @@ close all
 clear all
 vl_setup()
 
-
-
 % load images
 disp("Loading images");
 directory = "House";

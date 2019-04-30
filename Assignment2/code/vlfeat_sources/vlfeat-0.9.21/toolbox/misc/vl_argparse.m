@@ -1,4 +1,14 @@
-function [opts, args] = vl_argparse(opts, args, varargin)
+function [opts, args] = vl_argparse(opts, args, varargin)	 % DOCSTRING_GENERATED
+ % VL_ARGPARSE		 [add function description here]
+ % INPUTS 
+ %			opts = ..
+ %			args = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			opts = ..
+ %			args = ..
+
+
 %VL_ARGPARSE Parse list of parameter-value pairs.
 %   OPTS = VL_ARGPARSE(OPTS, ARGS) updates the structure OPTS based on
 %   the specified parameter-value pairs ARGS={PAR1, VAL1, ... PARN,

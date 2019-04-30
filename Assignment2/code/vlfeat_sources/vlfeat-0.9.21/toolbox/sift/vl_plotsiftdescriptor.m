@@ -1,4 +1,13 @@
-function h=vl_plotsiftdescriptor(d,f,varargin)
+function h=vl_plotsiftdescriptor(d,f,varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTSIFTDESCRIPTOR		 [add function description here]
+ % INPUTS 
+ %			d = ..
+ %			f = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_PLOTSIFTDESCRIPTOR   Plot SIFT descriptor
 %   VL_PLOTSIFTDESCRIPTOR(D) plots the SIFT descriptor D. If D is a
 %   matrix, it plots one descriptor per column. D has the same format

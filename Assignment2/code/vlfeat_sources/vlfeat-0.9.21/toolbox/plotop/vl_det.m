@@ -1,4 +1,14 @@
-function [missRate, falseAlarm] = vl_det(labels, scores, varargin)
+function [missRate, falseAlarm] = vl_det(labels, scores, varargin)	 % DOCSTRING_GENERATED
+ % VL_DET		 [add function description here]
+ % INPUTS 
+ %			labels = ..
+ %			scores = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			missRate = ..
+ %			falseAlarm = ..
+
+
 % VL_DET  Compute DET curve
 %  [MISSRATE, FALSEALRAM] = VL_DET(LABELS, SCORES) computes the
 %  Detection Error Trade-off (DET) curve for the given set LABELS and

@@ -1,4 +1,11 @@
-function f = vl_ertr(f) ;
+function f = vl_ertr(f) ;	 % DOCSTRING_GENERATED
+ % VL_ERTR		 [add function description here]
+ % INPUTS 
+ %			f = ..
+ % OUTPUTS 
+ %			f = ..
+
+
 % VL_ERTR  Transpose exremal regions frames
 %  F = VL_ERTR(F) transposes the frames F as returned by VL_MSER(). This
 %  conversion is required as the VL_MSER algorithm considers the column

@@ -1,4 +1,12 @@
-function vl_demo
+function vl_demo	 % DOCSTRING_GENERATED
+ % VL_DEMO
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO Run VLFeat demos
 %   VL_DEMO runs all VLFeat demos in a row, exporting figures for
 %   the documentation. Edit this file to see a list of the vailable

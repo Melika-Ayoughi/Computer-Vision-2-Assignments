@@ -1,4 +1,12 @@
-function vl_demo_kdtree_forest
+function vl_demo_kdtree_forest	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE_FOREST
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_kdtree_forest
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_KDTREE
 %   Demonstrates the construction of a forest of randomized
 %   kd-trees.

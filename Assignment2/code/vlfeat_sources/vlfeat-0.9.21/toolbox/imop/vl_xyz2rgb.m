@@ -1,4 +1,12 @@
-function J=vl_xyz2rgb(I,ws)
+function J=vl_xyz2rgb(I,ws)	 % DOCSTRING_GENERATED
+ % VL_XYZ2RGB		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			ws = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_XYZ2RGB  Convert XYZ to RGB
 %   J = VL_XYZ2RGB(I) the XYZ image I in RGB format.
 %

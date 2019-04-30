@@ -1,4 +1,14 @@
-function [Y, sel] = vl_colsubset(X,n,varargin)
+function [Y, sel] = vl_colsubset(X,n,varargin)	 % DOCSTRING_GENERATED
+ % VL_COLSUBSET		 [add function description here]
+ % INPUTS 
+ %			X = ..
+ %			n = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			Y = ..
+ %			sel = ..
+
+
 % VL_COLSUBSET Select a given number of columns
 %   Y = VL_COLSUBSET(X, N) returns a random subset Y of N columns of
 %   X. The selection is order-preserving and without replacement. If N

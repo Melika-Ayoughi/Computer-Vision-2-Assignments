@@ -1,4 +1,10 @@
-function recognition_demo(varargin)
+function recognition_demo(varargin)	 % DOCSTRING_GENERATED
+ % RECOGNITION_DEMO		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % RECOGNITION_DEMO  Demonstrates using VLFeat for image classification
 
 if ~exist('vl_version')

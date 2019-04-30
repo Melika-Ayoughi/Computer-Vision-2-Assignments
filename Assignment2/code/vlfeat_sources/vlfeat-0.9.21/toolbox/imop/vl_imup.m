@@ -1,4 +1,11 @@
-function J = vl_imup(I)
+function J = vl_imup(I)	 % DOCSTRING_GENERATED
+ % VL_IMUP		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMUP Upsample an image by two
 %   J=VL_IMUP(I) doubles the resolution of the image I by using
 %   bilinear interpolation.

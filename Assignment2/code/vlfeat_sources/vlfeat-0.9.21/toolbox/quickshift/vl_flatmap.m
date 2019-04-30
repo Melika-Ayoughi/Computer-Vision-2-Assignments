@@ -1,4 +1,12 @@
-function [map, C] = vl_flatmap(map)
+function [map, C] = vl_flatmap(map)	 % DOCSTRING_GENERATED
+ % VL_FLATMAP		 [add function description here]
+ % INPUTS 
+ %			map = ..
+ % OUTPUTS 
+ %			map = ..
+ %			C = ..
+
+
 % VL_FLATMAP Flatten a tree, assigning the label of the root to each node
 %   [LABELS CLUSTERS] = VL_FLATMAP(MAP) labels each tree of the forest contained
 %   in MAP. LABELS contains the linear index of the root node in MAP, CLUSTERS

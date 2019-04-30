@@ -1,4 +1,13 @@
-function [f,d] = vl_ubcread(file, varargin)
+function [f,d] = vl_ubcread(file, varargin)	 % DOCSTRING_GENERATED
+ % VL_UBCREAD		 [add function description here]
+ % INPUTS 
+ %			file = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			f = ..
+ %			d = ..
+
+
 % SIFTREAD Read Lowe's SIFT implementation data files
 %   [F,D] = VL_UBCREAD(FILE) reads the frames F and the descriptors D
 %   from FILE in UBC (Lowe's original implementation of SIFT) format

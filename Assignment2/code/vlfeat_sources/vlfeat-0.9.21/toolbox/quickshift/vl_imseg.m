@@ -1,4 +1,12 @@
-function Q = vl_imseg(I,labels)
+function Q = vl_imseg(I,labels)	 % DOCSTRING_GENERATED
+ % VL_IMSEG		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			labels = ..
+ % OUTPUTS 
+ %			Q = ..
+
+
 % VL_IMSEG Color an image based on the segmentation
 %   ISEG = VL_IMSEG(I,LABELS) labels ISEG with the average color from I of
 %   each cluster indicated by LABELS.

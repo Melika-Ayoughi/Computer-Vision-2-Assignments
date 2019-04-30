@@ -1,4 +1,12 @@
-function h = vl_hikmeanshist(tree,path)
+function h = vl_hikmeanshist(tree,path)	 % DOCSTRING_GENERATED
+ % VL_HIKMEANSHIST		 [add function description here]
+ % INPUTS 
+ %			tree = ..
+ %			path = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_HIKMEANSHIST  Compute histogram of quantized data
 %  H = VL_HIKMEANSHIST(TREE,PATH) computes the histogram of the HIKM tree
 %  nodes activated by the root-to-leaf paths PATH. PATH is usually

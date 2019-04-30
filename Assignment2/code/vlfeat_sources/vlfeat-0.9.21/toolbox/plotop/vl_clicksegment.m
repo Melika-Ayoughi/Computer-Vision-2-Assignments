@@ -1,4 +1,15 @@
-function [P1,P2] = vl_clicksegment
+function [P1,P2] = vl_clicksegment	 % DOCSTRING_GENERATED
+ % VL_CLICKSEGMENT
+		 [add function description here]
+ % INPUTS 
+ %			function[P1 = ..
+ %			P2]=vl_clicksegment
+ = ..
+ % OUTPUTS 
+ %			P1 = ..
+ %			P2 = ..
+
+
 % VL_CLICKSEGMENT  Select a segment by clicking
 %  [P1,P2] = VL_CLICKSEGMENT() lets the user select a segment in the
 %  current figure and returns the starting and ending point P1 and P2.

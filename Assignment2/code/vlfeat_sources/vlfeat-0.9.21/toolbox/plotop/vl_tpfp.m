@@ -1,4 +1,18 @@
-function [tp, fp, p, n, perm, varargin] = vl_tpfp(labels, scores, varargin)
+function [tp, fp, p, n, perm, varargin] = vl_tpfp(labels, scores, varargin)	 % DOCSTRING_GENERATED
+ % VL_TPFP		 [add function description here]
+ % INPUTS 
+ %			labels = ..
+ %			scores = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			tp = ..
+ %			fp = ..
+ %			p = ..
+ %			n = ..
+ %			perm = ..
+ %			varargin = ..
+
+
 % VL_TPFP  Compute true positives and false positives
 %  This is an helper function used by VL_PR(), VL_ROC(), VL_DET().
 %

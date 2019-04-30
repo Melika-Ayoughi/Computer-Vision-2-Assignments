@@ -1,4 +1,11 @@
-function results = vl_test_alldist(varargin)
+function results = vl_test_alldist(varargin)	 % DOCSTRING_GENERATED
+ % VL_TEST_ALLDIST		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			results = ..
+
+
 % VL_TEST_ALLDIST
 vl_test_init ;
 

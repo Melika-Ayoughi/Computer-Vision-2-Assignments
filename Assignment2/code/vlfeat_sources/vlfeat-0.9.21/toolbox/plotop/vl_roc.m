@@ -1,4 +1,15 @@
-function [tpr,tnr,info] = vl_roc(labels, scores, varargin)
+function [tpr,tnr,info] = vl_roc(labels, scores, varargin)	 % DOCSTRING_GENERATED
+ % VL_ROC		 [add function description here]
+ % INPUTS 
+ %			labels = ..
+ %			scores = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			tpr = ..
+ %			tnr = ..
+ %			info = ..
+
+
 %VL_ROC   ROC curve.
 %   [TPR,TNR] = VL_ROC(LABELS, SCORES) computes the Receiver Operating
 %   Characteristic (ROC) curve [1]. LABELS is a row vector of ground

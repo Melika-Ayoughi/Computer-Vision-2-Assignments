@@ -1,4 +1,15 @@
-function [Iedge dists map gaps] = vl_quickvis(I, ratio, kernelsize, maxdist, maxcuts)
+function [Iedge dists map gaps] = vl_quickvis(I, ratio, kernelsize, maxdist, maxcuts)	 % DOCSTRING_GENERATED
+ % VL_QUICKVIS		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			ratio = ..
+ %			kernelsize = ..
+ %			maxdist = ..
+ %			maxcuts = ..
+ % OUTPUTS 
+ %			Iedgedistsmapgaps = ..
+
+
 % VL_QUICKVIS Create an edge image from a Quickshift segmentation.
 %   IEDGE = VL_QUICKVIS(I, RATIO, KERNELSIZE, MAXDIST, MAXCUTS) creates an edge
 %   stability image from a Quickshift segmentation. RATIO controls the tradeoff

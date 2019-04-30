@@ -1,4 +1,13 @@
-function [frames, descrs] = vl_phow(im, varargin)
+function [frames, descrs] = vl_phow(im, varargin)	 % DOCSTRING_GENERATED
+ % VL_PHOW		 [add function description here]
+ % INPUTS 
+ %			im = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			frames = ..
+ %			descrs = ..
+
+
 % VL_PHOW  Extract PHOW features
 %   [FRAMES, DESCRS] = VL_PHOW(IM) extracts PHOW features [1] from the
 %   image IM. PHOW is simply dense SIFT applied at several resolutions. This function is a commodity interface to VL_DSIFT() and

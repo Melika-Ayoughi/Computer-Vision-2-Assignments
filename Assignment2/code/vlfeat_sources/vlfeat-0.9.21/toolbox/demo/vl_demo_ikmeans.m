@@ -1,4 +1,9 @@
-function vl_demo_ikmeans()
+function vl_demo_ikmeans()	 % DOCSTRING_GENERATED
+ % VL_DEMO_IKMEANS		 [add function description here]
+ % INPUTS 
+ % OUTPUTS 
+
+
 % VL_DEMO_IKMEANS
 
 numData = 10000 ;

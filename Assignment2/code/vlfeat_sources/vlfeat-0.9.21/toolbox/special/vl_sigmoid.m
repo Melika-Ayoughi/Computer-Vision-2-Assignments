@@ -1,4 +1,11 @@
-function y = vl_sigmoid(x)
+function y = vl_sigmoid(x)	 % DOCSTRING_GENERATED
+ % VL_SIGMOID		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_SIGMOID Sigmoid function
 %   Y = VL_SIGMOID(X) returns
 %

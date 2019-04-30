@@ -1,10 +1,13 @@
-function F = fun_matrix(A, method)
+function F = fun_matrix(A, method)	 % DOCSTRING_GENERATED
+ % FUN_MATRIX		 [GEts the functional matrix]
+ % INPUTS 
+ %			A = see assignment
+ %			method = standard, normalized or ransac
+ % OUTPUTS 
+ %			F = see assignment
+
 
 if (strcmp(method, "standard") || strcmp(method, "normalized"))
-    
-
-    
-    
     
     % get F
     [~, ~, V_t] = svd(A); % TODO not sure if we have to transpose V_t??

@@ -1,4 +1,12 @@
-function y = vl_rcos(r,x)
+function y = vl_rcos(r,x)	 % DOCSTRING_GENERATED
+ % VL_RCOS		 [add function description here]
+ % INPUTS 
+ %			r = ..
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_RCOS RCOS function
 %   Y = VL_RCOS(R,X) computes the RCOS function with roll-off R.
 %

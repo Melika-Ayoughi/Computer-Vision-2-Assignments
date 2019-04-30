@@ -1,4 +1,13 @@
-function [Fx,Fy] = vl_imgrad(F,varargin) ;
+function [Fx,Fy] = vl_imgrad(F,varargin) ;	 % DOCSTRING_GENERATED
+ % VL_IMGRAD		 [add function description here]
+ % INPUTS 
+ %			F = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			Fx = ..
+ %			Fy = ..
+
+
 % VL_IMGRAD  Image gradient
 %   [Fx,Fy] = VL_GRAD(F) returns the finite differencies gradient of the
 %   image F. The function uses central differencies and for all but

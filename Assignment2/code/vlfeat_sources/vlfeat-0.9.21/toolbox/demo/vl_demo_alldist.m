@@ -1,4 +1,12 @@
-function vl_demo_alldist
+function vl_demo_alldist	 % DOCSTRING_GENERATED
+ % VL_DEMO_ALLDIST
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_alldist
+ = ..
+ % OUTPUTS 
+
+
 %
 
 numRepetitions  = 3 ;

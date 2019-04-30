@@ -1,4 +1,13 @@
-function d = vl_numder(func, x, varargin)
+function d = vl_numder(func, x, varargin)	 % DOCSTRING_GENERATED
+ % VL_NUMDER		 [add function description here]
+ % INPUTS 
+ %			func = ..
+ %			x = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			d = ..
+
+
 % VL_NUMDER  Numerical derivative
 %   D = VL_NUMDER(FUNC, X) computes the numerical derivative of the
 %   function FUNC at point X. X is a real array and is passed as first

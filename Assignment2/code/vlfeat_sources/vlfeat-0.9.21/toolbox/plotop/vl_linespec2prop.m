@@ -1,4 +1,11 @@
-function prop=vl_linespec2prop(spec)
+function prop=vl_linespec2prop(spec)	 % DOCSTRING_GENERATED
+ % VL_LINESPEC2PROP		 [add function description here]
+ % INPUTS 
+ %			spec = ..
+ % OUTPUTS 
+ %			prop = ..
+
+
 % VL_LINESPEC2PROP  Convert PLOT style line specs to line properties
 %  PROPR = VL_LINESPEC2PROP(SPEC) converts the string SPEC to a cell
 %  array of properties PROPR. SPEC is in the format of PLOT().

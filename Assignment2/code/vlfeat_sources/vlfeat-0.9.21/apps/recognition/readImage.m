@@ -1,4 +1,12 @@
-function [im, scale] = readImage(imagePath)
+function [im, scale] = readImage(imagePath)	 % DOCSTRING_GENERATED
+ % READIMAGE		 [add function description here]
+ % INPUTS 
+ %			imagePath = ..
+ % OUTPUTS 
+ %			im = ..
+ %			scale = ..
+
+
 % READIMAGE   Read and standardize image
 %    [IM, SCALE] = READIMAGE(IMAGEPATH) reads the specified image file,
 %    converts the result to SINGLE class, and rescales the image

@@ -1,4 +1,12 @@
-function imdb = setupCaltech256(datasetDir, varargin)
+function imdb = setupCaltech256(datasetDir, varargin)	 % DOCSTRING_GENERATED
+ % SETUPCALTECH256		 [add function description here]
+ % INPUTS 
+ %			datasetDir = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			imdb = ..
+
+
 % SETUPCALTECH256    Setup Caltech 256 and 101 datasets
 %    This is similar to SETUPGENERIC(), with modifications to setup
 %    Caltech-101 and Caltech-256 according to the standard

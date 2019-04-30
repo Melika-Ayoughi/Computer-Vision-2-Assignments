@@ -1,4 +1,13 @@
-function h=vl_plotgrid(x,y,varargin)
+function h=vl_plotgrid(x,y,varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTGRID		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ %			y = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			h = ..
+
+
 % VL_PLOTGRID  Plot a 2-D grid
 %  VL_PLOTGRID(X,Y) plots a grid with vertices (X,Y). X and Y are MxN
 %  matrices, with one entry per vertex.

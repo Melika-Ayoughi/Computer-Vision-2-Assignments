@@ -1,4 +1,12 @@
-function y = vl_aibcutpush(map, x)
+function y = vl_aibcutpush(map, x)	 % DOCSTRING_GENERATED
+ % VL_AIBCUTPUSH		 [add function description here]
+ % INPUTS 
+ %			map = ..
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_AIBCUTPUSH  Quantize based on VL_AIB cut
 %  Y = VL_AIBCUTPUSH(MAP, X) maps the data X to elements of the AIB
 %  cut specified by MAP.

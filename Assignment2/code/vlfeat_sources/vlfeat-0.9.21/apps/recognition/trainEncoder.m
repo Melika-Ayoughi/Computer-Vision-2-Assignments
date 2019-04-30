@@ -1,4 +1,12 @@
-function encoder = trainEncoder(images, varargin)
+function encoder = trainEncoder(images, varargin)	 % DOCSTRING_GENERATED
+ % TRAINENCODER		 [add function description here]
+ % INPUTS 
+ %			images = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			encoder = ..
+
+
 % TRAINENCODER   Train image encoder: BoVW, VLAD, FV
 %   ENCODER = TRAINENCOER(IMAGES) trains a BoVW encoder from the
 %   specified list of images IMAGES.

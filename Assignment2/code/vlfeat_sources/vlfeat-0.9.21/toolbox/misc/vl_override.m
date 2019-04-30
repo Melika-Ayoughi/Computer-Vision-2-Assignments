@@ -1,4 +1,13 @@
-function config = vl_override(config,update,varargin)
+function config = vl_override(config,update,varargin)	 % DOCSTRING_GENERATED
+ % VL_OVERRIDE		 [add function description here]
+ % INPUTS 
+ %			config = ..
+ %			update = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			config = ..
+
+
 % VL_OVERRIDE  Override structure subset
 %   CONFIG = VL_OVERRIDE(CONFIG, UPDATE) copies recursively the fileds
 %   of the structure UPDATE to the corresponding fields of the

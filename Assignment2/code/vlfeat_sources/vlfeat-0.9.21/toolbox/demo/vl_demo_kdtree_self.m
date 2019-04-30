@@ -1,4 +1,12 @@
-function vl_demo_kdtree_self
+function vl_demo_kdtree_self	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE_SELF
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_kdtree_self
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_KDTREE_SELF
 %   Demonstrates using a kd-tree to find the pairwise nearest
 %   neighbors in a set of points.

@@ -1,4 +1,11 @@
-function vl_plotss(ss, varargin)
+function vl_plotss(ss, varargin)	 % DOCSTRING_GENERATED
+ % VL_PLOTSS		 [add function description here]
+ % INPUTS 
+ %			ss = ..
+ %			varargin = ..
+ % OUTPUTS 
+
+
 % VL_PLOTSS Plot scale space
 %   VL_PLOTSS(SS) plots the scale space SS. SS is a structure
 %   with the following members:

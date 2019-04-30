@@ -1,4 +1,11 @@
-function H = vl_tightsubplot(varargin)
+function H = vl_tightsubplot(varargin)	 % DOCSTRING_GENERATED
+ % VL_TIGHTSUBPLOT		 [add function description here]
+ % INPUTS 
+ %			varargin = ..
+ % OUTPUTS 
+ %			H = ..
+
+
 % VL_TIGHTSUBPLOT  Tiles axes without wasting space
 %   H = VL_TIGHTSUBPLOT(K,P) returns an handle to the P-th axis in a
 %   regular grid of K axes. The K axes are numbered from left to right

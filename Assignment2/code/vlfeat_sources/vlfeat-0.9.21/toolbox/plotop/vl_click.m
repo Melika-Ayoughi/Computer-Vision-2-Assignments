@@ -1,4 +1,12 @@
-function P = vl_click(N,varargin) ;
+function P = vl_click(N,varargin) ;	 % DOCSTRING_GENERATED
+ % VL_CLICK		 [add function description here]
+ % INPUTS 
+ %			N = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			P = ..
+
+
 % VL_CLICK  Click a point
 %  P=VL_CLICK() let the user click a point in the current figure and
 %  returns its coordinates in P. P is a two dimensiona vectors where

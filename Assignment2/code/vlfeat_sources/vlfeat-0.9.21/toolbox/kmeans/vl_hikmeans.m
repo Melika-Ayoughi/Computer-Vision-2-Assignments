@@ -1,4 +1,14 @@
-function [tree,asgn] = vl_hikmeans(data,K,nleaves)
+function [tree,asgn] = vl_hikmeans(data,K,nleaves)	 % DOCSTRING_GENERATED
+ % VL_HIKMEANS		 [add function description here]
+ % INPUTS 
+ %			data = ..
+ %			K = ..
+ %			nleaves = ..
+ % OUTPUTS 
+ %			tree = ..
+ %			asgn = ..
+
+
 % VL_HIKMEANS  Hierachical integer K-means
 %   [TREE,ASGN] = VL_HIKMEANS(DATA,K,NLEAVES) applies integer K-menas
 %   recursively to cluster the data DATA, returing a structure TREE

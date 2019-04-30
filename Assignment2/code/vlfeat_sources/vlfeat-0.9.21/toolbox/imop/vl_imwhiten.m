@@ -1,4 +1,13 @@
-function J=vl_imwhiten(I,alpha,cutoff)
+function J=vl_imwhiten(I,alpha,cutoff)	 % DOCSTRING_GENERATED
+ % VL_IMWHITEN		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			alpha = ..
+ %			cutoff = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMWHITEN  Whiten an image
 %   J = VL_IMWHITEN(I,ALPHA) approximatively whitens the power spectrum
 %   of the natural image I. The algorithm assumes that the modulus of

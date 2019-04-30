@@ -1,4 +1,12 @@
-function H = vl_histmarg(H, dims)
+function H = vl_histmarg(H, dims)	 % DOCSTRING_GENERATED
+ % VL_HISTMARG		 [add function description here]
+ % INPUTS 
+ %			H = ..
+ %			dims = ..
+ % OUTPUTS 
+ %			H = ..
+
+
 % VL_HISTMARG  Marginal of histogram
 %   H = VL_HISTMARG(H, DIMS) marginalizes the historgram H w.r.t the
 %   dimensions DIMS. This is done by summing out all dimensions not

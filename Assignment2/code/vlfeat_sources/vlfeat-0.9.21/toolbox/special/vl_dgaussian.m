@@ -1,4 +1,11 @@
-function y = vl_dgaussian(x)
+function y = vl_dgaussian(x)	 % DOCSTRING_GENERATED
+ % VL_DGAUSSIAN		 [add function description here]
+ % INPUTS 
+ %			x = ..
+ % OUTPUTS 
+ %			y = ..
+
+
 % VL_DGAUSSIAN  Derivative of the Gaussian density function
 %   Y=VL_DGAUSSIAN(X) evaluates the derivative of the standard Gaussian
 %   density.

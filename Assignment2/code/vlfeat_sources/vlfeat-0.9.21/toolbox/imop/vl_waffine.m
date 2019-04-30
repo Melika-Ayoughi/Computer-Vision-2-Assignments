@@ -1,4 +1,13 @@
-function varargout = vl_waffine(A,T,varargin)
+function varargout = vl_waffine(A,T,varargin)	 % DOCSTRING_GENERATED
+ % VL_WAFFINE		 [add function description here]
+ % INPUTS 
+ %			A = ..
+ %			T = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			varargout = ..
+
+
 % VL_WAFFINE  Apply affine transformation to points
 %  Y = VL_WAFFINE(A,T,X) applies the affine transformatio (A,T) to points
 %  X. X contains one point per column.

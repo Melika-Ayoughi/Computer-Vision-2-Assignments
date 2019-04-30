@@ -1,4 +1,13 @@
-function path = vl_root
+function path = vl_root	 % DOCSTRING_GENERATED
+ % VL_ROOT
+		 [add function description here]
+ % INPUTS 
+ %			functionpath=vl_root
+ = ..
+ % OUTPUTS 
+ %			path = ..
+
+
 % VL_ROOT  Obtain VLFeat root path
 %   PATH = VL_ROOT() returns the path to the VLFeat installation.
 %

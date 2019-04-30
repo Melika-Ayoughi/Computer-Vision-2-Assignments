@@ -1,4 +1,12 @@
-function vl_demo_kdtree_ann
+function vl_demo_kdtree_ann	 % DOCSTRING_GENERATED
+ % VL_DEMO_KDTREE_ANN
+		 [add function description here]
+ % INPUTS 
+ %			functionvl_demo_kdtree_ann
+ = ..
+ % OUTPUTS 
+
+
 % VL_DEMO_KDTREE
 %   Demonstrates the use of a kd-tree for approximate nearest neighbor
 %   (ANN) queries.

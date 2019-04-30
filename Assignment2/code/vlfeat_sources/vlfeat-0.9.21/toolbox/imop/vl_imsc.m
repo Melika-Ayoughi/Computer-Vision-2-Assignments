@@ -1,4 +1,11 @@
-function J=vl_imsc(I)
+function J=vl_imsc(I)	 % DOCSTRING_GENERATED
+ % VL_IMSC		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMSC  Scale image
 %   J=VL_IMSC(I) scales the range of the gray-scale or color image I to
 %   fit in the interval [0,1].

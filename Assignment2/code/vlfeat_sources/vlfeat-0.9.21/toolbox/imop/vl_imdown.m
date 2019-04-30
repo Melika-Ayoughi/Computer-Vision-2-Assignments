@@ -1,4 +1,12 @@
-function J = vl_imdown(I, varargin)
+function J = vl_imdown(I, varargin)	 % DOCSTRING_GENERATED
+ % VL_IMDOWN		 [add function description here]
+ % INPUTS 
+ %			I = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			J = ..
+
+
 % VL_IMDOWN  Downsample an image by two
 %   J = VL_IMDOWN(I) downsamples the image I by half by discarding
 %   each other pixel.

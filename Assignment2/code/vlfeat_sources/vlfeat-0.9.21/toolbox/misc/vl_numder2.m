@@ -1,4 +1,13 @@
-function d = vl_numder2(func, x, varargin)
+function d = vl_numder2(func, x, varargin)	 % DOCSTRING_GENERATED
+ % VL_NUMDER2		 [add function description here]
+ % INPUTS 
+ %			func = ..
+ %			x = ..
+ %			varargin = ..
+ % OUTPUTS 
+ %			d = ..
+
+
 % VL_NUMDER2  Numerical second derivative
 %   D = VL_NUMDER2(FUNC, X) computes the numerical second derivative of
 %   the function FUNC at point X.

@@ -3,6 +3,7 @@ clear all
 vl_setup()
 
 
+
 % load images
 disp("Loading images");
 directory = "House";
@@ -15,6 +16,7 @@ pic1 = imgs(1, :, :);
 pic2 = imgs(2, :, :);
 
 % do eight point algorithm
-result = eight_point(pic1, pic2);
+methods = ["standard", "normalized", "ransac"];
+result = eight_point(pic1, pic2, methods(2));
 
 

@@ -1,6 +1,9 @@
 function feature_points = generate_feature_points(imgs)
 
 
+
+
+
 feature_points = struct();
 
 for i = 1:size(imgs,1)
@@ -12,6 +15,5 @@ for i = 1:size(imgs,1)
     local_struct.descriptors = d;
     feature_points.("pic"+string(i)) = local_struct;
 
-feature_points = filter_feature_points(feature_points);
 
 end

@@ -10,9 +10,11 @@ start_at = 1;
 how_many = 3;
 imgs = load_data(directory, how_many, start_at);
 
-% detect feature points
-disp("Getting feature points");
-feature_points = generate_feature_points(imgs);
+% for now pic the first two pictures: TODO: something else?
+pic1 = imgs(1, :, :);
+pic2 = imgs(2, :, :);
 
-% matching feature points
-vl_ubcmatch
+% do eight point algorithm
+result = eight_point(pic1, pic2);
+
+

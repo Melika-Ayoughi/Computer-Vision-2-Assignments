@@ -7,8 +7,7 @@ function [F] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
  % OUTPUTS 
  %			F = ..
 
-
-
+ 
 % find points
 [frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512))) ;
 [frame_2,descriptors_2] = vl_sift(single(reshape(picture_2, 480, 512))) ;
@@ -30,6 +29,10 @@ if (strcmp(method, "normalized"))
 
 end
 
+%Initialize points (ADDED THIS)
+
+p_1 = [];
+p_2 = [];
 
 for i = 1:size(matches,2)
     
@@ -53,6 +56,12 @@ for i = 1:size(matches,2)
         y_1 = p_1(2);
         y_2 = p_2(2);
         
+    else
+        
+        %Get points of matches
+        p_1 = [p_1;[x_1, y_1, 1]]; %ADDED THIS cause we need it for epipolar lines
+        p_2 = [p_2;[x_2, y_2, 1]];
+        
     end
     
     % get A matrix entry
@@ -73,5 +82,9 @@ if (strcmp(method, "normalized"))
 end
 
 % TODO: is there more?
+
+
+%get epipolar line
+get_epipolar_lines(F, reshape(picture_1, 480, 512), reshape(picture_2, 480, 512), p_1, p_2,1);
 
 end

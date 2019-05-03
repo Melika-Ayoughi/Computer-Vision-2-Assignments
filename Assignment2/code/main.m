@@ -13,6 +13,7 @@ imgs = load_data(directory, how_many, start_at);
 pic1 = imgs(1, :, :);
 pic2 = imgs(2, :, :);
 
+
 % do eight point algorithm
 methods = ["standard", "normalized", "ransac"];
 result = eight_point(pic1, pic2, methods(3));

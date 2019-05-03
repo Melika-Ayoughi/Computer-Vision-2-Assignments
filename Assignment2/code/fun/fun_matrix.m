@@ -21,7 +21,6 @@ if (strcmp(method, "standard") || strcmp(method, "normalized"))
 
 elseif (strcmp(method, "ransac"))
     %TODO: RANSAC implementation
-    
     F = get_fun_RANSAC(matches, frame_1, frame_2, method);
 else
     error("Method for fun matrix not recognized");

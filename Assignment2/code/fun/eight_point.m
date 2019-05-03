@@ -85,6 +85,6 @@ end
 
 
 %get epipolar line
-get_epipolar_lines(F, reshape(picture_1, 480, 512), reshape(picture_2, 480, 512), p_1, p_2,1);
+get_epipolar_lines(F, reshape(picture_1, 480, 512), reshape(picture_2, 480, 512), p_1, p_2, 8);
 
 end

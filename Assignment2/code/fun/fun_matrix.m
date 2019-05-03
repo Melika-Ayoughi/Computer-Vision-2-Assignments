@@ -1,4 +1,4 @@
-function F = fun_matrix(A, method)	 % DOCSTRING_GENERATED
+function F = fun_matrix(A, method, matches, frame_1, frame_2)	 % DOCSTRING_GENERATED
  % FUN_MATRIX		 [GEts the functional matrix]
  % INPUTS 
  %			A = see assignment
@@ -21,8 +21,10 @@ if (strcmp(method, "standard") || strcmp(method, "normalized"))
 
 elseif (strcmp(method, "ransac"))
     %TODO: RANSAC implementation
+    
+    F = get_fun_RANSAC(matches, frame_1, frame_2, method);
 else
-    error("Mehtod for fun matrix not recognized");
+    error("Method for fun matrix not recognized");
     
 end
 

@@ -1,4 +1,4 @@
-function [F] = get_fun_RANSAC(matches, frame_1, frame_2, method)
+function F = get_fun_RANSAC(matches, frame_1, frame_2, method)
  % get_fun_RANSAC		 [Estimates the Fundamental matrix]
  % INPUTS 
  %			matches = indices of matches

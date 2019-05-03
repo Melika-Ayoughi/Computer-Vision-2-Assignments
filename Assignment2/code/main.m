@@ -15,6 +15,6 @@ pic2 = imgs(2, :, :);
 
 % do eight point algorithm
 methods = ["standard", "normalized", "ransac"];
-result = eight_point(pic1, pic2, methods(2));
+result = eight_point(pic1, pic2, methods(3));
 
 

@@ -62,7 +62,8 @@ end
 
 
 % get actual matrix
-F = fun_matrix(A, method);
+% F = fun_matrix(A, method);
+F = fun_matrix(A, method, matches, frame_1, frame_2);
 
 % denormalize if needed
 if (strcmp(method, "normalized"))

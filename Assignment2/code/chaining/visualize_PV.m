@@ -1,11 +1,21 @@
 function [] = visualize_PV(PV) 
 
+%get x and y aspect ratios
+[x, y] = size(PV);
 
-binary_PV = PV > 0;
+%make present points black and absent points white (in diagram)
+binary_PV = PV == 0; 
 
-%get indexes discarding the y's (not needed since binary
+%get indexes discarding the y's (not needed since binary)
 idx = 1 + linspace(0,size(PV,1)-2,(size(PV,1)-2)/2+1);
 
 binary_PV = binary_PV(idx,:);
 
-imshow(binary_PV)
+
+
+figure();
+imshow(binary_PV,'InitialMagnification','fit')
+title('Number of 3D points: ' + string(size(PV,2)));
+xlabel('Points') 
+ylabel('Image Index') 
+daspect([y x 1]) %correct aspect ratio

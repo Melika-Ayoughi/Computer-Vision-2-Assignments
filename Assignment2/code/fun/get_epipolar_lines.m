@@ -38,18 +38,30 @@ for i = 1:size(p1, 1)
     
     %get epipolar line corresponding to p1
     p = F*p1(i,:)';
+      
+    % plot epipolar line
+    length = size(I2, 1)*2;
+    a = p(1);
+    b = p(2);
+    c = p(3);
+    u = p_2(1);
+    v = p_2(2);
     
-    %get x coordinates to plot epipolar line
-    x = linspace(0, size(I2, 2));
-    % get corresponding y coordinates for epipolar line
-    y = -(p(1)*x + p(3))/p(2);
-
-    %plot epipolar line
-    line = plot(x, y);
+    if(abs(a)<abs(b))
+        d = length/sqrt((a/b)^2+1);
+        drawpoint = [u-d, u+d ; (-c - a*(u-d))/b , (-c - a*(u+d))/b ];
+    else
+        d = length/sqrt((b/a)^2+1);
+        drawpoint = [(-c - b*(v-d))/a , (-c - b*(v+d))/a ; v-d , v+d ];
+    end
+    
+    line = plot(drawpoint(1,:), drawpoint(2,:));
     line.LineWidth = 1.5;
+
     
     %plot point on image 2 matching to p1
     scatter(p2(i,1), p2(i, 2), 50, get(line, 'Color'), 'filled')
+    
 end
 
 end

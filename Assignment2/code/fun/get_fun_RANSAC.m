@@ -22,6 +22,7 @@ for n = 1:N
     %get random subset of size N from frames with matching features
     permutations = randperm(size(matches,2));
     subset = permutations(1:P);
+    best_inliners_idx = subset;
         
     %get corresponding point coordinates
     x_1  = frame_1(1,matches(1,subset));

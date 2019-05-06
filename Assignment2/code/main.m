@@ -16,7 +16,7 @@ pic2 = imgs(49, :, :);
 
 % do eight point algorithm
 methods = ["standard", "ransac"];
-normalization = [1];
+normalization = [0, 1];
 
 s_threshold = 5;
 m_threshold = 5;

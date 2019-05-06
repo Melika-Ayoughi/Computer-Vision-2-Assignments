@@ -35,18 +35,18 @@ for n = 1:N
     p_2 = [];
     
     %get T matrices if normalized
-    [T_1, T_2] = find_T_matrix(matches(:,subset), frame_1, frame_2);
+    [T_1, T_2] = find_T_matrix(matches(:,subset), frame_1, frame_2); % STIJN : notnorm = Idetnity
 %     
     for i = 1:P
         %Get A using match coordinates
-        A(i,:) = [x_1(i)*x_2(i), x_1(i)*y_2(i), x_1(i), y_1(i)*x_2(i), y_1(i)*y_2(i), y_1(i), x_2(i), y_2(i), 1];
+        A(i,:) = [x_1(i)*x_2(i), x_1(i)*y_2(i), x_1(i), y_1(i)*x_2(i), y_1(i)*y_2(i), y_1(i), x_2(i), y_2(i), 1];   % STIJN: get A function
         %Get points of matches
         p_1 = [p_1;(T_1*[x_1(i); y_1(i); 1])']; %APPLIED NORMALIZATION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         p_2 = [p_2;(T_2*[x_2(i); y_2(i); 1])'];
     end    
     
     %get functional matrix    
-    [~, D_t, V_t] = svd(A);
+    [~, D_t, V_t] = svd(A); % STIJN: get F function
     [~,idx] = min(diag(D_t));
     F = V_t(:, idx);
     F = reshape(V_t(:, end),3,3);
@@ -86,6 +86,6 @@ A = getA(matches(:,best_inliners_idx), frame_1, frame_2, method);
 [~, D_t, V_t] = svd(A);
 [~,idx] = min(diag(D_t));
 F = V_t(:, idx);
-F = reshape(V_t(:, end),3,3);        
+F = reshape(F,3,3);        
     
 end

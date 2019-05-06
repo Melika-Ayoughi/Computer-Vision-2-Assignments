@@ -1,30 +1,35 @@
-function F = fun_matrix(A, method, matches, frame_1, frame_2)	 % DOCSTRING_GENERATED
- % FUN_MATRIX		 [GEts the functional matrix]
+function [F, p_1, p_2] = fun_matrix(normalized, method, matches, frame_1, frame_2)		 % DOCSTRING_GENERATED
+ % FUN_MATRIX		 [add function description here]
  % INPUTS 
- %			A = see assignment
- %			method = standard, normalized or ransac
+ %			normalized = ..
+ %			method = ..
+ %			matches = ..
+ %			frame_1 = ..
+ %			frame_2 = ..
  % OUTPUTS 
- %			F = see assignment
+ %			F = ..
+ %			p_1 = ..
+ %			p_2 = ..
 
 
-if (strcmp(method, "standard") || strcmp(method, "normalized"))
+
+
+
+
+if (strcmp(method, "standard") )
     
-    % get F
-    [~, ~, V_t] = svd(A); % TODO not sure if we have to transpose V_t??
-    F = reshape(V_t(:, end),3,3);
+    [~, F, p_1, p_2] = getA_F(matches, frame_1, frame_2, normalized);
 
 elseif (strcmp(method, "ransac"))
-    %TODO: RANSAC implementation
-    F = get_fun_RANSAC(matches, frame_1, frame_2, method);
+
+    [F, p_1, p_2] = get_fun_RANSAC(matches, frame_1, frame_2, method, normalized);
+    
 else
+    
     error("Method for fun matrix not recognized");
     
 end
 
-% correction to F
-[U_f, D_f, V_tf] = svd(F);
-temp = diag(D_f);
-temp(end) = 0;
-F = U_f* diag(temp) * V_tf';
+
 
 end

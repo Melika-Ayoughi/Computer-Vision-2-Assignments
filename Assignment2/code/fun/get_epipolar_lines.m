@@ -1,4 +1,4 @@
-function [] = get_epipolar_lines(F, img1, img2, p_1, p_2, n, method)
+function [] = get_epipolar_lines(F, img1, img2, p_1, p_2, n, method, figure_number)  % DOCSTRING_GENERATED
  % get_epipolar_lines		 [Visualizes epipolar lines]
  % INPUTS 
  %			F = fundamental matrix
@@ -22,7 +22,7 @@ p1 = p_1(idxs, :);
 p2 = p_2(idxs, :);
 
 
-figure(1);
+figure(figure_number);
 
 subplot(1, 2, 1);
 imshow(I1)

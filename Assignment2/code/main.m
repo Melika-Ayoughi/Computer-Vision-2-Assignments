@@ -15,20 +15,27 @@ pic2 = imgs(49, :, :);
 
 
 % do eight point algorithm
-methods = ["standard", "normalized", "ransac"];
-[F, p_1, p_2] = eight_point(pic1, pic2, methods(3));
+methods = ["standard", "ransac"];
+normalization = [1];
 
-%get epipolar line
-get_epipolar_lines(F, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8, methods(3));
+s_threshold = 5;
+m_threshold = 5;
 
+plot_counter = 1;
 
-% % do eight point algorithm %%%%%%%%%%%%%%%%%%USE THIS
-% for method = ["standard", "normalized", "ransac"]
-%     [F, p_1, p_2] = eight_point(pic1, pic2, method);
-% 
-%     %get epipolar line
-%     get_epipolar_lines(F, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8, method);
-% end
+for method = methods
+    
+    for norm = normalization
+    
+        [F, p_1, p_2] = eight_point(pic1, pic2, method, norm, s_threshold, m_threshold);
+                
+        get_epipolar_lines(F, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8, method+" normalized="+string(norm), plot_counter); 
+        
+        plot_counter = plot_counter+1;
+    
+    end
+
+end
 
 
 

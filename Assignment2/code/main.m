@@ -9,7 +9,7 @@ start_at = 1;
 how_many = 49; %49 = all images
 imgs = load_data(directory, how_many, start_at);
 
-% for now pic the first two pictures: TODO: something else?
+% for now pick the first two pictures: TODO: something else?
 pic1 = imgs(1, :, :);
 pic2 = imgs(2, :, :);
 

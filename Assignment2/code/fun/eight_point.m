@@ -8,16 +8,26 @@ function [F] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
  %			F = ..
 
  
+s_threshold = 5;
+m_threshold = 5;
+ 
+ 
 % find points
-[frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512))) ;
-[frame_2,descriptors_2] = vl_sift(single(reshape(picture_2, 480, 512))) ;
+% [frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512))) ;
+% [frame_2,descriptors_2] = vl_sift(single(reshape(picture_2, 480, 512))) ;
+
+[frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512)),'PeakThresh', s_threshold) ;
+[frame_2,descriptors_2] = vl_sift(single(reshape(picture_2, 480, 512)),'PeakThresh', s_threshold) ;
 
 % filter
 [frame_1,descriptors_1] = filter_feature_points(frame_1 ,descriptors_1);
 [frame_2,descriptors_2] = filter_feature_points(frame_2 ,descriptors_2);
 
 % match
-[matches, scores] = vl_ubcmatch(descriptors_1, descriptors_2) ; % todo: maybe we can use the scores for something about filtering???
+% [matches, scores] = vl_ubcmatch(descriptors_1, descriptors_2) ; % todo: maybe we can use the scores for something about filtering???
+[matches, scores] = vl_ubcmatch(descriptors_1, descriptors_2, m_threshold) ; % todo: maybe we can use the scores for something about filtering???
+
+
 
 % init A
 A = zeros(size(matches,2), 9);

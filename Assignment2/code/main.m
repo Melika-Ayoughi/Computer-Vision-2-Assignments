@@ -18,15 +18,15 @@ pic2 = imgs(2, :, :);
 methods = ["standard", "normalized", "ransac"];
 result = eight_point(pic1, pic2, methods(3));
 
-% % CHAINING
-% %set sift threshold and matching threshold
-% s_threshold = 5;
-% m_threshold = 5;
-% 
-% %get point view matrix
-% PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
-% visualize_PV(PV)
-% 
-% %import given PV (its as dense as possible..)
-% M=dlmread('PointViewMatrix.txt');
-% visualize_PV(M)
+% CHAINING
+%set sift threshold and matching threshold
+s_threshold = 5;
+m_threshold = 5;
+
+%get point view matrix
+PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
+visualize_PV(PV)
+
+%import given PV (its as dense as possible..)
+M=dlmread('PointViewMatrix.txt');
+visualize_PV(M)

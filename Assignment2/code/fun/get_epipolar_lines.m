@@ -1,4 +1,4 @@
-function [] = get_epipolar_lines(F, img1, img2, p_1, p_2, n)
+function [] = get_epipolar_lines(F, img1, img2, p_1, p_2, n, method)
  % get_epipolar_lines		 [Visualizes epipolar lines]
  % INPUTS 
  %			F = fundamental matrix
@@ -62,6 +62,7 @@ for i = 1:size(p1, 1)
     %plot point on image 2 matching to p1
     scatter(p2(i,1), p2(i, 2), 50, get(line, 'Color'), 'filled')
     
+    title(string(method));
 end
 
 end

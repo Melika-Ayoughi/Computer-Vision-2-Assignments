@@ -1,4 +1,4 @@
-function [F] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
+function [F, p_1, p_2] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
  % EIGHT_POINT		 [Does eight oint algorithm]
  % INPUTS 
  %			picture_1 = ..
@@ -20,7 +20,7 @@ m_threshold = 5;
 [frame_2,descriptors_2] = filter_feature_points(frame_2 ,descriptors_2);
 
 % match
-[matches, scores] = vl_ubcmatch(descriptors_1, descriptors_2, m_threshold) ; % Added threshold to matchpoint extraction
+[matches, ~] = vl_ubcmatch(descriptors_1, descriptors_2, m_threshold) ; % Added threshold to matchpoint extraction
 
 % init A
 A = zeros(size(matches,2), 9);
@@ -84,10 +84,5 @@ if (strcmp(method, "normalized"))
 
 end
 
-% TODO: is there more?
-
-
-%get epipolar line
-get_epipolar_lines(F, reshape(picture_1, 480, 512), reshape(picture_2, 480, 512), p_1, p_2, 8);  % STIJN: MOVE IT OUT
 
 end

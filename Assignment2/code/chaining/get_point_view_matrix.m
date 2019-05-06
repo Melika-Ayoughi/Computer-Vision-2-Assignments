@@ -1,4 +1,13 @@
-function [PV] = get_point_view_matrix(imgs, s_threshold, m_threshold)
+function [PV] = get_point_view_matrix(imgs, s_threshold, m_threshold)	 % DOCSTRING_GENERATED
+ % GET_POINT_VIEW_MATRIX		 [add function description here]
+ % INPUTS 
+ %			imgs = ..
+ %			s_threshold = ..
+ %			m_threshold = ..
+ % OUTPUTS 
+ %			PV = ..
+
+
 
 %get first image
 img_1 = imgs(1,:,:);

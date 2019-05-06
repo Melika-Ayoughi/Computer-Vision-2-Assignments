@@ -11,12 +11,33 @@ imgs = load_data(directory, how_many, start_at);
 
 % for now pick the first two pictures: TODO: something else?
 pic1 = imgs(1, :, :);
-pic2 = imgs(2, :, :);
+pic2 = imgs(49, :, :);
 
 
 % do eight point algorithm
-methods = ["standard", "normalized", "ransac"];
-result = eight_point(pic1, pic2, methods(3));
+methods = ["standard", "ransac"];
+normalization = [0, 1];
+
+s_threshold = 5;
+m_threshold = 5;
+
+plot_counter = 1;
+
+for method = methods
+    
+    for norm = normalization
+    
+        [F, p_1, p_2] = eight_point(pic1, pic2, method, norm, s_threshold, m_threshold);
+                
+        get_epipolar_lines(F, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8, method+" normalized="+string(norm), plot_counter); 
+        
+        plot_counter = plot_counter+1;
+    
+    end
+
+end
+
+
 
 % % CHAINING
 % %set sift threshold and matching threshold

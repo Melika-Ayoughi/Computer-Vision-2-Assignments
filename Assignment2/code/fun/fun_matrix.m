@@ -25,6 +25,6 @@ end
 [U_f, D_f, V_tf] = svd(F);
 temp = diag(D_f);
 temp(end) = 0;
-F = U_f* diag(temp) * V_tf;
+F = U_f* diag(temp) * V_tf';
 
 end

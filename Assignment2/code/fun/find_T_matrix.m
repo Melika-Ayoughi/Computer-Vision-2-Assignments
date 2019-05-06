@@ -37,6 +37,7 @@ function [T_1, T_2] = find_T_matrix(matches, frame_1, frame_2, normalized)	 % DO
      % variances from assignment
      d_1 = mean(sum(sqrt((p_1-ms_1).^2), 2));
      d_2 = mean(sum(sqrt((p_2-ms_2).^2), 2));
+
      
      % return t matrices
      T_1 = T_matrix(d_1, ms_1(1), ms_1(2));

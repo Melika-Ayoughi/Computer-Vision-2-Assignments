@@ -1,4 +1,4 @@
-function [F] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
+function [F, p_1, p_2] = eight_point(picture_1, picture_2, method)	 % DOCSTRING_GENERATED
  % EIGHT_POINT		 [Does eight oint algorithm]
  % INPUTS 
  %			picture_1 = ..
@@ -94,8 +94,5 @@ end
 
 % TODO: is there more?
 
-
-%get epipolar line
-get_epipolar_lines(F, reshape(picture_1, 480, 512), reshape(picture_2, 480, 512), p_1, p_2, 8);
 
 end

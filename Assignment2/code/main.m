@@ -63,3 +63,10 @@ visualize_PV(PV)
 %import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
 visualize_PV(M)
+
+%building the 3d model from PV
+for seq = (3:4)
+    for mode = (1:2) %different svd matrices
+        build3d(PV, seq, mode);
+    end
+end

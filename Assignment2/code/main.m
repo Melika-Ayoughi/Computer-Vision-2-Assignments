@@ -13,7 +13,7 @@ imgs = load_data(directory, how_many, start_at);
 
 % for now pick the first two pictures: TODO: something else?
 pic1 = imgs(1, :, :);
-pic2 = imgs(49, :, :);
+pic2 = imgs(2, :, :);
 
 
 %% do EIGHT POINT algorithm
@@ -41,8 +41,11 @@ for method = methods
 
 end
 
+
+
 %plot epipolar lines
-get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8); 
+% get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
+get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
 
 
@@ -70,3 +73,4 @@ for seq = (3:4)
         build3d(PV, seq, mode);
     end
 end
+

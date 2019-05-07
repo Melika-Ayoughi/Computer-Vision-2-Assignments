@@ -5,14 +5,19 @@ function [T_1, T_2] = find_T_matrix(matches, frame_1, frame_2, normalized)	 % DO
  %			frame_1 = sift locations 
  %			frame_2 = sift locations 
  % OUTPUTS 
- %			T_1 = ..
- %			T_2 = ..
-
+ %			T_1 = transformation matrix for points of pic1
+ %			T_2 = transformation matrix for points of pic2
+ 
+ 
+ 
+ 
+ % if not normalized, return the identity
  if (~normalized) 
      T_1 = eye(3);
      T_2 = T_1;
+     
+ % otherwise
  else 
-
 
      % find used points of each picture
      p_1 = [];
@@ -35,18 +40,9 @@ function [T_1, T_2] = find_T_matrix(matches, frame_1, frame_2, normalized)	 % DO
      ms_1 = mean(p_1, 1);
      ms_2 = mean(p_2, 1);
      
-    
      % variances from assignment
      d_1 = mean(sum(sqrt((p_1-ms_1).^2), 2));
      d_2 = mean(sum(sqrt((p_2-ms_2).^2), 2));
-
-%      % variances from assignment
-%     d_1 = 0;
-%     d_2 = 0;
-%     for i = 1:size(matches,2)
-%         d_1 = d_1 + sqrt((p_1(i,1)-ms_1(1)).^2 + (p_1(i,2)-ms_1(2)).^2);
-%         d_2 = d_2 + sqrt((p_2(i,1)-ms_2(1)).^2 + (p_2(i,2)-ms_2(2)).^2);
-%     end
 
      % return t matrices
      T_1 = T_matrix(d_1, ms_1(1), ms_1(2));

@@ -1,4 +1,13 @@
-function [s, m] = calculate_s_m(D, mode)
+function [s, m] = calculate_s_m(D, mode)	 % DOCSTRING_GENERATED
+ % CALCULATE_S_M		 [add function description here]
+ % INPUTS 
+ %			D = ..
+ %			mode = ..
+ % OUTPUTS 
+ %			s = ..
+ %			m = ..
+
+
 
 %normalize M
 D = D - mean(D,2); 

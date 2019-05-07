@@ -1,11 +1,11 @@
 function imgs = load_data(directory, number, start)	 % DOCSTRING_GENERATED
- % LOAD_DATA		 [add function description here]
+ % LOAD_DATA		 [loads entire directory of images]
  % INPUTS 
- %			directory = ..
- %			number = ..
- %			start = ..
+ %			directory
+ %			number = amount of pictures to load
+ %			start = start loading from picture-index
  % OUTPUTS 
- %			imgs = ..
+ %			imgs
 
 
 

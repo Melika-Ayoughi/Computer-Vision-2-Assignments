@@ -1,10 +1,10 @@
 function img = load_one(number, directory)	 % DOCSTRING_GENERATED
- % LOAD_ONE		 [add function description here]
+ % LOAD_ONE		 [loads one picture]
  % INPUTS 
- %			number = ..
- %			directory = ..
+ %			number = picture index
+ %			directory = picture directory
  % OUTPUTS 
- %			img = ..
+ %			img
 
 
 

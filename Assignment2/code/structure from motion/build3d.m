@@ -1,7 +1,15 @@
-function [] = build3d(PV, seq)
-% structure from motion
-% PV is point view matrix : 2M*N (M=#images N=#points)
-% seq: number of images that we take as a sequence
+function [] = build3d(PV, seq)	 % DOCSTRING_GENERATED
+ % BUILD3D		 
+ % structure from motion
+ 
+ % INPUTS 
+ %			PV =  point view matrix : 2M*N (M=#images N=#points)
+ %			seq = number of images that we take as a sequence
+ % OUTPUTS 
+ %			 = ..
+
+
+
 
 step = 2 * seq;
 for image= 1 : step : size(PV,1)-step+1

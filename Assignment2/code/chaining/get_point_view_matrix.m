@@ -1,11 +1,11 @@
 function [PV] = get_point_view_matrix(imgs, s_threshold, m_threshold)	 % DOCSTRING_GENERATED
- % GET_POINT_VIEW_MATRIX		 [add function description here]
+ % GET_POINT_VIEW_MATRIX		 [retrieves the pvm]
  % INPUTS 
- %			imgs = ..
- %			s_threshold = ..
- %			m_threshold = ..
+ %			imgs = all images
+ %			s_threshold = threshold for sift extraction
+ %			m_threshold = threshold for matching descriptors
  % OUTPUTS 
- %			PV = ..
+ %			PV = point view matrix
 
 
 

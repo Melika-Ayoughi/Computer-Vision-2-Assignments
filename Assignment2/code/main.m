@@ -44,6 +44,7 @@ end
 
 
 %plot epipolar lines
+% get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
 

@@ -1,9 +1,9 @@
 function [] = visualize_PV(PV) 	 % DOCSTRING_GENERATED
- % VISUALIZE_PV		 [add function description here]
+ % VISUALIZE_PV		 [Binarizes the PV matrix and outputs a sparsity plot]
  % INPUTS 
- %			PV = ..
+ %			PV = The point view matrix
  % OUTPUTS 
- %			 = ..
+ %			 = Sparsity visualisation
 
 
 

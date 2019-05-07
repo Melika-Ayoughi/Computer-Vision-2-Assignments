@@ -23,19 +23,23 @@ m_threshold = 5;
 
 plot_counter = 1;
 
+% initialize dictionary for F's computed using different methods
+Fs = struct;
+
 for method = methods
     
     for norm = normalization
     
         [F, p_1, p_2] = eight_point(pic1, pic2, method, norm, s_threshold, m_threshold);
-                
-        get_epipolar_lines(F, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8, method+" normalized="+string(norm), plot_counter); 
         
-        plot_counter = plot_counter+1;
-    
+        Fs.(string(method) + string(norm)) = [F];
+                    
     end
 
 end
+
+%plot epipolar lines
+get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8); 
 
 
 

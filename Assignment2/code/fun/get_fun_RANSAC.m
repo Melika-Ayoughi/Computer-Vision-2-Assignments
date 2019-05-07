@@ -1,15 +1,15 @@
 function [F, p_1, p_2] = get_fun_RANSAC(matches, frame_1, frame_2, ~, normalized)	 % DOCSTRING_GENERATED
  % GET_FUN_RANSAC		 [add function description here]
  % INPUTS 
- %			matches = ..
- %			frame_1 = ..
- %			frame_2 = ..
- %			method = ..
- %			normalized = ..
+ %			matches = indexes of the frames of the matched points
+ %			frame_1 = frames of extracted interest points of 1st image 
+ %			frame_2 = frames of extracted interest points of 2nd image
+ %			method = self explanatory
+ %			normalized = True or False (1 or 0)
  % OUTPUTS 
- %			F = ..
- %			p_1 = ..
- %			p_2 = ..
+ %			F = fundamental matrix
+ %			p_1 = homogenous coordinates of first image
+ %			p_2 = homogenous coordinates of second image
 
  
  

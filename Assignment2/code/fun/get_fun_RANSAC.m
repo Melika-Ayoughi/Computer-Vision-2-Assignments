@@ -21,7 +21,7 @@ N = 10000;
 P = 8; 
 
 %Threshold
-T = 0.001; 
+T = 0.0001; 
 
 %initialize
 best_n_inliners = zeros(P,1);
@@ -31,19 +31,24 @@ best_inliners_idx  = subset;
 
 for n = 1:N
     
-    %get random subset of size N from frames with matching features
+    % get random subset of size N from frames with matching features
     permutations = randperm(size(matches,2));
     subset = permutations(1:P);
     
-    [~, F, p_1, p_2] = getA_F(matches(:, subset), frame_1, frame_2, normalized);
+    % get a fundamental matrix for the subset
+    [~, F, ~, ~] = getA_F(matches(:, subset), frame_1, frame_2, normalized);
+    
+    %Get all matching points
+    [~, ~, p_1, p_2] = getA_F(matches, frame_1, frame_2, normalized);
+    
 
-    % get Sampson distance
+    % get Sampson distance for each point
     
     % initialize distance vector
-    d = zeros(P,1);
+    d = zeros(size(p_1,1),1);
     
     % get distances
-    for i = 1:P
+    for i = 1:size(p_1,1)
         Fp_1 = F * p_1(i,:)';
         Fp_2 = F' * p_2(i,:)'; 
         numerator = (p_2(i,:) * F * p_1(i,:)')^2;
@@ -53,7 +58,7 @@ for n = 1:N
     
     % get number of inliners less than threshold 
     current_n_inliners = d < T;
-    
+       
     if sum(current_n_inliners) > sum(best_n_inliners)
         best_n_inliners = current_n_inliners;
         best_inliners_idx = subset;
@@ -62,6 +67,6 @@ for n = 1:N
 end
 
 % get final values
-[~, F, p_1, p_2] = getA_F(matches(:, best_inliners_idx), frame_1, frame_2, normalized);     
+[~, F, ~, ~] = getA_F(matches(:, best_inliners_idx), frame_1, frame_2, normalized);     
     
 end

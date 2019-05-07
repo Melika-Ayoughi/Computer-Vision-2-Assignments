@@ -38,25 +38,27 @@ for method = methods
 
 end
 
+
+
 %plot epipolar lines
-get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, 8); 
+get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
 
 
-% % CHAINING
-% %set sift threshold and matching threshold
-% s_threshold = 1.5;
-% m_threshold = 1.5;
-% 
-% %get point view matrix
-% disp('  ')
-% disp('---------------------------')
-% disp('Computing PV matrix')
-% disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
-% disp('---------------------------')
-% PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
-% visualize_PV(PV)
-% 
-% %import given PV (its as dense as possible..)
-% M=dlmread('PointViewMatrix.txt');
-% visualize_PV(M)
+% CHAINING
+%set sift threshold and matching threshold
+s_threshold = 1.5;
+m_threshold = 1.5;
+
+%get point view matrix
+disp('  ')
+disp('---------------------------')
+disp('Computing PV matrix')
+disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
+disp('---------------------------')
+PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
+visualize_PV(PV)
+
+%import given PV (its as dense as possible..)
+M=dlmread('PointViewMatrix.txt');
+visualize_PV(M)

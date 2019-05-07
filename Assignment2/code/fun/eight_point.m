@@ -1,12 +1,12 @@
 function [F, p_1, p_2] = eight_point(picture_1, picture_2, method, normalized, s_threshold, m_threshold)	 % DOCSTRING_GENERATED
- % EIGHT_POINT		 [Does eight oint algorithm]
+ % EIGHT_POINT		 [Does eight point algorithm]
  % INPUTS 
- %			picture_1 = ..
- %			picture_2 = ..
+ %			picture_1  
+ %			picture_2 
  %			method = standard or ransac
  %          normalized = 1 or 0
  % OUTPUTS 
- %			F = ..
+ %			F = fundamental matrix
 
 % find points
 [frame_1,descriptors_1] = vl_sift(single(reshape(picture_1, 480, 512)),'PeakThresh', s_threshold) ;

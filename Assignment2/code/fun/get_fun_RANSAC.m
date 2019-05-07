@@ -1,5 +1,5 @@
 function [F, p_1, p_2] = get_fun_RANSAC(matches, frame_1, frame_2, ~, normalized)	 % DOCSTRING_GENERATED
- % GET_FUN_RANSAC		 [add function description here]
+ % GET_FUN_RANSAC		 [performs a RANSAC algorithm to find the best points to base eight-point on]
  % INPUTS 
  %			matches = indexes of the frames of the matched points
  %			frame_1 = frames of extracted interest points of 1st image 
@@ -35,6 +35,7 @@ for n = 1:N
     permutations = randperm(size(matches,2));
     subset = permutations(1:P);
     
+
     % get a fundamental matrix for the subset
     [~, F, ~, ~] = getA_F(matches(:, subset), frame_1, frame_2, normalized);
     
@@ -43,10 +44,10 @@ for n = 1:N
     
 
     % get Sampson distance for each point
-    
+
     % initialize distance vector
     d = zeros(size(p_1,1),1);
-    
+
     % get distances
     for i = 1:size(p_1,1)
         Fp_1 = F * p_1(i,:)';
@@ -58,7 +59,8 @@ for n = 1:N
     
     % get number of inliners less than threshold 
     current_n_inliners = d < T;
-       
+
+    % check overwrite condition
     if sum(current_n_inliners) > sum(best_n_inliners)
         best_n_inliners = current_n_inliners;
         best_inliners_idx = subset;

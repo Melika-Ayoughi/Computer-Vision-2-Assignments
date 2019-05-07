@@ -1,15 +1,15 @@
 function [F, p_1, p_2] = fun_matrix(normalized, method, matches, frame_1, frame_2)		 % DOCSTRING_GENERATED
- % FUN_MATRIX		 [add function description here]
+ % FUN_MATRIX		 [gets the fundamental matrix]
  % INPUTS 
- %			normalized = ..
- %			method = ..
- %			matches = ..
- %			frame_1 = ..
- %			frame_2 = ..
+ %			normalized = boolean
+ %			method = standard or ransac
+ %			matches = feature point matches (indices) from SIFT
+ %			frame_1 = feature points from SIFT of pic1
+ %			frame_2 = feature points from SIFT of pic2
  % OUTPUTS 
- %			F = ..
- %			p_1 = ..
- %			p_2 = ..
+ %			F = fundamental matrix
+ %			p_1 = points from pic1
+ %			p_2 =  points from pic2
 
 
 

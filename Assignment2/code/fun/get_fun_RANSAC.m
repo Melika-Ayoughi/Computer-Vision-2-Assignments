@@ -22,7 +22,7 @@ N = n_iterations;
 P = n_correspondences;
 
 %Threshold
-T = 0.0001; 
+T = 0.0001;  
 
 %initialize
 best_n_inliners = zeros(P,1);

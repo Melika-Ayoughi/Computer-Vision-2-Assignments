@@ -18,34 +18,34 @@ pic2 = imgs(2, :, :);
 
 %% do EIGHT POINT algorithm
 
-% % define settings
-% methods = ["standard", "ransac"];
-% normalization = [0, 1];
-% s_threshold = 5;
-% m_threshold = 5;
-% 
-% plot_counter = 1;
-% 
-% % initialize dictionary for F's computed using different methods
-% Fs = struct;
-% 
-% for method = methods
-%     
-%     for norm = normalization
-%     
-%         [F, p_1, p_2] = eight_point(pic1, pic2, method, norm, s_threshold, m_threshold);
-%         
-%         Fs.(string(method) + string(norm)) = [F];
-%                     
-%     end
-% 
-% end
-% 
-% 
-% 
-% %plot epipolar lines
-% % get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
+% define settings
+methods = ["standard", "ransac"];
+normalization = [0, 1];
+s_threshold = 5;
+m_threshold = 5;
+
+plot_counter = 1;
+
+% initialize dictionary for F's computed using different methods
+Fs = struct;
+
+for method = methods
+    
+    for norm = normalization
+    
+        [F, p_1, p_2] = eight_point(pic1, pic2, method, norm, s_threshold, m_threshold);
+        
+        Fs.(string(method) + string(norm)) = [F];
+                    
+    end
+
+end
+
+
+
+%plot epipolar lines
 % get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
+get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
 
 
@@ -71,6 +71,10 @@ visualize_PV(PV)
 %import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
 visualize_PV(M)
+
+%load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
+%saved by ---> dlmwrite('../Ransac_PV.mat', PV);
+PV = load('../Ransac_PV.mat', '-ASCII');
 
 %building the 3d model from PV
 for seq = (3:4)

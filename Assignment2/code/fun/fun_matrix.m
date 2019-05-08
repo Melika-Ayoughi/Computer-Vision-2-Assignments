@@ -22,7 +22,7 @@ if (strcmp(method, "standard") )
 
 elseif (strcmp(method, "ransac"))
 
-    [F, p_1, p_2, ~] = get_fun_RANSAC(matches, frame_1, frame_2, normalized, 8, 10000);
+    [F, p_1, p_2, ~] = get_fun_RANSAC(matches, frame_1, frame_2, normalized, 8, 1000);
     
 else
     

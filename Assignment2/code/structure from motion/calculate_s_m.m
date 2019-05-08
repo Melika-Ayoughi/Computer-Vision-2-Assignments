@@ -1,4 +1,4 @@
-function [s, m] = calculate_s_m(D, mode)	 % DOCSTRING_GENERATED
+function [s, m] = calculate_s_m(D, mode, eliminate_affine)	 % DOCSTRING_GENERATED
  % CALCULATE_S_M		 [add function description here]
  % INPUTS 
  %			D = ..
@@ -26,5 +26,23 @@ elseif mode == 2
     s = W_3 * V_3';
 end
 
+% Eliminate affine ambiguity
+if eliminate_affine==true
+    %         % solve for L -> MLM^T = I
+    %         % retreive c and c^-1 from L with cholesky decomposition
+    %         % s = c^-1 * s
+    pm = pinv(m);
+    pmt = pinv(m');
+    size(pm)
+    size(pmt)
+    size(D)
+%     L = pm * (diag(D) .* eye(size(pm,2))) * pmt;
+    L = pm * (eye(size(pm,2))) * pmt;
+    
+    
+    C = chol(L);
+    m = m*C;
+    s = inv(C)*s;
+end
 end
 

@@ -73,8 +73,8 @@ M=dlmread('PointViewMatrix.txt');
 visualize_PV(M)
 
 %load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
-%saved by ---> dlmwrite('../Ransac_PV.mat', PV);
-% PV = load('../Ransac_PV.mat', '-ASCII');
+%saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);
+% PV = load('Ransac_PV.mat', '-ASCII');
 
 %building the 3d model from PV
 for seq = (3:4)

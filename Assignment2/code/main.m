@@ -63,7 +63,7 @@ disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)
 disp('---------------------------')
 
 distance = 1;
-ransac = 0;
+ransac = 1;
 
 PV = get_point_view_matrix(imgs, s_threshold, m_threshold, distance, ransac);
 visualize_PV(PV)
@@ -71,6 +71,8 @@ visualize_PV(PV)
 %import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
 visualize_PV(M)
+
+%% Structure from Motion
 
 %load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
 %saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);

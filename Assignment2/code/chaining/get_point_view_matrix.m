@@ -49,14 +49,7 @@ for i = 2:size(imgs,1)
 
     %get matching points in current and previous img (match row 1 = idx in
     %f_1, row 2 = idx in f_2)
-    [matches, scores] = vl_ubcmatch(previous_d, current_d, m_threshold); 
-
-    %use L2 distance to filter matches
-    if distance == 1     
-        best_idx = find(scores < 5000);
-        matches = matches(:,best_idx);
-    end
-    
+    [matches, scores] = vl_ubcmatch(previous_d, current_d, m_threshold);   
     
     %extract best matches using RANSAC
     if ransac == 1
@@ -95,7 +88,14 @@ for i = 2:size(imgs,1)
         end
     
     matches = matches(:,best_idx);
+    scores = scores(:,best_idx);
 
+    end
+    
+    %use L2 distance to filter matches
+    if distance == 1     
+        best_idx = find(scores < 5000);
+        matches = matches(:,best_idx);
     end
     
     %get current image row idxs

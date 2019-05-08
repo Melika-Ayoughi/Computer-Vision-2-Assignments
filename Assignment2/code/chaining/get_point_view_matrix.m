@@ -16,6 +16,11 @@ img_1 = imgs(1,:,:);
 [f_1,d_1] = vl_sift(single(reshape(img_1, 480, 512)),'PeakThresh', s_threshold) ;
 previous_d = d_1;
 
+fig = figure(10);
+imshow(im2double(mat2gray(reshape(img_1, 480, 512))))
+hold on
+plot(f_1(1,:), f_1(2,:), 'y.', 'MarkerSize',6);
+saveas(fig, strcat('vl_sift_points.png'));
 
 %initialize dictionary
 dict = struct;

@@ -1,4 +1,4 @@
-function [] = build3d(PV, seq, mode, eliminate_affine)	 % DOCSTRING_GENERATED
+function [] = build3d(PV, seq, mode, eliminate_affine, density)	 % DOCSTRING_GENERATED
  % BUILD3D		 
  % structure from motion
  
@@ -35,9 +35,7 @@ for image= 1 : step : size(PV,1)-step+1
 end
 
 % visualize cloud points
-figure(5);
 scatter3(model(1,:), model(2,:), model(3,:)) %maybe some prettier function
-    
-
+savefig(strcat('3dmodel_', string(seq), '_', string(mode), '_', string(eliminate_affine), '_', density, '.fig'));
 end
 

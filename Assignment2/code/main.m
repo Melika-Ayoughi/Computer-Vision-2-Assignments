@@ -51,7 +51,7 @@ get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_
 
 %% CHAINING
 %set sift threshold and matching threshold
-s_threshold = 1.5;
+s_threshold = 5;
 m_threshold = 1.5;
 
 %get point view matrix
@@ -61,16 +61,18 @@ disp('Computing PV matrix')
 disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
 disp('---------------------------')
 PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
-visualize_PV(PV)
+visualize_PV(pic1, PV, 'sparse');
 
 %import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
-visualize_PV(M)
+visualize_PV(pic1, M, 'dense');
 
 %building the 3d model from PV
 for seq = (3:4)
     for mode = (1:2) %different svd matrices
-        build3d(PV, seq, mode);
+        for eliminate_affine = (1:2)
+            build3d(PV, seq, mode, eliminate_affine, 'sparse');
+        end
     end
 end
 

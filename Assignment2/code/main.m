@@ -74,7 +74,7 @@ visualize_PV(M)
 
 %load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
 %saved by ---> dlmwrite('../Ransac_PV.mat', PV);
-PV = load('../Ransac_PV.mat', '-ASCII');
+% PV = load('../Ransac_PV.mat', '-ASCII');
 
 %building the 3d model from PV
 for seq = (3:4)

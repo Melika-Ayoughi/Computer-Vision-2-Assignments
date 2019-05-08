@@ -14,7 +14,7 @@ I1 = im2double(mat2gray(img1));
 I2 = im2double(mat2gray(img2));
 
 
-if size(p_2,1) > 25
+if size(p_2,1) > 25 || n>25
     n = 25;
 end
 

@@ -36,7 +36,7 @@ end
 
 % visualize cloud points
 figure();
-model = model(:,model(3,:) > -25 & model(3,:) < 20);
+model = model(:,model(3,:) > -30 & model(3,:));
 % tri = delaunay(model(1,:), model(2,:), model(3,:));
 % trimesh(tri,model(1,:), model(2,:), model(3,:))
 scatter3(model(1,:), model(2,:), model(3,:)) %maybe some prettier function

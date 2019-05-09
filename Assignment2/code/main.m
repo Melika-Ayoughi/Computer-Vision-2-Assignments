@@ -50,9 +50,10 @@ get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_
 
 
 %% CHAINING
+
 %set sift threshold and matching threshold
-s_threshold = 5;
-m_threshold = 1.5;
+s_threshold = 7;
+m_threshold = 5;
 
 %get point view matrix
 disp('  ')
@@ -60,19 +61,31 @@ disp('---------------------------')
 disp('Computing PV matrix')
 disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
 disp('---------------------------')
-PV = get_point_view_matrix(imgs, s_threshold, m_threshold);
-visualize_PV(pic1, PV, 'sparse');
+
+distance = 1;
+ransac = 1;
+
+PV = get_point_view_matrix(imgs, s_threshold, m_threshold, distance, ransac);
+visualize_PV(pic1, PV, 'sparse')
 
 %import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
 visualize_PV(pic1, M, 'dense');
 
+%% Structure from Motion
+
+%load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
+%saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);
+% PV = load('Ransac_PV.mat', '-ASCII');
+
 %building the 3d model from PV
-for seq = (3:4)
-    for mode = (1:2) %different svd matrices
-        for eliminate_affine = (1:2)
-            build3d(PV, seq, mode, eliminate_affine, 'sparse');
-        end
-    end
-end
+% for seq = (3:4)
+%     for mode = (1:2) %different svd matrices
+%         for eliminate_affine = (1:2)
+%             build3d(PV, seq, mode, eliminate_affine, 'sparse');
+%         end
+%     end
+% end
+
+build3d(M, 3, 1, 1, 'dense');
 

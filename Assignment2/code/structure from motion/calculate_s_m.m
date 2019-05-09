@@ -21,7 +21,7 @@ elseif mode == 2
 end
 
 % Eliminate affine ambiguity
-if eliminate_affine==true
+if eliminate_affine==1
     % solve for L -> MLM^T = I
     % retreive c and c^-1 from L with cholesky decomposition
     % s = c^-1 * s

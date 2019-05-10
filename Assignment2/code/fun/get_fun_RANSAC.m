@@ -29,6 +29,7 @@ best_n_inliners = zeros(P,1);
 permutations = randperm(size(matches,2));
 subset = permutations(1:P);
 best_inliners_idx  = subset;
+best_F = getA_F(matches(:, subset), frame_1, frame_2, normalized);
 
 for n = 1:N
     

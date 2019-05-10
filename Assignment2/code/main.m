@@ -63,8 +63,8 @@ disp('Computing PV matrix')
 disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
 disp('---------------------------')
 
-distance = 0;
-ransac = 0;
+distance = 1;
+ransac = 1;
 
 PV = get_point_view_matrix(imgs, s_threshold, m_threshold, distance, ransac);
 visualize_PV(pic1, PV, 'sparse')
@@ -77,7 +77,7 @@ visualize_PV(pic1, M, 'dense');
 
 % load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
 % saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);
-PV = load('Ransac_PV.mat', '-ASCII');
+% PV = load('Ransac_PV.mat', '-ASCII');
 
 % building the 3d model from PV
 for seq = (3:4)

@@ -1,4 +1,4 @@
-function [] = build3d(PV, seq, mode, eliminate_affine)	 % DOCSTRING_GENERATED
+function [] = build3d(PV, seq, mode, eliminate_affine, density)	 % DOCSTRING_GENERATED
  % BUILD3D		 
  % structure from motion
  
@@ -17,7 +17,7 @@ for image= 1 : step : size(PV,1)-step+1
     dense_points_idx = all(PV(image:image+step-1, :));
     PV_dense = PV(image:image+step-1, dense_points_idx);
     
-    [s, m] = calculate_s_m(PV_dense, 1, true);
+    [s, ~] = calculate_s_m(PV_dense, mode, eliminate_affine);
     
     points = zeros(3, size(PV,2));
     points(:, dense_points_idx) = s;
@@ -35,9 +35,11 @@ for image= 1 : step : size(PV,1)-step+1
 end
 
 % visualize cloud points
-figure(5);
+figure();
+model = model(:,model(3,:) > -30 & model(3,:));
+% tri = delaunay(model(1,:), model(2,:), model(3,:));
+% trimesh(tri,model(1,:), model(2,:), model(3,:))
 scatter3(model(1,:), model(2,:), model(3,:)) %maybe some prettier function
-    
-
+savefig(strcat('3dmodel_', string(seq), '_', string(mode), '_', string(eliminate_affine), '_', density, '.fig'));
 end
 

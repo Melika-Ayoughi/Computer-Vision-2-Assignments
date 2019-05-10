@@ -2,19 +2,22 @@
 
 close all
 clear all
-% vl_setup()
+vl_setup()
 
 % load images
 disp("Loading images");
 directory = "House";
 start_at = 1;
-how_many = 49; %49 = all images
+how_many = 49; % 49 = all images
 imgs = load_data(directory, how_many, start_at);
 
-% for now pick the first two pictures: TODO: something else?
+% for now pick the first two pictures
 pic1 = imgs(1, :, :);
 pic2 = imgs(2, :, :);
 
+%% threshold experiment
+
+thresholding(pic1, [0,1,5,10,100]);
 
 %% do EIGHT POINT algorithm
 
@@ -43,17 +46,17 @@ end
 
 
 
-%plot epipolar lines
-% get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
+% plot epipolar lines
+get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
 %% CHAINING
 
-%set sift threshold and matching threshold
-s_threshold = 1.5;
+% set sift threshold and matching threshold
+s_threshold = 7;
 m_threshold = 5;
 
-%get point view matrix
+% get point view matrix
 disp('  ')
 disp('---------------------------')
 disp('Computing PV matrix')
@@ -64,22 +67,29 @@ distance = 0;
 ransac = 0;
 
 PV = get_point_view_matrix(imgs, s_threshold, m_threshold, distance, ransac);
-visualize_PV(PV)
+visualize_PV(pic1, PV, 'sparse')
 
-%import given PV (its as dense as possible..)
+% import given PV (its as dense as possible..)
 M=dlmread('PointViewMatrix.txt');
-visualize_PV(M)
+visualize_PV(pic1, M, 'dense');
 
 %% Structure from Motion
 
-%load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
-%saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);
-% PV = load('Ransac_PV.mat', '-ASCII');
+% load Ransac PV %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% another can be
+% saved in Labs directory by ---> dlmwrite('../Ransac_PV.mat', PV);
+PV = load('Ransac_PV.mat', '-ASCII');
 
-%building the 3d model from PV
+% building the 3d model from PV
 for seq = (3:4)
     for mode = (1:2) %different svd matrices
-        build3d(PV, seq, mode);
+        for eliminate_affine = (1:2)
+            build3d(PV, seq, mode, eliminate_affine, 'sparse');
+        end
     end
 end
 
+build3d(M, 3, 1, 1, 'dense');
+
+
+%% end
+disp("finished succesfully");

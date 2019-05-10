@@ -17,6 +17,11 @@ img_1 = imgs(1,:,:);
 previous_d = d_1;
 previous_f = f_1;
 
+fig = figure(10);
+imshow(im2double(mat2gray(reshape(img_1, 480, 512))))
+hold on
+plot(f_1(1,:), f_1(2,:), 'y.', 'MarkerSize',6);
+saveas(fig, strcat('vl_sift_points.png'));
 
 %initialize dictionary
 dict = struct;

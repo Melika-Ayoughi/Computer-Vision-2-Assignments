@@ -1,4 +1,4 @@
-function [F, p_1, p_2, best_inliners_idx] = get_fun_RANSAC(matches, frame_1, frame_2, normalized, n_correspondences, n_iterations)	 % DOCSTRING_GENERATED
+function [best_F, p_1, p_2, best_inliners_idx] = get_fun_RANSAC(matches, frame_1, frame_2, normalized, n_correspondences, n_iterations)	 % DOCSTRING_GENERATED
  % GET_FUN_RANSAC		 [performs a RANSAC algorithm to find the best points to base eight-point on]
  % INPUTS 
  %			matches = indexes of the frames of the matched points
@@ -22,7 +22,7 @@ N = n_iterations;
 P = n_correspondences;
 
 %Threshold
-T = 0.0001;  
+T = 0.001;  
 
 %initialize
 best_n_inliners = zeros(P,1);
@@ -63,11 +63,12 @@ for n = 1:N
     if sum(current_n_inliners) > sum(best_n_inliners)
         best_n_inliners = current_n_inliners;
         best_inliners_idx = subset;
+        best_F = F;
     end
 
 end
 
-% get final values
-[~, F, ~, ~] = getA_F(matches(:, best_inliners_idx), frame_1, frame_2, normalized);     
+% % get final values
+% [~, F, ~, ~] = getA_F(matches(:, best_inliners_idx), frame_1, frame_2, normalized);     
     
 end

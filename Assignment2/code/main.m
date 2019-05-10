@@ -21,7 +21,7 @@ pic2 = imgs(2, :, :);
 % define settings
 methods = ["standard", "ransac"];
 normalization = [0, 1];
-s_threshold = 5;
+s_threshold = 5.1;
 m_threshold = 5;
 
 plot_counter = 1;
@@ -47,8 +47,6 @@ end
 % get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 get_epipolar_lines(Fs, reshape(pic1, 480, 512), reshape(pic2, 480, 512), p_1, p_2, size(p_1,1)); 
 
-
-
 %% CHAINING
 
 %set sift threshold and matching threshold
@@ -62,8 +60,8 @@ disp('Computing PV matrix')
 disp('s_thresh = ' + string(s_threshold) + ', m_thresh = ' + string(m_threshold)) 
 disp('---------------------------')
 
-distance = 1;
-ransac = 1;
+distance = 0;
+ransac = 0;
 
 PV = get_point_view_matrix(imgs, s_threshold, m_threshold, distance, ransac);
 visualize_PV(PV)

@@ -18,6 +18,7 @@ if size(p_2,1) > 25 || n>25
     n = 25;
 end
 
+
 %Get random subset of size n of frames with matching features
 permutations = randperm(size(p_2,1));
 idxs = permutations(1:n);

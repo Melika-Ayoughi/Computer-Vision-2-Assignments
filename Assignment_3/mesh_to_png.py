@@ -121,17 +121,6 @@ mu_id = np.asarray(bfm['shape/model/mean'], dtype=np.float32).reshape((-1, 3))
 mu_exp = np.asarray(bfm['expression/model/mean'], dtype=np.float32).reshape((-1, 3))
 
 
-#####################################################
-
-# def mesh_to_png(file_name, mesh):
-#     mesh = trimesh.base.Trimesh(
-#         vertices=mesh.vertices,
-#         faces=mesh.triangles,
-#         vertex_colors=mesh.colors)
-#
-#     png = mesh.scene().save_image()
-#     with open(file_name, 'wb') as f:
-#         f.write(png)
 
 if __name__ == '__main__':
     # mesh = Mesh(mean_shape, mean_tex, triangles)

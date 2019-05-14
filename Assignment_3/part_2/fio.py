@@ -1,6 +1,7 @@
 import numpy as np
 
-from data_def import Mesh
+from model.data_def import Mesh
+
 
 def load_obj(obj_path):
     vertices = []

@@ -43,13 +43,11 @@ def mesh_to_png(file_name, mesh, width=640, height=480, z_camera_translation=400
 
 #################################################### Extract the PCA model for facial identity
 
-def plot_what_we_are_looking_at():
+def plot_PC():
     # make a subplot figure with the different generated point clouds plotted
     for i in range(20):
         # read image
         I = mpimg.imread("Results/Morphable_Model/pc_" + str(i) + ".png")
-
-        print(i + 1)
 
         plt.subplot(5, 4, i + 1)  # adjust according to size of subplot
         plt.imshow(I)
@@ -91,5 +89,4 @@ if __name__ == '__main__':
         mesh = Mesh(G, mean_tex, triangles)
         mesh_to_png("Results/Morphable_Model/pc_" + str(i) + ".png", mesh)
 
-    plot_what_we_are_looking_at()
-    
+    plot_PC()

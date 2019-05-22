@@ -7,13 +7,21 @@ from model.training_model import Training
 
 from part_4.landmarks import *
 
+pdist = torch.nn.PairwiseDistance(p=2)  # TODO: CHANGE
 
 def loss_total(alphas, deltas, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
-    loss_lan = F.mse_loss(p, ground_truth)
+    L_lan = torch.sum(pdist(p, ground_truth) ** 2)
+    L_reg = lambda_alpha * torch.sum(alphas ** 2) + lambda_delta * torch.sum(deltas ** 2)
+    L_fit = L_lan + L_reg
 
-    loss_reg = loss_reg_function(lambda_alpha, lambda_delta, alphas, deltas)
+    return L_fit
+                            ## TODO: change
 
-    return loss_reg + loss_lan
+    # loss_lan = F.mse_loss(p, ground_truth)
+    #
+    # loss_reg = loss_reg_function(lambda_alpha, lambda_delta, alphas, deltas)
+    #
+    # return loss_reg + loss_lan
 
 
 def loss_reg_function(lambda_alpha, lambda_delta, alphas, deltas):
@@ -44,10 +52,6 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
 
     model.to(device)
 
-    avg = read_file_points()
-
-    avg = torch.FloatTensor(avg).to(device)
-
     opt = torch.optim.Adam(model.parameters(), lr=lr)
 
     ground_truth = torchify([ground_truth.numpy()])[0]
@@ -64,7 +68,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
 
         opt.step()
 
-        print(f"\ralpha: {model.alphas.item()}, delta: {model.deltas.item()}, omega: [{model.omegas[0].item()}, {model.omegas[1].item()}, {model.omegas[2].item()}], tau [{model.tau[0].item()}, {model.tau[1].item()}, {model.tau[2].item()}]", end='')
+        print(f"\rEpoch: {i}, Loss: {loss.item()} alpha: {model.alphas.item()}, delta: {model.deltas.item()}, omega: [{model.omegas[0].item()}, {model.omegas[1].item()}, {model.omegas[2].item()}], tau [{model.tau[0].item()}, {model.tau[1].item()}, {model.tau[2].item()}]", end='')
 
     return model
 
@@ -84,13 +88,13 @@ def main_4():
     points = extract_ground_truth(picture)
 
     # 4.1
-    # demo(picture, points)
+    demo(picture, points)
 
     # 4.2
-    alphas, deltas, omegas, tau = train(torch.LongTensor(points), lr=0.05)
+    alphas, deltas, omegas, tau = train(torch.LongTensor(points), lr=0.1)
 
     # 4.3
-
+    ## TODO
 
 if __name__ == '__main__':
     ensure_current_directory()

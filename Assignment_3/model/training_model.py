@@ -24,11 +24,11 @@ class Training(torch.nn.Module):
         )
 
         self.omegas = nn.Parameter(
-            torch.FloatTensor([0.0000001, 0.1745, 0.0000001]).to(device), requires_grad=True
+            torch.FloatTensor([0.0000001, 0.1745, 0.0000001]).to(device), requires_grad=True   ## TODO
         )
 
         self.tau = nn.Parameter(
-            torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True
+            torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True  ## TODO
         )
 
         # load model

@@ -2,7 +2,706 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf93b8c-4549-4286-ace0-ac6d9ceace87" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/model/training_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/training_model.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../Assignment1/data_functions/all_pcd_data.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/data_functions/get_specific_pcd_data.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/data_functions/readPcd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/filter_bad_points.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/find_match.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/icp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/icp_iteration.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/rms.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/icp/subsample.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/main_icp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/main_merging_scenes.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/merge scenes/get_barplots.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/merge scenes/iterative_merging.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/merge scenes/merge_scene.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/Method-all points noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/Method-informed iterative subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/Method-random iterative subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/Method-uniform subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-all points noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-informed iterative subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-random iterative subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-0 stability-index9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-1 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniform subsamp noise-2 stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/figures/Method-uniformsubsampnoise-1stability-index1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/results24-Apr-2019 01:52:40.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/results_icp/results24-Apr-2019 02:26:48.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/transformations/add_instability.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment1/transformations/add_noise.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_3_1_1_dense.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_3_1_1_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_3_1_2_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_3_2_1_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_3_2_2_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_4_1_1_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_4_1_2_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_4_2_1_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/3dmodel_4_2_2_sparse.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/Assignment_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000014.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000015.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000016.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000021.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000022.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000023.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000027.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000028.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000029.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000030.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000032.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000033.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000034.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000035.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000036.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000037.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000038.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000039.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000041.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000042.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000044.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000046.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000047.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/House/frame00000049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/PV_dense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/PV_sparse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/PointViewMatrix.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/Readings/ijcv04d.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/Readings/top_ten_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/chaining/get_point_view_matrix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/chaining/visualize_PV.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/data/load_data.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/data/load_one.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/T_matrix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/eight_point.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/find_T_matrix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/fun_matrix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/getA_F.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/get_epipolar_lines.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/get_fun_RANSAC.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/fun/thresholding.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/structure from motion/build3d.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/structure from motion/calculate_s_m.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/Makefile.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/phow_caltech101.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/encodeImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/experiments.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/extendDescriptorsWithGeometry.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/getDenseSIFT.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/readImage.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/setupCaltech256.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/setupFMD.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/setupGeneric.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/setupScene67.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/setupVoc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/trainEncoder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/recognition/traintest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/apps/sift_mosaic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/box.pgm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/box.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/river1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/river2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/roofs1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/roofs2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/data/spots.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/api.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/apps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/compiling.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/download.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/doxygen.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/doxygen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/doxytag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml-lat1.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml-special.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml-symbol.ent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml.soc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml1-frameset.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml1-strict.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml1-transitional.dtd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/dtd/xhtml1/xhtml1.dcl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/cell-bins.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/covdet-normalization.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/covdet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/dhog-bins.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/dsift-geom.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/frame-canonical.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/frame-types.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/frames.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/lbp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/liop.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/mser-er-step.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/mser-er.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/mser-tree.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/scalespace-basic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/scalespace.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-angle.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-bins.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-can.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-conv-vlfeat.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-conv.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-descr-easy.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-frame.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-image-frame.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-orient.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/figures/sift-ss.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/formatter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/PASCAL2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/caltech-collage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/fulkerson.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/git.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/lenc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/liop-neighbours-sampling.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/liop-patch-layout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/perdoch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/perrone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/placeholder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/sarbortova.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/sift-mosaic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/sulc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-additional-deps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-additional-include.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-additional-libdir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-all-configurations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-empty-project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-new-project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-nodll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-ok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-post-step.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-vs-project-properties.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-copy-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-dylib.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-err.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/using-xcode-ok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/vedaldi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/vl_blue.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/vl_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/vl_blue.pxm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/vl_blue_large.pxm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/images/yandex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/install-c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/install-matlab.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/install-octave.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/install-shell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/license.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/mdoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/notfound.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/pygmentize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/roadmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tabs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/aib.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/covdet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/dsift.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/encode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/gmm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/hikm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/hog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/ikm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/imdisttf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/kdtree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/kmeans.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/liop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/mser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/plots-rank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/quickshift.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/sift.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/slic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/svm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/tutorials/utils.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/using-gcc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/using-vsexpress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/using-xcode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat-website-main-content.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat-website-preproc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat-website-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat-website.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/vlfeat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/webdoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/docsrc/wikidoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/bin.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/dist.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/dll.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/doc.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/macos_relink_omp.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/matlab.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/nmake_helper.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/octave.mak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/make/update-mak.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/aib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/check.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/generic-driver.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/mser.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/mser.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/sift.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/sift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_gauss_elimination.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_getopt_long.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_gmm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_heap-def.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_host.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_imopv.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_kmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_liop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_mathop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_mathop_abs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_mathop_fast_resqrt.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_mathop_fast_sqrt_ui.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_nan.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_qsort-def.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_rand.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_sqrti.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_stringop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_svd2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_threads.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/test_vec_comp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/src/vlfeat.7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aib.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aibcut.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aibcuthist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aibcutpush.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aibhist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/aib/vl_aibhist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_aib.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_alldist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_cmd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_covdet.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_dsift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_frame.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_gmm_2d_rand.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_gmm_2d_twist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_gmm_3d.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_gmm_convergence.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_hog.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_ikmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_imdisttf.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree_ann.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree_forest.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree_plot.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree_self.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kdtree_sift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kmeans_2d.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kmeans_ann_speed.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kmeans_init.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_kmeans_vs_builtin.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_mser_basic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_mser_cmd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_mser_delta.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_plots_rank.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_print.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_quickshift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_basic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_cmd.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_edge.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_match.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_or.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_peak.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_sift_vs_ubc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_slic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_svm.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/demo/vl_demo_svm_data.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/fisher/vl_fisher.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/fisher/vl_fisher.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_hat.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_ihat.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_irodr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_irodr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_rodr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/geometry/vl_rodr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/gmm/vl_gmm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/gmm/vl_gmm.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_dwaffine.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imarray.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imarraysc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imdisttf.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imdisttf.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imdown.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imgrad.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imintegral.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imintegral.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_impattern.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imreadbw.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imreadgray.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imsc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imsmooth.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imsmooth.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imup.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imwbackward.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imwbackwardmx.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_imwhiten.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_rgb2xyz.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_tps.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_tpsu.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_tpsumx.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_waffine.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_witps.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_wtps.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_xyz2lab.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_xyz2luv.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/imop/vl_xyz2rgb.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_hikmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_hikmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_hikmeanshist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_hikmeanspush.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_hikmeanspush.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_ikmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_ikmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_ikmeanshist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_ikmeanspush.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_ikmeanspush.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_kmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/kmeans/vl_kmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mexutils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/inthist.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/kdtree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/samplinthist.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/svms_common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_alldist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_alldist2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_alldist2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_alphanum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_argparse.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_binsearch.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_binsearch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_binsum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_binsum.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_binsum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_colsubset.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_cummax.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_cummax.def" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_cummax.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_getpid.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_getpid.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_grad.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_histmarg.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_hog.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_hog.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_homkermap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_homkermap.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_ihashfind.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_ihashfind.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_ihashsum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_ihashsum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_inthist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_inthist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_isoctave.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_kdtreebuild.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_kdtreebuild.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_kdtreequery.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_kdtreequery.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_lbp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_lbp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_lbpfliplr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_localmax.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_localmax.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_matlabversion.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_numder.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_numder2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_override.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_pegasos.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_sampleinthist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_sampleinthist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_simdctrl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_simdctrl.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_svmdataset.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_svmpegasos.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_svmtrain.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_svmtrain.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_threads.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_threads.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_twister.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_twister.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_version.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_version.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_whistc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/misc/vl_xmkdir.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mser/vl_erfill.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mser/vl_erfill.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mser/vl_ertr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mser/vl_mser.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/mser/vl_mser.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_cf.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_click.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_clickpoint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_clicksegment.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_det.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_figaspect.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_linespec2prop.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_plotbox.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_plotframe.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_plotgrid.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_plotpoint.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_plotstyle.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_pr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_printsize.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_roc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_tightsubplot.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/plotop/vl_tpfp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_flatmap.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_imseg.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_quickseg.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_quickshift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_quickshift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/quickshift/vl_quickvis.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_covdet.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_covdet.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_dsift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_dsift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_frame2oell.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_liop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_liop.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_phow.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_plotsiftdescriptor.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_plotss.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_sift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_sift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_siftdescriptor.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_siftdescriptor.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_ubcmatch.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_ubcmatch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/sift/vl_ubcread.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/slic/vl_slic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/slic/vl_slic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_ddgaussian.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_dgaussian.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_dsigmoid.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_gaussian.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_rcos.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/special/vl_sigmoid.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_compile.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_demo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_harris.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_help.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_noprefix.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_root.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vl_setup.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vlad/vl_vlad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/vlad/vl_vlad.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_aib.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_alldist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_alldist2.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_alphanum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_argparse.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_base.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_binsearch.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_binsum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_colsubset.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_cummax.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_dsift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_fisher.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_gmm.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_grad.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_hikmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_hog.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_homkermap.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_ihashsum.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_ikmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_imarray.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_imdisttf.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_imintegral.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_imsmooth.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_imwbackward.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_inthist.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_kdtree.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_kmeans.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_lbp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_liop.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_mser.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_phow.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_plotbox.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_pr.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_printsize.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_roc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_sift.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_slic.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_svmtrain.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_twister.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_vlad.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/toolbox/xtest/vl_test_whistc.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/aib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/aib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/array.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/array.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/covdet.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/covdet.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/dsift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/dsift.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/fisher.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/fisher.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/float.th" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/generic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/generic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/getopt_long.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/getopt_long.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/gmm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/gmm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/heap-def.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/hikmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/hikmeans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/hog.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/hog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/homkermap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/homkermap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/host.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/host.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/ikmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/ikmeans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/ikmeans_elkan.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/ikmeans_init.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/ikmeans_lloyd.tc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/imopv.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/imopv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/imopv_sse2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/imopv_sse2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/kdtree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/kdtree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/kmeans.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/kmeans.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/lbp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/lbp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/liop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/liop.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop_avx.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop_avx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop_sse2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mathop_sse2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mser.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/mser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/pgm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/pgm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/qsort-def.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/quickshift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/quickshift.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/random.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/rodrigues.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/rodrigues.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/scalespace.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/scalespace.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/shuffle-def.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/sift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/sift.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/slic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/slic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/stringop.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/stringop.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/svm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/svm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/svmdataset.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/svmdataset.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/vlad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vl/vlad.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.vcproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.xcodeproj/xcshareddata/xcschemes/make doc-api.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.xcodeproj/xcshareddata/xcschemes/make info.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/code/vlfeat_sources/vlfeat-0.9.21/vlfeat.xcodeproj/xcshareddata/xcschemes/make.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/1_M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/2_M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/3_M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/PV_dense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/PV_improved.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/PV_sparse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/PV_sparse_old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/single1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/single2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/single3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/trace_dense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/trace_sparse_new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/trace_sparse_old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/new/vl_sift_points.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/readmePVM.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/trace_dense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/trace_sparse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/false_affine_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/false_affine_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/false_affine_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_noaffine_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_noaffine_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/mode2_noaffine_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/seq4_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/seq4_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/seq4_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/thresholding.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/true_affine_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/true_affine_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/views/true_affine_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment2/vl_sift_points.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Assignment 3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Assignment 3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part_3/pinhole_camera_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/part_3/pinhole_camera_model.py" afterDir="false" />
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +714,7 @@
     <SUITE FILE_PATH="coverage/Assignment_3$mesh_to_png.coverage" NAME="mesh_to_png Coverage Results" MODIFIED="1558462172664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Assignment_3$main_4.coverage" NAME="main_4 Coverage Results" MODIFIED="1558518813261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/part_4" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="1388817847">
       <usages-collector id="statistics.file.extensions.open">
@@ -59,28 +759,23 @@
       </usages-collector>
     </session>
   </component>
+=======
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/util_functions.py">
+        <entry file="file://$PROJECT_DIR$/part_2/mesh_to_png.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <marker date="1558461783892" expanded="true" signature="74:75" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
-          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="265">
               <caret line="112" column="35" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="35" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="677">
+              <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
             </state>
           </provider>
         </entry>
@@ -88,6 +783,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/data_def.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1020">
               <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
             </state>
@@ -126,10 +822,15 @@
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="-43">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -154,11 +855,15 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_4/landmarks.py">
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+            <state relative-caret-position="35">
+              <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,7 +907,10 @@
         <option value="$PROJECT_DIR$/part_4/afkijken.py" />
         <option value="$PROJECT_DIR$/part_4/main_4.py" />
         <option value="$PROJECT_DIR$/part_3/pinhole_camera_model.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/model/training_model.py" />
+=======
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
       </list>
     </option>
   </component>
@@ -224,6 +932,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,27 +960,11 @@
               <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
               <item name="part_3" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Assignment_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
-              <item name="part_4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment_3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,7 +1001,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_4">
+  <component name="RunManager" selected="Python.pinhole_camera_model">
     <configuration name="main_4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Assignment 3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -382,8 +1075,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main_4" />
         <item itemvalue="Python.pinhole_camera_model" />
+        <item itemvalue="Python.main_4" />
         <item itemvalue="Python.mesh_to_png" />
       </list>
     </recent_temporary>
@@ -402,22 +1095,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22523962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.32715377" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" visible="true" weight="0.32715377" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005325" side_tool="true" weight="0.32824427" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32914045" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -431,9 +1124,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/part_2/debug.png" />
@@ -485,16 +1175,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3198" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Landmarks68_model2017-1_face12_nomouth.anl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585" />
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Data/Landmarks68_model2017-1_face12_nomouth.anl" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -505,13 +1187,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/optim/optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="192" selection-start-line="192" selection-end-line="192" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/optim/optimizer.py" />
     <entry file="file://$PROJECT_DIR$/part_4/landmarks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -522,23 +1198,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/data_def.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part_4/afkijken.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="166" column="61" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/part_4/afkijken.py" />
     <entry file="file://$PROJECT_DIR$/utils/util_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -549,25 +1209,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/elias.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/elias.jpg" />
     <entry file="file://$PROJECT_DIR$/part_2/mesh_to_png.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="677">
+          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Data/model2017-1_face12_nomouth.anl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-521" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
+=======
+    <entry file="file://$PROJECT_DIR$/Data/model2017-1_face12_nomouth.anl" />
+    <entry file="file://$PROJECT_DIR$/model/training_model.py">
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
@@ -580,6 +1240,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -591,11 +1252,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/training_model.py">
+=======
+    <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
+>>>>>>> e555bec1d71e4bd3e09594cfddd19a00a566b3f6
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/data_def.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,6 +7,12 @@ Data/*
 */Data
 */data.zip
 
+
+*/.idea/
+*/.idea
+./.idea
+./.idea/
+
 # Windows default autosave extension
 *.asv
 

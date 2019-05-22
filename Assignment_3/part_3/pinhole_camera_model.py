@@ -102,6 +102,41 @@ def dehomogenize(input):
 
     return d_input
 
+def get_projection(G, omega, tau):
+
+    # make G homogenous
+    h_G = homogenize(G)
+
+    # get width
+    G_x = G[:, 0]
+    width = G_x.max() - G_x.min()
+
+    # get height
+    G_y = G[:, 1]
+    height = G_y.max() - G_y.min()
+
+    # get near and far using z
+    G_z = G[:, 2]
+    near = G_z.min()
+    far = G_z.max()
+
+    # get P
+    P = generate_P(0.5, width, height, near, far)
+
+    # get V
+    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2)
+
+    # construct rotation matrix and translation vector
+    R = generate_R(omega)
+    T = generate_T(R, tau)
+
+    # project to 2D plane
+    p_G = (V @ P) @ (T @ h_G.T)
+    p_G = dehomogenize(p_G.T)
+    p_G = dehomogenize(p_G)
+
+    return p_G
+
 
 def main_3():
     # load model
@@ -139,6 +174,8 @@ def main_3():
     # dehomogenize G
     t_G = dehomogenize(t_h_G.T)
 
+    #################################### 3(a)
+
     # plot point cloud
     mesh = Mesh(t_G, mean_tex, triangles)
 
@@ -146,34 +183,15 @@ def main_3():
 
     #################################### 3(b)
 
-    # get width
-    G_x = G[:, 0]
-    width = G_x.max() - G_x.min()
+    # project to 2D
+    p_G = get_projection(G,omega,t)
 
-    # get height
-    G_y = G[:, 1]
-    height = G_y.max() - G_y.min()
-
-    # get near and far using z
-    G_z = G[:, 2]
-    near = G_z.min()
-    far = G_z.max()
-
-    # get P
-    P = generate_P(0.5, width, height, near, far)
-
-    # get V
-    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2)
 
     # import landmark subset idxs
-    with open("Data/model2017-1_face12_nomouth.anl", mode="r", encoding="utf-8") as f:
+    with open("Data/Landmarks68_model2017-1_face12_nomouth.anl", mode="r", encoding="utf-8") as f:
         data = f.read().splitlines()
         subset = list(map(int, data))
 
-    # project to 2D plane
-    p_G = (V @ P) @ (T @ h_G.T)
-    p_G = dehomogenize(p_G.T)
-    p_G = dehomogenize(p_G)
 
     # plot subset
     plt.scatter(p_G[subset, 0], p_G[subset, 1])

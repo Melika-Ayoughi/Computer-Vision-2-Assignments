@@ -6,6 +6,7 @@ from utils.util_functions import *
 from model.data_def import Mesh, MyPCAModel
 from part_2.mesh_to_png import mesh_to_png
 
+
 def generate_R(omega):
     # convert input from degrees to radians
     omega = omega * (np.pi / 180)
@@ -30,7 +31,6 @@ def generate_R(omega):
 
     # get overall rotation matrix
     R = R_z @ R_y @ R_x
-    # R = R_x @ R_y @ R_z
 
     return R
 
@@ -75,12 +75,6 @@ def generate_V(v_r, v_l, v_t, v_b):
                   [0, 0, 0, 1]
                   ])
 
-    # V = np.array([[(v_r - v_l)/2, 0, 0, 0],
-    #               [0, 0, (v_t - v_b)/2, 0],
-    #               [0, 0, 1/2, 0],
-    #               [0, 0, 0, 1]
-    #               ])
-
     return V
 
 
@@ -111,8 +105,7 @@ def dehomogenize(input):
 
 def main_3():
     # load model
-    bfm = h5py.File("Data/model2017-1_face12_nomouth.h5",
-                    'r')  # could not load model so made a folder Data/ containing the model in part 3 directory
+    bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
     mean_tex = np.asarray(bfm['color/model/mean'], dtype=np.float32).reshape((-1, 3))
     triangles = np.asarray(bfm['shape/representer/cells'], dtype=np.int32).T
 
@@ -186,6 +179,8 @@ def main_3():
     plt.scatter(p_G[subset, 0], p_G[subset, 1])
     plt.savefig("./Results/2D_image_plane.png")
     plt.show()
+
+    return
 
 
 if __name__ == '__main__':

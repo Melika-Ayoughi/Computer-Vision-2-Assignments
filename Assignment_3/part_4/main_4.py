@@ -33,17 +33,14 @@ def read_file_points():
         return subset
 
 
-def get_projected_points(alphas, deltas, omegas, tau, avg):
-
-    return ""
 
 
-def train(alpha_shape, delta_shape, ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
+def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
           steps=1000):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = Training(alpha_shape, delta_shape)
+    model = Training()
 
     model.to(device)
 
@@ -53,7 +50,7 @@ def train(alpha_shape, delta_shape, ground_truth, lambda_alpha=1.0, lambda_delta
 
     opt = torch.optim.Adam(model.parameters(), lr=lr)
 
-    ground_truth.to(device)
+    ground_truth = torchify([ground_truth.numpy()])[0]
 
     for i in range(steps):
 
@@ -66,6 +63,8 @@ def train(alpha_shape, delta_shape, ground_truth, lambda_alpha=1.0, lambda_delta
         loss.backward()
 
         opt.step()
+
+        print(f"\ralpha: {model.alphas.item()}, delta: {model.deltas.item()}, omega: [{model.omegas[0].item()}, {model.omegas[1].item()}, {model.omegas[2].item()}], tau [{model.tau[0].item()}, {model.tau[1].item()}, {model.tau[2].item()}]", end='')
 
     return model
 
@@ -88,7 +87,7 @@ def main_4():
     # demo(picture, points)
 
     # 4.2
-    alphas, deltas, omegas, tau = train((30, 1), (30, 1), torch.LongTensor(points))
+    alphas, deltas, omegas, tau = train(torch.LongTensor(points), lr=0.05)
 
     # 4.3
 

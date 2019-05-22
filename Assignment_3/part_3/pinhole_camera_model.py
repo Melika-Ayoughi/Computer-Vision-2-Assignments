@@ -81,7 +81,7 @@ def generate_T(R, t, torching=False):
         l_r = torch.zeros(4).view(1, 4)
         l_r[0, 3] = 1
 
-        l_r = torchify(l_r)[0]
+        l_r = torchify(l_r)[0].view(1, 4)
 
         # concatenate last row to the rest
         T = torch.cat((T, l_r), dim=0)
@@ -188,12 +188,12 @@ def dehomogenize(input, torching=False):
     if (torching):
 
         # initialize dehomogenized version
-        d_input = torch.empty((rows, 0), int)
+        d_input = torchify(torch.empty((rows, 0)))[0]
 
         # divide each row by final row
         for c in range(columns - 1):
             new_column = input[:, c] / input[:, -1]
-            d_input = torch.cat((d_input, new_column.reshape(new_column.shape[0], 1)), dim=1)
+            d_input = torch.cat((d_input, new_column.view(new_column.shape[0], 1)), dim=1)
 
     else:
 
@@ -236,8 +236,14 @@ def get_projection(G, omega, tau, torching=False):
     T = generate_T(R, tau, torching=torching)
 
     # project to 2D plane
-    p_G = (V @ P) @ (T @ h_G.T)
-    p_G = dehomogenize(p_G.T, torching=torching)
+
+    if (torching):
+        p_G = (V @ P) @ (T @ h_G.t())
+        p_G = dehomogenize(p_G.t(), torching=torching)
+    else:
+        p_G = (V @ P) @ (T @ h_G.T)
+        p_G = dehomogenize(p_G.T, torching=torching)
+
     p_G = dehomogenize(p_G, torching=torching)
 
     return p_G

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf93b8c-4549-4286-ace0-ac6d9ceace87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/training_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/training_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part_4/main_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/part_4/main_4.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,13 +38,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="198" />
-          <entry key="py" value="2623" />
+          <entry key="py" value="2789" />
           <entry key="yml" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2821" />
+          <entry key="Python" value="2987" />
           <entry key="YAML" value="29" />
         </counts>
       </usages-collector>
@@ -78,11 +76,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="112" column="35" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="112" selection-end-column="35" />
+            <state relative-caret-position="265">
+              <caret line="112" column="35" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="35" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1558520139099" expanded="true" signature="2607:4457" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/training_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
+            <state relative-caret-position="180">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -133,16 +130,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+            <state relative-caret-position="820">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1558531770766" expanded="true" signature="746:933" ph="..." />
-                <marker date="1558531770766" expanded="true" signature="1803:1980" ph="..." />
-                <marker date="1558531770766" expanded="true" signature="2238:2241" ph="..." />
+                <marker date="1558531936912" expanded="true" signature="746:933" ph="..." />
+                <marker date="1558531936912" expanded="true" signature="1795:1972" ph="..." />
+                <marker date="1558531936912" expanded="true" signature="2230:2233" ph="..." />
               </folding>
             </state>
           </provider>
@@ -202,10 +199,10 @@
         <option value="$PROJECT_DIR$/part_2/mesh_to_png.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/part_4/landmarks.py" />
-        <option value="$PROJECT_DIR$/part_3/pinhole_camera_model.py" />
         <option value="$PROJECT_DIR$/part_4/afkijken.py" />
-        <option value="$PROJECT_DIR$/model/training_model.py" />
         <option value="$PROJECT_DIR$/part_4/main_4.py" />
+        <option value="$PROJECT_DIR$/part_3/pinhole_camera_model.py" />
+        <option value="$PROJECT_DIR$/model/training_model.py" />
       </list>
     </option>
   </component>
@@ -570,36 +567,35 @@
         <state relative-caret-position="-521" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/training_model.py">
+    <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
+        <state relative-caret-position="820">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1558531936912" expanded="true" signature="746:933" ph="..." />
+            <marker date="1558531936912" expanded="true" signature="1795:1972" ph="..." />
+            <marker date="1558531936912" expanded="true" signature="2230:2233" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="112" column="35" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="112" selection-end-column="35" />
+        <state relative-caret-position="265">
+          <caret line="112" column="35" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="35" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1558520139099" expanded="true" signature="2607:4457" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
+    <entry file="file://$PROJECT_DIR$/model/training_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <marker date="1558531770766" expanded="true" signature="746:933" ph="..." />
-            <marker date="1558531770766" expanded="true" signature="1803:1980" ph="..." />
-            <marker date="1558531770766" expanded="true" signature="2238:2241" ph="..." />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

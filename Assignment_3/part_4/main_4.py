@@ -34,17 +34,16 @@ def read_file_points():
 
 
 def get_projected_points(alphas, deltas, omegas, tau, avg):
-    # import landmark subset idxs
 
     return ""
 
 
-def train(alpha_shape, delta_shape, omega_shape, tau_shape, ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
+def train(alpha_shape, delta_shape, ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
           steps=1000):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = Training(alpha_shape, omega_shape, tau_shape, delta_shape)
+    model = Training(alpha_shape, delta_shape)
 
     model.to(device)
 
@@ -57,6 +56,7 @@ def train(alpha_shape, delta_shape, omega_shape, tau_shape, ground_truth, lambda
     ground_truth.to(device)
 
     for i in range(steps):
+
         opt.zero_grad()
 
         p = get_projected_points(model.alphas, model.deltas, model.omegas, model.tau, avg)
@@ -64,6 +64,7 @@ def train(alpha_shape, delta_shape, omega_shape, tau_shape, ground_truth, lambda
         loss = loss_total(model.alphas, model.deltas, p, ground_truth, lambda_alpha=lambda_alpha, lambda_delta=lambda_delta)
 
         loss.backward()
+
         opt.step()
 
     return model
@@ -87,7 +88,7 @@ def main_4():
     demo(picture, points)
 
     # 4.2
-    alphas, deltas, omegas, tau = train((1, 30), (1, 30), (3, 1), (3, 1), torch.LongTensor(points))
+    alphas, deltas, omegas, tau = train((1, 30), (1, 30), torch.LongTensor(points))
 
     # 4.3
 

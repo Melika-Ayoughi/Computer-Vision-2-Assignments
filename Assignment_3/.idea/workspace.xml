@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf93b8c-4549-4286-ace0-ac6d9ceace87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/training_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part_4/landmarks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part_3/pinhole_camera_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/part_3/pinhole_camera_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/training_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/training_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/part_4/main_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/part_4/main_4.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,40 +21,42 @@
     <session id="1388817847">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="anl" value="5" />
+          <entry key="anl" value="6" />
+          <entry key="jpg" value="1" />
           <entry key="png" value="8" />
-          <entry key="py" value="20" />
+          <entry key="py" value="22" />
           <entry key="txt" value="4" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="8" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="20" />
+          <entry key="Image" value="9" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Python" value="22" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="198" />
-          <entry key="py" value="2598" />
+          <entry key="py" value="2623" />
           <entry key="yml" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2796" />
+          <entry key="Python" value="2821" />
           <entry key="YAML" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2289">
-              <caret line="178" column="30" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="30" />
+            <state relative-caret-position="-120">
+              <caret line="112" column="35" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="112" selection-end-column="35" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <marker date="1558520139099" expanded="true" signature="2607:4457" ph="..." />
@@ -89,10 +89,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/data_def.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_4/afkijken.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-193">
-              <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
+            <state relative-caret-position="1365">
+              <caret line="166" column="61" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="61" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -103,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/training_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="77" lean-forward="true" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+            <state relative-caret-position="225">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -113,45 +122,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+        <entry file="file://$PROJECT_DIR$/part_2/mesh_to_png.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="-125">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+            <state relative-caret-position="-5">
+              <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1558519536165" expanded="true" signature="746:933" ph="..." />
-                <marker date="1558519536165" expanded="true" signature="1875:2052" ph="..." />
-                <marker date="1558519536165" expanded="true" signature="2326:2329" ph="..." />
+                <marker date="1558531770766" expanded="true" signature="746:933" ph="..." />
+                <marker date="1558531770766" expanded="true" signature="1803:1980" ph="..." />
+                <marker date="1558531770766" expanded="true" signature="2238:2241" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/optim/optimizer.py">
+        <entry file="file://$PROJECT_DIR$/Data/model2017-1_face12_nomouth.anl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="192" selection-start-line="192" selection-end-line="192" />
-            </state>
+            <state relative-caret-position="-521" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_4/landmarks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="240">
               <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -175,6 +182,7 @@
       <find>mean</find>
       <find>2d</find>
       <find>2D</find>
+      <find>p_G</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -194,10 +202,10 @@
         <option value="$PROJECT_DIR$/part_2/mesh_to_png.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/part_4/landmarks.py" />
+        <option value="$PROJECT_DIR$/part_3/pinhole_camera_model.py" />
         <option value="$PROJECT_DIR$/part_4/afkijken.py" />
         <option value="$PROJECT_DIR$/model/training_model.py" />
         <option value="$PROJECT_DIR$/part_4/main_4.py" />
-        <option value="$PROJECT_DIR$/part_3/pinhole_camera_model.py" />
       </list>
     </option>
   </component>
@@ -207,7 +215,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="108" />
     <option name="y" value="138" />
     <option name="width" value="1657" />
@@ -219,7 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,10 +259,21 @@
               <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
               <item name="part_4" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Assignment_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment_3" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Course" />
     </panes>
   </component>
@@ -387,22 +405,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1049" extended-state="7" />
+    <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22310969" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22523962" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.32715377" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991276" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" weight="0.3293348" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" visible="true" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005325" side_tool="true" weight="0.32824427" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32914045" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -419,17 +437,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/part_4/main_4.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/part_2/debug.png" />
@@ -459,13 +466,6 @@
     <entry file="file://$PROJECT_DIR$/model/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/data_def.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="59" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/part_2/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -478,9 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,12 +488,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part_2/mesh_to_png.py">
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        <state relative-caret-position="-3198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Landmarks68_model2017-1_face12_nomouth.anl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-585" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/optim/optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2820">
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part_4/landmarks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/data_def.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part_4/afkijken.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="166" column="61" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -511,75 +552,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/Data/elias.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part_2/mesh_to_png.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="-125">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part_4/landmarks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3198" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/miniconda3/lib/python3.7/site-packages/torch/optim/optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="192" selection-start-line="192" selection-end-line="192" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Landmarks68_model2017-1_face12_nomouth.anl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/model2017-1_face12_nomouth.anl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585" />
+        <state relative-caret-position="-521" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/training_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="77" lean-forward="true" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <marker date="1558519536165" expanded="true" signature="746:933" ph="..." />
-            <marker date="1558519536165" expanded="true" signature="1875:2052" ph="..." />
-            <marker date="1558519536165" expanded="true" signature="2326:2329" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part_4/afkijken.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
+        <state relative-caret-position="225">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="27" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -588,11 +582,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/part_3/pinhole_camera_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2289">
-          <caret line="178" column="30" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="30" />
+        <state relative-caret-position="-120">
+          <caret line="112" column="35" lean-forward="true" selection-start-line="106" selection-start-column="3" selection-end-line="112" selection-end-column="35" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <marker date="1558520139099" expanded="true" signature="2607:4457" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part_4/main_4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1558531770766" expanded="true" signature="746:933" ph="..." />
+            <marker date="1558531770766" expanded="true" signature="1803:1980" ph="..." />
+            <marker date="1558531770766" expanded="true" signature="2238:2241" ph="..." />
           </folding>
         </state>
       </provider>

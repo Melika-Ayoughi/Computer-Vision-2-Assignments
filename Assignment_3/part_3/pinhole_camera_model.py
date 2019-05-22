@@ -1,33 +1,70 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import h5py
-
+import torch
 from utils.util_functions import *
 from model.data_def import Mesh, MyPCAModel
 from part_2.mesh_to_png import mesh_to_png
 
+import math
 
-def generate_R(omega):
+
+def generate_R(omega, torching=False):
     # convert input from degrees to radians
-    omega = omega * (np.pi / 180)
+    omega = omega * (math.pi / 180)
 
-    # get rotation about x-axis
-    R_x = np.array([[1, 0, 0],
-                    [0, np.cos(omega[0]), -np.sin(omega[0])],
-                    [0, np.sin(omega[0]), np.cos(omega[0])]
-                    ])
+    if (torching):
 
-    # get rotation about y-axis
-    R_y = np.array([[np.cos(omega[1]), 0, np.sin(omega[1])],
-                    [0, 1, 0],
-                    [-np.sin(omega[1]), 0, np.cos(omega[1])]
-                    ])
+        # get rotation about x-axis
+        R_x = torchify(
+            [
+                [[1, 0, 0],
+                 [0, torch.cos(omega[0]), -torch.sin(omega[0])],
+                 [0, torch.sin(omega[0]), torch.cos(omega[0])]
+                 ]
+            ]
+        )[0]
 
-    # get rotation about z-axis
-    R_z = np.array([[np.cos(omega[2]), -np.sin(omega[2]), 0],
-                    [np.sin(omega[2]), np.cos(omega[2]), 0],
-                    [0, 0, 1]
-                    ])
+        # get rotation about y-axis
+        R_y = torchify(
+            [
+                [[torch.cos(omega[1]), 0, torch.sin(omega[1])],
+                 [0, 1, 0],
+                 [-torch.sin(omega[1]), 0, torch.cos(omega[1])]
+                 ]
+            ]
+        )[0]
+
+        # get rotation about z-axis
+        R_z = torchify(
+            [
+                [[torch.cos(omega[2]), -torch.sin(omega[2]), 0],
+                 [torch.sin(omega[2]), torch.cos(omega[2]), 0],
+                 [0, 0, 1]
+                 ]
+            ]
+        )[0]
+
+
+    else:
+
+        # get rotation about x-axis
+        R_x = np.array([[1, 0, 0],
+                        [0, np.cos(omega[0]), -np.sin(omega[0])],
+                        [0, np.sin(omega[0]), np.cos(omega[0])]
+                        ])
+
+        # get rotation about y-axis
+        R_y = np.array([[np.cos(omega[1]), 0, np.sin(omega[1])],
+                        [0, 1, 0],
+                        [-np.sin(omega[1]), 0, np.cos(omega[1])]
+                        ])
+
+        # get rotation about z-axis
+        R_z = np.array([[np.cos(omega[2]), -np.sin(omega[2]), 0],
+                        [np.sin(omega[2]), np.cos(omega[2]), 0],
+                        [0, 0, 1]
+                        ])
 
     # get overall rotation matrix
     R = R_z @ R_y @ R_x
@@ -35,77 +72,145 @@ def generate_R(omega):
     return R
 
 
-def generate_T(R, t):
-    T = np.concatenate((R, t), axis=1)
+def generate_T(R, t, torching=False):
+    if (torching):
 
-    # initialize last row of matrix
-    l_r = np.zeros(4).reshape(1, 4)
-    l_r[0, 3] = 1
+        T = torch.cat((R, t), dim=1)
 
-    # concatenate last row to the rest
-    T = np.concatenate((T, l_r), axis=0)
+        # initialize last row of matrix
+        l_r = torch.zeros(4).view(1, 4)
+        l_r[0, 3] = 1
+
+        l_r = torchify(l_r)[0]
+
+        # concatenate last row to the rest
+        T = torch.cat((T, l_r), dim=0)
+
+
+    else:
+
+        T = np.concatenate((R, t), axis=1)
+
+        # initialize last row of matrix
+        l_r = np.zeros(4).reshape(1, 4)
+        l_r[0, 3] = 1
+
+        # concatenate last row to the rest
+        T = np.concatenate((T, l_r), axis=0)
 
     return T
 
 
-def generate_P(fov, width, height, near, far):
+def generate_P(fov, width, height, near, far, torching=False):
     n = near
     f = far
 
-    # compute parameters
-    aspect_ratio = (width / height)
-    t = np.tan(fov / 2) * n
-    b = -t
-    r = t * aspect_ratio
-    l = -t * aspect_ratio
+    if (torching):
 
-    P = np.array([[2 * n / (r - l), 0, 0, 0],
-                  [0, 2 * n / (t - b), 0, 0],
-                  [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
-                  [0, 0, -(2 * f * n) / (f - n), 0]
-                  ])
+        # compute parameters
+        aspect_ratio = (width / height)
+        t = math.tan(fov / 2) * n
+        b = -t
+        r = t * aspect_ratio
+        l = -t * aspect_ratio
+
+        P = torchify([
+            [[2 * n / (r - l), 0, 0, 0],
+             [0, 2 * n / (t - b), 0, 0],
+             [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
+             [0, 0, -(2 * f * n) / (f - n), 0]
+             ]
+        ]
+        )[0]
+
+    else:
+
+        # compute parameters
+        aspect_ratio = (width / height)
+        t = np.tan(fov / 2) * n
+        b = -t
+        r = t * aspect_ratio
+        l = -t * aspect_ratio
+
+        P = np.array([[2 * n / (r - l), 0, 0, 0],
+                      [0, 2 * n / (t - b), 0, 0],
+                      [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
+                      [0, 0, -(2 * f * n) / (f - n), 0]
+                      ])
 
     return P
 
 
-def generate_V(v_r, v_l, v_t, v_b):
-    V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-                  [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-                  [0, 0, 1 / 2, 1 / 2],
-                  [0, 0, 0, 1]
-                  ])
+def generate_V(v_r, v_l, v_t, v_b, torching=False):
+    if (torching):
+        V = torchify(
+            [
+                [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
+                 [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
+                 [0, 0, 1 / 2, 1 / 2],
+                 [0, 0, 0, 1]
+                 ]
+            ]
+        )[0]
+
+    else:
+        V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
+                      [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
+                      [0, 0, 1 / 2, 1 / 2],
+                      [0, 0, 0, 1]
+                      ])
 
     return V
 
 
-def homogenize(input):
+def homogenize(input, torching=False):
     # get dimensions
-    [rows, _] = input.shape
+    rows = input.shape[0]
 
-    # add homogenous coordinates
-    h_input = np.concatenate((input, np.ones(rows).reshape((rows, 1))), axis=1)
+    if (torching):
+
+        elem = torchify([torch.ones(rows).view((rows, 1))])[0]
+        # add homogenous coordinates
+        h_input = torch.cat((input, elem), dim=1)
+
+    else:
+
+        # add homogenous coordinates
+        h_input = np.concatenate((input, np.ones(rows).reshape((rows, 1))), axis=1)
 
     return h_input
 
 
-def dehomogenize(input):
+def dehomogenize(input, torching=False):
     # get dimesnions
-    [rows, columns] = input.shape
+    rows, columns = input.shape
 
-    # initialize dehomogenized version
-    d_input = np.empty((rows, 0), int)
+    if (torching):
 
-    # divide each row by final row
-    for c in range(columns - 1):
-        new_column = input[:, c] / input[:, -1]
-        d_input = np.concatenate((d_input, new_column.reshape(new_column.shape[0], 1)), axis=1)
+        # initialize dehomogenized version
+        d_input = torch.empty((rows, 0), int)
+
+        # divide each row by final row
+        for c in range(columns - 1):
+            new_column = input[:, c] / input[:, -1]
+            d_input = torch.cat((d_input, new_column.reshape(new_column.shape[0], 1)), dim=1)
+
+    else:
+
+        # initialize dehomogenized version
+        d_input = np.empty((rows, 0), int)
+
+        # divide each row by final row
+        for c in range(columns - 1):
+            new_column = input[:, c] / input[:, -1]
+            d_input = np.concatenate((d_input, new_column.reshape(new_column.shape[0], 1)), axis=1)
 
     return d_input
 
-def get_projection(G, omega, tau):
 
+def get_projection(G, omega, tau, torching=False):
     # make G homogenous
-    h_G = homogenize(G)
+    h_G = homogenize(G, torching=torching)
 
     # get width
     G_x = G[:, 0]
@@ -121,19 +226,19 @@ def get_projection(G, omega, tau):
     far = G_z.max()
 
     # get P
-    P = generate_P(0.5, width, height, near, far)
+    P = generate_P(0.5, width, height, near, far, torching=torching)
 
     # get V
-    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2)
+    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2, torching=torching)
 
     # construct rotation matrix and translation vector
-    R = generate_R(omega)
-    T = generate_T(R, tau)
+    R = generate_R(omega, torching=torching)
+    T = generate_T(R, tau, torching=torching)
 
     # project to 2D plane
     p_G = (V @ P) @ (T @ h_G.T)
-    p_G = dehomogenize(p_G.T)
-    p_G = dehomogenize(p_G)
+    p_G = dehomogenize(p_G.T, torching=torching)
+    p_G = dehomogenize(p_G, torching=torching)
 
     return p_G
 
@@ -184,14 +289,12 @@ def main_3():
     #################################### 3(b)
 
     # project to 2D
-    p_G = get_projection(G,omega,t)
-
+    p_G = get_projection(G, omega, t)
 
     # import landmark subset idxs
     with open("Data/Landmarks68_model2017-1_face12_nomouth.anl", mode="r", encoding="utf-8") as f:
         data = f.read().splitlines()
         subset = list(map(int, data))
-
 
     # plot subset
     plt.scatter(p_G[subset, 0], p_G[subset, 1])

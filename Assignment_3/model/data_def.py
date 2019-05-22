@@ -1,4 +1,6 @@
 import numpy as np
+import torch
+from utils.util_functions import torchify
 
 
 class Mesh:
@@ -66,9 +68,13 @@ class MyPCAModel(PCAModel):
 
         return E_id_sample, sigma_id_sample, E_exp_sample, sigma_exp_sample
 
-    def generate_point_cloud(self, alpha, delta):
+    def generate_point_cloud(self, alpha, delta, torching=False):
         mu_id, mu_exp, sigma_id, sigma_exp, E_id, E_exp = self.mean["id"], self.mean["exp"], self.std["id"], self.std[
             "exp"], self.pc["id"], self.pc["exp"]
+
+        if (torching):
+            mu_id, mu_exp, sigma_id, sigma_exp, E_id, E_exp = torchify(
+                [mu_id, mu_exp, sigma_id, sigma_exp, E_id, E_exp])
 
         G = mu_id + E_id @ (alpha * sigma_id) + mu_exp + E_exp @ (delta * sigma_exp)
 

@@ -1,8 +1,10 @@
 import torch
-import torch.nn
+import torch.nn as nn
 import numpy as np
 from model.data_def import MyPCAModel
 import h5py
+from part_3.pinhole_camera_model import get_projection
+
 
 class Training(torch.nn.Module):
     def __init__(self, alpha_num, delta_num):
@@ -12,21 +14,29 @@ class Training(torch.nn.Module):
 
         self.device = device
 
-        self.alphas = (torch.randn((alpha_num), requires_grad=True)).to(device)
-        self.omegas = (torch.randn([0, 0.1745, 0], requires_grad=True)).to(device)
-        self.tau = (torch.randn([0, 0, -400], requires_grad=True)).to(device)
-        self.deltas = (torch.randn((delta_num), requires_grad=True)).to(device)
+        self.alphas = nn.Parameter(
+            torch.randn((1)).to(device), requires_grad=True
+        )
+
+        self.deltas = nn.Parameter(
+            torch.randn((1)).to(device), requires_grad=True
+        )
+
+        self.omegas = nn.Parameter(
+            torch.FloatTensor([0, 0.1745, 0]).to(device), requires_grad=True
+        )
+
+        self.tau = nn.Parameter(
+            torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True
+        )
 
         # load model
         bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
-        mean_tex = np.asarray(bfm['color/model/mean'], dtype=np.float32).reshape((-1, 3))
-        triangles = np.asarray(bfm['shape/representer/cells'], dtype=np.int32).T
-
         self.pca = MyPCAModel(bfm, 30, 20)
 
-    def forward(self, input):
+    def forward(self, banana):
+        G = (self.pca.generate_point_cloud(self.alphas, self.deltas, torching=True)).to(self.device)
 
-        G = torch.FloatTensor(self.pca.generate_point_cloud(self.alpha, self.delta)).to(self.device)
+        p_G = get_projection(G, self.omegas, self.tau, torching=True)
 
-
-        pass
+        return p_G

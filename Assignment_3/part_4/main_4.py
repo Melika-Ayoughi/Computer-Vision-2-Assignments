@@ -59,7 +59,7 @@ def train(alpha_shape, delta_shape, ground_truth, lambda_alpha=1.0, lambda_delta
 
         opt.zero_grad()
 
-        p = get_projected_points(model.alphas, model.deltas, model.omegas, model.tau, avg)
+        p = model.forward(0)
 
         loss = loss_total(model.alphas, model.deltas, p, ground_truth, lambda_alpha=lambda_alpha, lambda_delta=lambda_delta)
 
@@ -85,10 +85,10 @@ def main_4():
     points = extract_ground_truth(picture)
 
     # 4.1
-    demo(picture, points)
+    # demo(picture, points)
 
     # 4.2
-    alphas, deltas, omegas, tau = train((1, 30), (1, 30), torch.LongTensor(points))
+    alphas, deltas, omegas, tau = train((30, 1), (30, 1), torch.LongTensor(points))
 
     # 4.3
 

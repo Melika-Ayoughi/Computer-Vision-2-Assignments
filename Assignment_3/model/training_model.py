@@ -51,4 +51,4 @@ class Training(torch.nn.Module):
         p_G = get_projection(G, self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device)
 
         # return valid subset
-        return (p_G[self.subset, :])
+        return self.activation(p_G[self.subset, :])

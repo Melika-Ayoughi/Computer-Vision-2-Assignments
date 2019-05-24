@@ -101,7 +101,7 @@ def main_4():
     demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.077, steps=2000, lambda_alpha=1.5, lambda_delta=1.5)
+    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.077, steps=100, lambda_alpha=1.5, lambda_delta=1.5)
     normalised_points = model.forward(None)
     actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
     demo(picture, actual_points)

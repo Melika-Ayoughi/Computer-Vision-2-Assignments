@@ -16,6 +16,7 @@ def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0
 
 
 def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
+
     return lambda_alpha * torch.sum(alpha.pow(2)) + lambda_delta * torch.sum(delta.pow(2))
 
 
@@ -39,7 +40,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
     for i in range(steps):
         opt.zero_grad()
 
-        p = model.forward(0)
+        p = model.forward(None)
 
         loss = loss_total(model.alpha, model.delta, p, ground_truth, lambda_alpha=lambda_alpha,
                           lambda_delta=lambda_delta)

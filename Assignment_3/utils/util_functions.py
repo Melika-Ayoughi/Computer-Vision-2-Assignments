@@ -10,18 +10,18 @@ def ensure_current_directory():
     os.chdir(current_dir.split("Assignment_3")[0] + "Assignment_3/")
 
 
-def create_mask(commands, dim=0):
+def create_mask(commands, dim=0, device="cpu"):
     output = []
     for command in commands:
         if (command == 1):
             output.append(torch.ones(1))
         else:
             output.append(torch.zeros(1))
-    return torch.stack(output, dim=dim)
+    return torch.stack(output, dim=dim).to(device)
 
 
-def torchify_2(matr, x):
-    masks = {i: create_mask([j == i for j in range(x)], dim=1) for i in range(x)}
+def torchify_2(matr, x, device="cpu"):
+    masks = {i: create_mask([j == i for j in range(x)], dim=1, device=device) for i in range(x)}
 
     rows = {}
 
@@ -30,6 +30,9 @@ def torchify_2(matr, x):
         columns = {}
 
         for j, column in enumerate(row):
+
+
+
             columns[j] = column*masks[j]
 
         rows[i] = sum(tuple(columns[k] for k in columns))

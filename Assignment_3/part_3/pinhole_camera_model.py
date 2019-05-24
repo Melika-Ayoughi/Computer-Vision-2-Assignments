@@ -8,7 +8,7 @@ from part_2.mesh_to_png import mesh_to_png
 import math
 
 
-def generate_R(omega, torching=False):
+def generate_R(omega, torching=False, device="cpu"):
     # convert input from degrees to radians
     omega = omega * (math.pi / 180)
 
@@ -20,7 +20,7 @@ def generate_R(omega, torching=False):
             [[1, 0, 0],
              [0, torch.cos(omega[0]), -torch.sin(omega[0])],
              [0, torch.sin(omega[0]), torch.cos(omega[0])]
-             ], 3
+             ], 3, device=device
 
         )
 
@@ -30,7 +30,7 @@ def generate_R(omega, torching=False):
              [0, 1, 0],
              [-1 * torch.sin(omega[1]), 0, torch.cos(omega[1])]
              ]
-            , 3
+            , 3, device=device
         )
 
         # get rotation about z-axis
@@ -40,7 +40,7 @@ def generate_R(omega, torching=False):
              [torch.sin(omega[2]), torch.cos(omega[2]), 0],
              [0, 0, 1]
              ]
-            , 3
+            , 3, device=device
         )
 
 
@@ -70,13 +70,13 @@ def generate_R(omega, torching=False):
     return R
 
 
-def generate_T(R, t, torching=False):
+def generate_T(R, t, torching=False, device="cpu"):
     if (torching):
 
         T = torch.cat((R, t), dim=1)
 
         # initialize last row of matrix
-        l_r = create_mask([0, 0, 1, 0]).view(1, 4)
+        l_r = create_mask([0, 0, 1, 0], device=device).view(1, 4)
 
         # concatenate last row to the rest
         T = torch.cat((T, l_r), dim=0)
@@ -96,7 +96,7 @@ def generate_T(R, t, torching=False):
     return T
 
 
-def generate_P(fov, width, height, near, far, torching=False):
+def generate_P(fov, width, height, near, far, torching=False, device="cpu"):
     n = near
     f = far
 
@@ -115,7 +115,7 @@ def generate_P(fov, width, height, near, far, torching=False):
              [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
              [0, 0, -(2 * f * n) / (f - n), 0]
              ]
-            , 4)
+            , 4, device=device)
 
     else:
 
@@ -135,7 +135,7 @@ def generate_P(fov, width, height, near, far, torching=False):
     return P
 
 
-def generate_V(v_r, v_l, v_t, v_b, torching=False):
+def generate_V(v_r, v_l, v_t, v_b, torching=False, device="cpu"):
     if (torching):
 
         V = torchify_2(
@@ -144,7 +144,7 @@ def generate_V(v_r, v_l, v_t, v_b, torching=False):
              [0, 0, 1 / 2, 1 / 2],
              [0, 0, 0, 1]
              ]
-            , 4)
+            , 4, device=device)
 
     else:
         V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
@@ -156,7 +156,7 @@ def generate_V(v_r, v_l, v_t, v_b, torching=False):
     return V
 
 
-def homogenize(input, torching=False):
+def homogenize(input, torching=False, device="cpu"):
     # get dimensions
     rows = input.shape[0]
 
@@ -174,7 +174,7 @@ def homogenize(input, torching=False):
     return h_input
 
 
-def dehomogenize(input, torching=False):
+def dehomogenize(input, torching=False, device="cpu"):
     # get dimesnions
     rows, columns = input.shape
 
@@ -201,9 +201,9 @@ def dehomogenize(input, torching=False):
     return d_input
 
 
-def get_projection(G, omega, tau, torching=False):
+def get_projection(G, omega, tau, torching=False, device="cpu"):
     # make G homogenous
-    h_G = homogenize(G, torching=torching)
+    h_G = homogenize(G, torching=torching, device=device)
 
     # get width
     G_x = G[:, 0]
@@ -219,25 +219,25 @@ def get_projection(G, omega, tau, torching=False):
     far = G_z.max()
 
     # get P
-    P = generate_P(0.5, width, height, near, far, torching=torching)
+    P = generate_P(0.5, width, height, near, far, torching=torching, device=device)
 
     # get V
-    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2, torching=torching)
+    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2, torching=torching, device=device)
 
     # construct rotation matrix and translation vector
-    R = generate_R(omega, torching=torching)
-    T = generate_T(R, tau, torching=torching)
+    R = generate_R(omega, torching=torching, device=device)
+    T = generate_T(R, tau, torching=torching, device=device)
 
     # project to 2D plane
 
     if (torching):
         p_G = (V @ P) @ (T @ h_G.t())
-        p_G = dehomogenize(p_G.t(), torching=torching)
+        p_G = dehomogenize(p_G.t(), torching=torching, device=device)
     else:
         p_G = (V @ P) @ (T @ h_G.T)
-        p_G = dehomogenize(p_G.T, torching=torching)
+        p_G = dehomogenize(p_G.T, torching=torching, device=device)
 
-    p_G = dehomogenize(p_G, torching=torching)
+    p_G = dehomogenize(p_G, torching=torching, device=device)
 
     return p_G
 

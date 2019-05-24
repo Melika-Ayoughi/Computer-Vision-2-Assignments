@@ -21,9 +21,22 @@ def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
 
 
 def extract_ground_truth(face):
-    points = detect_landmark(face)
+    points = np.array(detect_landmark(face))
 
-    return np.array(points)
+    x_column = points[:,0]
+    y_column = points[:,1]
+
+    x_max = face.shape[1]
+    y_max = face.shape[0]
+
+
+    x_scaled = x_column/x_max
+    y_scaled = y_column/y_max
+
+    out = np.stack((x_scaled, y_scaled), 1)
+
+
+    return out
 
 
 def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None):
@@ -50,7 +63,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
         opt.step()
 
         print(
-            f"\rEpoch: {i}, Loss: {int(loss.item())} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
+            f"\rEpoch: {i}, Loss: {loss.item():0.3f} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
             end='')
 
         if (not exit_codition is None):
@@ -70,8 +83,11 @@ def demo(picture, points):
     plt.show()
 
 
-def denormalize(points, picture, model):  # TODO
-    return points
+def denormalize(points, picture):
+
+    shape = picture.shape[:-1][::-1]
+
+    return points*shape
 
 
 def main_4():
@@ -79,16 +95,18 @@ def main_4():
 
     # extract
     picture = plt.imread("./Data/trump.jpg")
-    points = extract_ground_truth(picture)
+    ground_truth_points = extract_ground_truth(picture)
 
     # 4.1 show ground truth points
-    demo(picture, points)
+    demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.LongTensor(points), lr=0.15, steps=500)
-    somepoints = model.forward(None)
-    actual_points = denormalize(somepoints.detach().cpu().numpy(), picture, model)
+    model, state = train(torch.LongTensor(ground_truth_points), lr=0.057, steps=2000, lambda_alpha=0.1, lambda_delta=1.5)
+    normalised_points = model.forward(None)
+    actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
     demo(picture, actual_points)
+
+    exit()
 
     # 4.3 hyperparameter tuning
 
@@ -98,7 +116,7 @@ def main_4():
         for delta_reg in [0.1, 1, 10, 100, 1000, 10000]:
             print(f"TESTING: alpha_reg = {alpha_reg} and delta_reg = {delta_reg}")
 
-            results = train(torch.LongTensor(points), lr=0.1, exit_codition=3.5)[1]
+            results = train(torch.LongTensor(ground_truth_points), lr=0.1, exit_codition=3.5)[1]
             result_dictionary[(alpha_reg, delta_reg)] = (results)
             data_manager.save_python_obj(result_dictionary, f"{data_manager.date_stamp()}__Grid_search_part4")
 

@@ -13,7 +13,7 @@ class Training(torch.nn.Module):
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-        self.activation = nn.Tanh()
+        self.activation = nn.Sigmoid()
 
         self.device = device
 
@@ -51,4 +51,4 @@ class Training(torch.nn.Module):
         p_G = get_projection(G, self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device)
 
         # return valid subset
-        return p_G[self.subset, :]
+        return (p_G[self.subset, :])

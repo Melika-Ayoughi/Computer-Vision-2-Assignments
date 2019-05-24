@@ -59,7 +59,7 @@ def main_2(n_samples=50, n_id=30, n_exp=30):
 
     triangles = np.asarray(bfm['shape/representer/cells'], dtype=np.int32).T
 
-    # sample 50 alphas and deltas uniformly
+    # sample 50 alpha and delta uniformly
     alphas, deltas = map(lambda x: np.random.uniform(-1, 1, n_samples), range(2))
 
     # initialize figure

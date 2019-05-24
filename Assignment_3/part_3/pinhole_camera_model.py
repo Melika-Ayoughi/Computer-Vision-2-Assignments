@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import h5py
-import torch
 from utils.util_functions import *
 from model.data_def import Mesh, MyPCAModel
 from part_2.mesh_to_png import mesh_to_png
@@ -16,34 +15,33 @@ def generate_R(omega, torching=False):
     if (torching):
 
         # get rotation about x-axis
-        R_x = torchify(
-            [
-                [[1, 0, 0],
-                 [0, torch.cos(omega[0]), -torch.sin(omega[0])],
-                 [0, torch.sin(omega[0]), torch.cos(omega[0])]
-                 ]
-            ]
-        )[0]
+        R_x = torchify_2(
+
+            [[1, 0, 0],
+             [0, torch.cos(omega[0]), -torch.sin(omega[0])],
+             [0, torch.sin(omega[0]), torch.cos(omega[0])]
+             ], 3
+
+        )
 
         # get rotation about y-axis
-        R_y = torchify(
-            [
-                [[torch.cos(omega[1]), 0, torch.sin(omega[1])],
-                 [0, 1, 0],
-                 [-torch.sin(omega[1]), 0, torch.cos(omega[1])]
-                 ]
-            ]
-        )[0]
+        R_y = torchify_2(
+            [[torch.cos(omega[1]), 0, torch.sin(omega[1])],
+             [0, 1, 0],
+             [-1 * torch.sin(omega[1]), 0, torch.cos(omega[1])]
+             ]
+            , 3
+        )
 
         # get rotation about z-axis
-        R_z = torchify(
-            [
-                [[torch.cos(omega[2]), -torch.sin(omega[2]), 0],
-                 [torch.sin(omega[2]), torch.cos(omega[2]), 0],
-                 [0, 0, 1]
-                 ]
-            ]
-        )[0]
+        R_z = torchify_2(
+
+            [[torch.cos(omega[2]), -1 * torch.sin(omega[2]), 0],
+             [torch.sin(omega[2]), torch.cos(omega[2]), 0],
+             [0, 0, 1]
+             ]
+            , 3
+        )
 
 
     else:
@@ -78,10 +76,7 @@ def generate_T(R, t, torching=False):
         T = torch.cat((R, t), dim=1)
 
         # initialize last row of matrix
-        l_r = torch.zeros(4).view(1, 4)
-        l_r[0, 3] = 1
-
-        l_r = torchify(l_r)[0].view(1, 4)
+        l_r = create_mask([0, 0, 1, 0]).view(1, 4)
 
         # concatenate last row to the rest
         T = torch.cat((T, l_r), dim=0)
@@ -114,14 +109,13 @@ def generate_P(fov, width, height, near, far, torching=False):
         r = t * aspect_ratio
         l = -t * aspect_ratio
 
-        P = torchify([
+        P = torchify_2(
             [[2 * n / (r - l), 0, 0, 0],
              [0, 2 * n / (t - b), 0, 0],
              [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
              [0, 0, -(2 * f * n) / (f - n), 0]
              ]
-        ]
-        )[0]
+            , 4)
 
     else:
 
@@ -143,15 +137,14 @@ def generate_P(fov, width, height, near, far, torching=False):
 
 def generate_V(v_r, v_l, v_t, v_b, torching=False):
     if (torching):
-        V = torchify(
-            [
-                [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-                 [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-                 [0, 0, 1 / 2, 1 / 2],
-                 [0, 0, 0, 1]
-                 ]
-            ]
-        )[0]
+
+        V = torchify_2(
+            [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
+             [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
+             [0, 0, 1 / 2, 1 / 2],
+             [0, 0, 0, 1]
+             ]
+            , 4)
 
     else:
         V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],

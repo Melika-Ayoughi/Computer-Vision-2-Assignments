@@ -1,31 +1,22 @@
 from utils.util_functions import *
 import matplotlib.pylab as plt
 import torch
-import torch.nn.functional as F
-from torch.autograd import Variable
 from model.training_model import Training
-
+from model.data_management import DataManager
 from part_4.landmarks import *
 
-pdist = torch.nn.PairwiseDistance(p=2)  # TODO: CHANGE
+pdist = torch.nn.PairwiseDistance(p=2)
 
-def loss_total(alphas, deltas, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
-    L_lan = torch.sum(pdist(p, ground_truth) ** 2)
-    L_reg = lambda_alpha * torch.sum(alphas ** 2) + lambda_delta * torch.sum(deltas ** 2)
-    L_fit = L_lan + L_reg
+def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
+    loss_lan = torch.sum(pdist(p, ground_truth) ** 2)
 
-    return L_fit
-                            ## TODO: change
+    loss_reg = loss_reg_function(lambda_alpha, lambda_delta, alpha, delta)
 
-    # loss_lan = F.mse_loss(p, ground_truth)
-    #
-    # loss_reg = loss_reg_function(lambda_alpha, lambda_delta, alphas, deltas)
-    #
-    # return loss_reg + loss_lan
+    return loss_reg + loss_lan
 
 
-def loss_reg_function(lambda_alpha, lambda_delta, alphas, deltas):
-    return lambda_alpha * torch.sum(alphas.pow(2)) + lambda_delta * torch.sum(deltas.pow(2))
+def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
+    return lambda_alpha * torch.sum(alpha.pow(2)) + lambda_delta * torch.sum(delta.pow(2))
 
 
 def extract_ground_truth(face):
@@ -34,18 +25,7 @@ def extract_ground_truth(face):
     return np.array(points)
 
 
-def read_file_points():
-    with open("Data/model2017-1_face12_nomouth.anl", mode="r", encoding="utf-8") as f:
-        data = f.read().splitlines()
-        subset = list(map(int, data))
-        return subset
-
-
-
-
-def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
-          steps=1000):
-
+def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = Training()
@@ -57,20 +37,27 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001,
     ground_truth = torchify([ground_truth.numpy()])[0]
 
     for i in range(steps):
-
         opt.zero_grad()
 
         p = model.forward(0)
 
-        loss = loss_total(model.alphas, model.deltas, p, ground_truth, lambda_alpha=lambda_alpha, lambda_delta=lambda_delta)
+        loss = loss_total(model.alpha, model.delta, p, ground_truth, lambda_alpha=lambda_alpha,
+                          lambda_delta=lambda_delta)
 
         loss.backward()
 
         opt.step()
 
-        print(f"\rEpoch: {i}, Loss: {loss.item()} alpha: {model.alphas.item()}, delta: {model.deltas.item()}, omega: [{model.omegas[0].item()}, {model.omegas[1].item()}, {model.omegas[2].item()}], tau [{model.tau[0].item()}, {model.tau[1].item()}, {model.tau[2].item()}]", end='')
+        print(
+            f"\rEpoch: {i}, Loss: {int(loss.item())} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
+            end='')
 
-    return model
+        if (not exit_codition is None):
+            if (abs(model.alpha.item()) > exit_codition and abs(model.delta.item()) > exit_codition):
+                print("\n\nalpha and delta growing too big, choose different regularisation parameters.\n\n")
+                break
+
+    return model, model.state_dict()
 
 
 def demo(picture, points):
@@ -83,18 +70,32 @@ def demo(picture, points):
 
 
 def main_4():
+    data_manager = DataManager("./Results/")
+
     # extract
-    picture = plt.imread("./Data/elias.jpg")
+    picture = plt.imread("./Data/trump.jpg")
     points = extract_ground_truth(picture)
 
-    # 4.1
+    # 4.1 show ground truth points
     demo(picture, points)
 
-    # 4.2
-    alphas, deltas, omegas, tau = train(torch.LongTensor(points), lr=0.1)
+    # 4.2 training on face
+    model = train(torch.LongTensor(points), lr=0.1, steps=2000)[0]
+    somepoints = model.forward(None)
+    demo(picture, somepoints.detach().cpu().numpy())
 
-    # 4.3
-    ## TODO
+    # 4.3 hyperparameter tuning
+
+    result_dictionary = {}
+
+    for alpha_reg in [0.1, 1, 10, 100, 1000, 1000]:
+        for delta_reg in [0.1, 1, 10, 100, 1000, 10000]:
+            print(f"TESTING: alpha_reg = {alpha_reg} and delta_reg = {delta_reg}")
+
+            results = train(torch.LongTensor(points), lr=0.1, exit_codition=3.5)[1]
+            result_dictionary[(alpha_reg, delta_reg)] = (results)
+            data_manager.save_python_obj(result_dictionary, f"{data_manager.date_stamp()}__Grid_search_part4")
+
 
 if __name__ == '__main__':
     ensure_current_directory()

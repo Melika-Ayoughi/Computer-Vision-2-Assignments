@@ -7,6 +7,7 @@ from part_4.landmarks import *
 
 pdist = torch.nn.PairwiseDistance(p=2)
 
+
 def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
     loss_lan = torch.sum(pdist(p, ground_truth) ** 2)
 
@@ -16,7 +17,6 @@ def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0
 
 
 def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
-
     return lambda_alpha * torch.sum(alpha.pow(2)) + lambda_delta * torch.sum(delta.pow(2))
 
 
@@ -70,6 +70,10 @@ def demo(picture, points):
     plt.show()
 
 
+def denormalize(points, picture, model):  # TODO
+    return points
+
+
 def main_4():
     data_manager = DataManager("./Results/")
 
@@ -81,9 +85,10 @@ def main_4():
     demo(picture, points)
 
     # 4.2 training on face
-    model = train(torch.LongTensor(points), lr=0.1, steps=2000)[0]
+    model, state = train(torch.LongTensor(points), lr=0.15, steps=500)
     somepoints = model.forward(None)
-    demo(picture, somepoints.detach().cpu().numpy())
+    actual_points = denormalize(somepoints.detach().cpu().numpy(), picture, model)
+    demo(picture, actual_points)
 
     # 4.3 hyperparameter tuning
 

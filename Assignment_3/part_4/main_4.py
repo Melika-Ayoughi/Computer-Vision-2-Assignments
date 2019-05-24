@@ -43,7 +43,7 @@ def demo_train(picture, train_points, ground_truth):
     plt.scatter(ground_truth[:, 0], ground_truth[:, 1])
     plt.xticks([])
     plt.yticks([])
-    plt.savefig("./Results/part_4_initial_face.png")
+    plt.savefig("./Results/part_4_debug.png")
     plt.show()
 
 
@@ -74,7 +74,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
             f"\rEpoch: {i}, Loss: {loss.item():0.3f} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
             end='')
 
-        if (i % 25 == 0 and not picture is None):
+        if (i % 50 == 0 and not picture is None):
             normalised_points = model.forward(None)
             train_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
             ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture)
@@ -107,15 +107,15 @@ def main_4():
     data_manager = DataManager("./Results/")
 
     # extract
-    picture = plt.imread("./Data/trump.jpg")
+    picture = plt.imread("./Data/sjors2.jpg")[:, :, :3]
     ground_truth_points = extract_ground_truth(picture)
 
     # 4.1 show ground truth points
     demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.077, steps=200, lambda_alpha=1.5,
-                         lambda_delta=1.5, picture=picture)
+    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.15, steps=2000, lambda_alpha=0.2,
+                         lambda_delta=0.25, picture=picture)
     normalised_points = model.forward(None)
     actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
     demo(picture, actual_points)

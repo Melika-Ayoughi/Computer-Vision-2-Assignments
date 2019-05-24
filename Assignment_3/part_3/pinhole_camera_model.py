@@ -185,7 +185,7 @@ def dehomogenize(input, torching=False, device="cpu"):
 
         # divide each row by final row
         for c in range(columns - 1):
-            new_column = input[:, c] / input[:, -1]
+            new_column = input[:, c] / (-1*input[:, -1])
             d_input = torch.cat((d_input, new_column.view(new_column.shape[0], 1)), dim=1)
 
     else:
@@ -237,9 +237,7 @@ def get_projection(G, omega, tau, torching=False, device="cpu"):
         p_G = (V @ P) @ (T @ h_G.T)
         p_G = dehomogenize(p_G.T, torching=torching, device=device)
 
-    p_G = dehomogenize(p_G, torching=torching, device=device)
-
-    return p_G
+    return p_G[:, 0:2]
 
 
 def main_3():

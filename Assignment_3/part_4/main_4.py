@@ -23,23 +23,31 @@ def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
 def extract_ground_truth(face):
     points = np.array(detect_landmark(face))
 
-    x_column = points[:,0]
-    y_column = points[:,1]
+    x_column = points[:, 0]
+    y_column = points[:, 1]
 
     x_max = face.shape[1]
     y_max = face.shape[0]
 
-
-    x_scaled = x_column/x_max
-    y_scaled = y_column/y_max
+    x_scaled = x_column / x_max
+    y_scaled = y_column / y_max
 
     out = np.stack((x_scaled, y_scaled), 1)
-
 
     return out
 
 
-def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None):
+def demo_train(picture, train_points, ground_truth):
+    plt.imshow(picture)
+    plt.scatter(train_points[:, 0], train_points[:, 1])
+    plt.scatter(ground_truth[:, 0], ground_truth[:, 1])
+    plt.xticks([])
+    plt.yticks([])
+    plt.savefig("./Results/part_4_initial_face.png")
+    plt.show()
+
+
+def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None, picture=None):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = Training()
@@ -66,6 +74,12 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
             f"\rEpoch: {i}, Loss: {loss.item():0.3f} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
             end='')
 
+        if (i % 25 == 0 and not picture is None):
+            normalised_points = model.forward(None)
+            train_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
+            ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture)
+            demo_train(picture, train_points, ground_truth_detached)
+
         if (not exit_codition is None):
             if (abs(model.alpha.item()) > exit_codition and abs(model.delta.item()) > exit_codition):
                 print("\n\nalpha and delta growing too big, choose different regularisation parameters.\n\n")
@@ -84,10 +98,9 @@ def demo(picture, points):
 
 
 def denormalize(points, picture):
-
     shape = picture.shape[:-1][::-1]
 
-    return points*shape
+    return points * shape
 
 
 def main_4():
@@ -101,7 +114,8 @@ def main_4():
     demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.077, steps=100, lambda_alpha=1.5, lambda_delta=1.5)
+    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.077, steps=200, lambda_alpha=1.5,
+                         lambda_delta=1.5, picture=picture)
     normalised_points = model.forward(None)
     actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
     demo(picture, actual_points)

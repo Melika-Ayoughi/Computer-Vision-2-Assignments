@@ -18,15 +18,15 @@ class Training(torch.nn.Module):
         self.device = device
 
         self.alpha = nn.Parameter(
-            torch.randn((1)).to(device), requires_grad=True
+            torch.zeros((1)).to(device), requires_grad=True
         )
 
         self.delta = nn.Parameter(
-            torch.randn((1)).to(device), requires_grad=True
+            torch.zeros((1)).to(device), requires_grad=True
         )
 
         self.omega = nn.Parameter(
-            torch.FloatTensor([0.0, 0.0, 0.0]).to(device), requires_grad=True
+            torch.FloatTensor([0.0, 10.0, 0.0]).to(device), requires_grad=True
         )
 
         self.tau = nn.Parameter(

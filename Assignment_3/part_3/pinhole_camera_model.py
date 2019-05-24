@@ -281,9 +281,9 @@ def main_3():
     #################################### 3(a)
 
     # plot point cloud
-    mesh = Mesh(t_G, mean_tex, triangles)
-
-    mesh_to_png("./Results/debug.png", mesh)
+    # mesh = Mesh(t_G, mean_tex, triangles)
+    #
+    # mesh_to_png("./Results/debug.png", mesh)
 
     #################################### 3(b)
 
@@ -300,7 +300,7 @@ def main_3():
     plt.savefig("./Results/2D_image_plane.png")
     plt.show()
 
-    return
+    return p_G
 
 
 if __name__ == '__main__':

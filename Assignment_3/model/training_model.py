@@ -4,7 +4,7 @@ import torch.nn as nn
 from model.data_def import MyPCAModel
 import h5py
 from part_3.pinhole_camera_model import get_projection
-from utils.util_functions import torchify
+from utils.util_functions import torchify, torchify_2, create_mask
 
 
 class Training(torch.nn.Module):
@@ -26,12 +26,16 @@ class Training(torch.nn.Module):
         )
 
         self.omega = nn.Parameter(
-            torch.FloatTensor([0.0, 10.0, 0.0]).to(device), requires_grad=True
+            torch.FloatTensor([1.0, 1.0, 1.0]).to(device), requires_grad=True
         )
 
         self.tau = nn.Parameter(
             torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True
         )
+
+
+        self.batchnorm1 = nn.BatchNorm1d(3)
+        self.batchnorm2 = nn.BatchNorm1d(2)
 
         # load model
         bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
@@ -47,9 +51,8 @@ class Training(torch.nn.Module):
         # create point cloud
         G = (self.pca.generate_point_cloud(self.alpha, self.delta, torching=True)).to(self.device)
 
-        # project onto 2d
-        p_G = get_projection(G, self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device)
+        G = self.batchnorm1(G)
 
-        # return valid subset
-        return (p_G)[self.subset, :]
-        # return self.activation(p_G[self.subset, :])
+        p_G = get_projection((G), self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device)
+
+        return self.batchnorm2(p_G[self.subset, :])

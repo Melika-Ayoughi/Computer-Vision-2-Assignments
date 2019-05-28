@@ -76,7 +76,7 @@ def generate_T(R, t, torching=False, device="cpu"):
         T = torch.cat((R, t), dim=1)
 
         # initialize last row of matrix
-        l_r = create_mask([0, 0, 1, 0], device=device).view(1, 4)
+        l_r = create_mask([0, 0, 0, 1], device=device).view(1, 4)
 
         # concatenate last row to the rest
         T = torch.cat((T, l_r), dim=0)
@@ -236,6 +236,8 @@ def get_projection(G, omega, tau, torching=False, device="cpu"):
     else:
         p_G = (V @ P) @ (T @ h_G.T)
         p_G = dehomogenize(p_G.T, torching=torching, device=device)
+
+    # p_G = dehomogenize(p_G.t(), torching=torching, device=device)
 
     return p_G[:, 0:2]
 

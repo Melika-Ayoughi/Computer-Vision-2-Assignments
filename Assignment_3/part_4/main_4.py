@@ -38,9 +38,18 @@ def extract_ground_truth(face):
 
 
 def demo_train(picture, train_points, ground_truth):
-    plt.imshow(picture)
-    plt.scatter(train_points[:, 0], train_points[:, 1])
-    plt.scatter(ground_truth[:, 0], ground_truth[:, 1])
+
+
+    # plt.imshow(picture)
+    ranger = [5, 55]  # np.linspace(0, 50, 1).astype(int)
+    plt.scatter(train_points[:, 0], -1 * train_points[:, 1])
+    plt.scatter(ground_truth[:, 0], -1 * ground_truth[:, 1])
+    plt.scatter(train_points[ranger, 0], -1 * train_points[ranger, 1], color="r")
+    plt.scatter(ground_truth[ranger, 0], -1 * ground_truth[ranger, 1], color="g")
+
+    # plt.text(ground_truth[:, 0] +0.3, -1 * ground_truth[:, 1] + 0.3, range(ground_truth.shape[0]), fontsize=9)
+
+
     plt.xticks([])
     plt.yticks([])
     plt.savefig("./Results/part_4_debug.png")
@@ -114,13 +123,12 @@ def main_4():
     demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.15, steps=2000, lambda_alpha=0.2,
+    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.15, steps=200, lambda_alpha=0.2,
                          lambda_delta=0.25, picture=picture)
+
     normalised_points = model.forward(None)
     actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
     demo(picture, actual_points)
-
-    exit()
 
     # 4.3 hyperparameter tuning
 

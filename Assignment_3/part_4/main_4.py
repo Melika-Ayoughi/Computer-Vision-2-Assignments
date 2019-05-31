@@ -29,8 +29,8 @@ def extract_ground_truth(face):
     x_max = face.shape[1]
     y_max = face.shape[0]
 
-    x_scaled = x_column / x_max
-    y_scaled = y_column / y_max
+    x_scaled = x_column  # / x_max
+    y_scaled = y_column  # / y_max
 
     out = np.stack((x_scaled, y_scaled), 1)
 
@@ -38,17 +38,12 @@ def extract_ground_truth(face):
 
 
 def demo_train(picture, train_points, ground_truth):
-
-
     # plt.imshow(picture)
-    ranger = [5, 55]  # np.linspace(0, 50, 1).astype(int)
+    ranger = [5]  # trackable point on both faces
     plt.scatter(train_points[:, 0], -1 * train_points[:, 1])
     plt.scatter(ground_truth[:, 0], -1 * ground_truth[:, 1])
     plt.scatter(train_points[ranger, 0], -1 * train_points[ranger, 1], color="r")
     plt.scatter(ground_truth[ranger, 0], -1 * ground_truth[ranger, 1], color="g")
-
-    # plt.text(ground_truth[:, 0] +0.3, -1 * ground_truth[:, 1] + 0.3, range(ground_truth.shape[0]), fontsize=9)
-
 
     plt.xticks([])
     plt.yticks([])
@@ -59,7 +54,7 @@ def demo_train(picture, train_points, ground_truth):
 def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None, picture=None):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = Training()
+    model = Training(picture)
 
     model.to(device)
 
@@ -83,7 +78,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
             f"\rEpoch: {i}, Loss: {loss.item():0.3f} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
             end='')
 
-        if (i % 50 == 0 and not picture is None):
+        if (i % 10 == 0 and not picture is None):
             normalised_points = model.forward(None)
             train_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
             ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture)
@@ -109,7 +104,7 @@ def demo(picture, points):
 def denormalize(points, picture):
     shape = picture.shape[:-1][::-1]
 
-    return points * shape
+    return points  # * shape
 
 
 def main_4():
@@ -120,10 +115,16 @@ def main_4():
     ground_truth_points = extract_ground_truth(picture)
 
     # 4.1 show ground truth points
+
+    print("Start part 1")
+
     demo(picture, denormalize(ground_truth_points, picture))
 
     # 4.2 training on face
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.15, steps=200, lambda_alpha=0.2,
+
+    print("Start part 2")
+
+    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.175, steps=1000, lambda_alpha=0.2,
                          lambda_delta=0.25, picture=picture)
 
     normalised_points = model.forward(None)
@@ -131,6 +132,8 @@ def main_4():
     demo(picture, actual_points)
 
     # 4.3 hyperparameter tuning
+
+    print("Start part 3")
 
     result_dictionary = {}
 

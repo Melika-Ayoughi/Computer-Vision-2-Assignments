@@ -8,8 +8,10 @@ from utils.util_functions import torchify, torchify_2, create_mask
 
 
 class Training(torch.nn.Module):
-    def __init__(self):
+    def __init__(self, picture):
         super().__init__()
+
+        self.picture = picture
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -26,16 +28,12 @@ class Training(torch.nn.Module):
         )
 
         self.omega = nn.Parameter(
-            torch.FloatTensor([1.0, 1.0, 1.0]).to(device), requires_grad=True
+            torch.FloatTensor([0.0, 0.0, 0.0]).to(device), requires_grad=True
         )
 
         self.tau = nn.Parameter(
             torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True
         )
-
-
-        self.batchnorm1 = nn.BatchNorm1d(3)
-        self.batchnorm2 = nn.BatchNorm1d(2)
 
         # load model
         bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
@@ -47,12 +45,11 @@ class Training(torch.nn.Module):
             self.subset = torchify([list(map(int, data))], type=torch.LongTensor)[0]
 
     def forward(self, _):
-
         # create point cloud
         G = (self.pca.generate_point_cloud(self.alpha, self.delta, torching=True)).to(self.device)
 
-        G = self.batchnorm1(G)
+        # project
+        p_G = get_projection((G), self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device,
+                             picture_shape=self.picture.shape)
 
-        p_G = get_projection((G), self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device)
-
-        return self.batchnorm2(p_G[self.subset, :])
+        return (p_G[self.subset, :])

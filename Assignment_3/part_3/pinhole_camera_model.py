@@ -113,7 +113,7 @@ def generate_P(fov, width, height, near, far, torching=False, device="cpu"):
             [[2 * n / (r - l), 0, 0, 0],
              [0, 2 * n / (t - b), 0, 0],
              [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
-             [0, 0, -(2 * f * n) / (f - n), 0]
+             [0, 0, -1, 0]
              ]
             , 4, device=device)
 
@@ -135,23 +135,29 @@ def generate_P(fov, width, height, near, far, torching=False, device="cpu"):
     return P
 
 
-def generate_V(v_r, v_l, v_t, v_b, torching=False, device="cpu"):
+# def generate_V(v_r, v_l, v_t, v_b, torching=False, device="cpu"):
+def generate_V(cx, cy, torching=False, device="cpu"):
     if (torching):
+        #
+        # V = torchify_2(
+        #     [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
+        #      [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
+        #      [0, 0, 1 / 2, 1 / 2],
+        #      [0, 0, 0, 1]
+        #      ]
+        #     , 4, device=device)
 
-        V = torchify_2(
-            [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-             [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-             [0, 0, 1 / 2, 1 / 2],
-             [0, 0, 0, 1]
-             ]
-            , 4, device=device)
+        V = torchify_2([[cx, 0, 0, cx],
+                        [0, -cy, 0, cy],
+                        [0, 0, 0.5, 0.5],
+                        [0, 0, 0, 1]], 4, device=device)
 
-    else:
-        V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-                      [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-                      [0, 0, 1 / 2, 1 / 2],
-                      [0, 0, 0, 1]
-                      ])
+    # else:
+    #     V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
+    #                   [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
+    #                   [0, 0, 1 / 2, 1 / 2],
+    #                   [0, 0, 0, 1]
+    #                   ])
 
     return V
 
@@ -185,7 +191,7 @@ def dehomogenize(input, torching=False, device="cpu"):
 
         # divide each row by final row
         for c in range(columns - 1):
-            new_column = input[:, c] / (-1*input[:, -1])
+            new_column = input[:, c] / (input[:, -1])
             d_input = torch.cat((d_input, new_column.view(new_column.shape[0], 1)), dim=1)
 
     else:
@@ -201,28 +207,33 @@ def dehomogenize(input, torching=False, device="cpu"):
     return d_input
 
 
-def get_projection(G, omega, tau, torching=False, device="cpu"):
+def get_projection(G, omega, tau, torching=False, device="cpu", picture_shape=None):
     # make G homogenous
     h_G = homogenize(G, torching=torching, device=device)
 
     # get width
-    G_x = G[:, 0]
-    width = G_x.max() - G_x.min()
+    if (picture_shape is None):
+        G_x = G[:, 0]
+        width = G_x.max() - G_x.min()
+    else:
+        width = picture_shape[0]
 
     # get height
-    G_y = G[:, 1]
-    height = G_y.max() - G_y.min()
+    if (picture_shape is None):
+        G_y = G[:, 1]
+        height = G_y.max() - G_y.min()
+    else:
+        height = picture_shape[1]
 
     # get near and far using z
-    G_z = G[:, 2]
-    near = G_z.min()
-    far = G_z.max()
+    near = 300
+    far = 2000
 
     # get P
     P = generate_P(0.5, width, height, near, far, torching=torching, device=device)
 
     # get V
-    V = generate_V(G_x.max() / 2, G_x.min() / 2, G_y.max() / 2, G_y.min() / 2, torching=torching, device=device)
+    V = generate_V(width / 2, height / 2, torching=torching, device=device)
 
     # construct rotation matrix and translation vector
     R = generate_R(omega, torching=torching, device=device)
@@ -236,8 +247,6 @@ def get_projection(G, omega, tau, torching=False, device="cpu"):
     else:
         p_G = (V @ P) @ (T @ h_G.T)
         p_G = dehomogenize(p_G.T, torching=torching, device=device)
-
-    # p_G = dehomogenize(p_G.t(), torching=torching, device=device)
 
     return p_G[:, 0:2]
 
@@ -267,6 +276,7 @@ def main_3():
 
     # translation over the z dimension
     t[2] = -400
+    t[0] = -400
 
     # construct rotation matrix and translation vector
     R = generate_R(omega)

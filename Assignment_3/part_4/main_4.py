@@ -4,6 +4,7 @@ import torch
 from model.training_model import Training
 from model.data_management import DataManager
 from part_4.landmarks import *
+from part_4.plotter import plot_mesh
 
 pdist = torch.nn.PairwiseDistance(p=2)
 
@@ -20,17 +21,20 @@ def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
     return lambda_alpha * torch.sum(alpha.pow(2)) + lambda_delta * torch.sum(delta.pow(2))
 
 
-def extract_ground_truth(face):
+def extract_ground_truth(face, normalised=False):
     points = np.array(detect_landmark(face))
 
     x_column = points[:, 0]
     y_column = points[:, 1]
 
-    x_max = face.shape[1]
-    y_max = face.shape[0]
+    if (normalised):
+        x_max = face.shape[1]
+        y_max = face.shape[0]
+    else:
+        x_max, y_max = 1, 1
 
-    x_scaled = x_column  # / x_max
-    y_scaled = y_column  # / y_max
+    x_scaled = x_column / x_max
+    y_scaled = y_column / y_max
 
     out = np.stack((x_scaled, y_scaled), 1)
 
@@ -38,7 +42,6 @@ def extract_ground_truth(face):
 
 
 def demo_train(picture, train_points, ground_truth):
-    # plt.imshow(picture)
     ranger = [5]  # trackable point on both faces
     plt.scatter(train_points[:, 0], -1 * train_points[:, 1])
     plt.scatter(ground_truth[:, 0], -1 * ground_truth[:, 1])
@@ -49,18 +52,22 @@ def demo_train(picture, train_points, ground_truth):
     plt.yticks([])
     plt.savefig("./Results/part_4_debug.png")
     plt.show()
+    plt.clf()
 
 
-def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None, picture=None):
+def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None, picture=None,
+          normalised=False):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    model = Training(picture)
+    model = Training(picture, normalised=normalised)
 
     model.to(device)
 
     opt = torch.optim.Adam(model.parameters(), lr=lr)
 
     ground_truth = torchify([ground_truth.numpy()])[0]
+
+    losses = []
 
     for i in range(steps):
         opt.zero_grad()
@@ -74,14 +81,18 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
 
         opt.step()
 
+        losses.append(loss.item())
+
+        loss.detach()
+
         print(
             f"\rEpoch: {i}, Loss: {loss.item():0.3f} alpha: {model.alpha.item():0.5f}, delta: {model.delta.item():0.5f}, omega: [{model.omega[0].item():0.5f}, {model.omega[1].item():0.5f}, {model.omega[2].item():0.5f}], tau [{model.tau[0].item():0.5f}, {model.tau[1].item():0.5f}, {model.tau[2].item():0.5f}]",
             end='')
 
-        if (i % 10 == 0 and not picture is None):
+        if (i % 100 == 0 and not picture is None):
             normalised_points = model.forward(None)
-            train_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
-            ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture)
+            train_points = denormalize(normalised_points.detach().cpu().numpy(), picture, normalised=normalised)
+            ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture, normalised=normalised)
             demo_train(picture, train_points, ground_truth_detached)
 
         if (not exit_codition is None):
@@ -89,7 +100,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
                 print("\n\nalpha and delta growing too big, choose different regularisation parameters.\n\n")
                 break
 
-    return model, model.state_dict()
+    return model, model.state_dict(), losses
 
 
 def demo(picture, points):
@@ -101,18 +112,18 @@ def demo(picture, points):
     plt.show()
 
 
-def denormalize(points, picture):
+def denormalize(points, picture, normalised=False):
     shape = picture.shape[:-1][::-1]
 
-    return points  # * shape
+    return (points * shape * int(normalised)) + (points * int(not normalised))
 
 
-def main_4():
+def main_4(normalised = False):
     data_manager = DataManager("./Results/")
 
     # extract
     picture = plt.imread("./Data/sjors2.jpg")[:, :, :3]
-    ground_truth_points = extract_ground_truth(picture)
+    ground_truth_points = extract_ground_truth(picture, normalised=normalised)
 
     # 4.1 show ground truth points
 
@@ -124,11 +135,11 @@ def main_4():
 
     print("Start part 2")
 
-    model, state = train(torch.FloatTensor(ground_truth_points), lr=0.175, steps=1000, lambda_alpha=0.2,
-                         lambda_delta=0.25, picture=picture)
+    model, state, losses = train(torch.FloatTensor(ground_truth_points), lr=0.175, steps=1000, lambda_alpha=10000,
+                         lambda_delta=10000, picture=picture, normalised=normalised)
 
     normalised_points = model.forward(None)
-    actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture)
+    actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture, normalised=normalised)
     demo(picture, actual_points)
 
     # 4.3 hyperparameter tuning
@@ -137,13 +148,23 @@ def main_4():
 
     result_dictionary = {}
 
-    for alpha_reg in [0.1, 1, 10, 100, 1000, 1000]:
-        for delta_reg in [0.1, 1, 10, 100, 1000, 10000]:
+    stamp = data_manager.date_stamp()
+
+    testrange = [0.1, 1, 10, 100, 1000, 10000]
+
+    for alpha_reg in testrange:
+        for delta_reg in testrange:
             print(f"TESTING: alpha_reg = {alpha_reg} and delta_reg = {delta_reg}")
 
-            results = train(torch.LongTensor(ground_truth_points), lr=0.1, exit_codition=3.5)[1]
+            results = train(torch.LongTensor(ground_truth_points), lr=0.175, exit_codition=3.5, steps=500,
+                            picture=picture, lambda_alpha=alpha_reg, lambda_delta=delta_reg, normalised=normalised)[1:3]
             result_dictionary[(alpha_reg, delta_reg)] = (results)
-            data_manager.save_python_obj(result_dictionary, f"{data_manager.date_stamp()}__Grid_search_part4")
+            data_manager.save_python_obj(result_dictionary, f"{stamp}_Grid_search_part4")
+
+    data = data_manager.load_python_obj(f"{stamp}_Grid_search_part4")
+    plot_mesh(data)
+
+    return
 
 
 if __name__ == '__main__':

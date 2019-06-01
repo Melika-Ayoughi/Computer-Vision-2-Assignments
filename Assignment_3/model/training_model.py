@@ -8,8 +8,10 @@ from utils.util_functions import torchify, torchify_2, create_mask
 
 
 class Training(torch.nn.Module):
-    def __init__(self, picture):
+    def __init__(self, picture, normalised=False):
         super().__init__()
+
+        self.normalised = normalised
 
         self.picture = picture
 
@@ -35,6 +37,8 @@ class Training(torch.nn.Module):
             torch.FloatTensor([0, 0, -400]).to(device), requires_grad=True
         )
 
+        self.batchnorm = nn.BatchNorm1d(2)
+
         # load model
         bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
         self.pca = MyPCAModel(bfm, 30, 20)
@@ -52,4 +56,7 @@ class Training(torch.nn.Module):
         p_G = get_projection((G), self.omega.view(3, 1), self.tau.view(3, 1), torching=True, device=self.device,
                              picture_shape=self.picture.shape)
 
-        return (p_G[self.subset, :])
+        if (self.normalised):
+            return self.batchnorm(p_G[self.subset, :])
+        else:
+            return p_G[self.subset, :]

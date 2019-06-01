@@ -10,6 +10,17 @@ pdist = torch.nn.PairwiseDistance(p=2)
 
 
 def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
+    """
+    Combined loss function
+
+    :param alpha:
+    :param delta:
+    :param p:
+    :param ground_truth:
+    :param lambda_alpha:
+    :param lambda_delta:
+    :return:
+    """
     loss_lan = torch.sum(pdist(p, ground_truth) ** 2)
 
     loss_reg = loss_reg_function(lambda_alpha, lambda_delta, alpha, delta)
@@ -18,10 +29,27 @@ def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0
 
 
 def loss_reg_function(lambda_alpha, lambda_delta, alpha, delta):
+    """
+    regulariser part of loss function
+
+    :param lambda_alpha:
+    :param lambda_delta:
+    :param alpha:
+    :param delta:
+    :return:
+    """
     return lambda_alpha * torch.sum(alpha.pow(2)) + lambda_delta * torch.sum(delta.pow(2))
 
 
 def extract_ground_truth(face, normalised=False):
+    """
+    get ground truth landmarks (normalised or not
+
+    :param face:
+    :param normalised:
+    :return:
+    """
+
     points = np.array(detect_landmark(face))
 
     x_column = points[:, 0]
@@ -41,7 +69,14 @@ def extract_ground_truth(face, normalised=False):
     return out
 
 
-def demo_train(picture, train_points, ground_truth):
+def demo_train(train_points, ground_truth):
+    """
+    plots progress of training
+
+    :param train_points:
+    :param ground_truth:
+    :return:
+    """
     ranger = [5]  # trackable point on both faces
     plt.scatter(train_points[:, 0], -1 * train_points[:, 1])
     plt.scatter(ground_truth[:, 0], -1 * ground_truth[:, 1])
@@ -57,6 +92,20 @@ def demo_train(picture, train_points, ground_truth):
 
 def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000, exit_codition=None, picture=None,
           normalised=False):
+    """
+    trains model
+
+    :param ground_truth:
+    :param lambda_alpha:
+    :param lambda_delta:
+    :param lr:
+    :param steps:
+    :param exit_codition:
+    :param picture:
+    :param normalised:
+    :return:
+    """
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model = Training(picture, normalised=normalised)
@@ -93,7 +142,7 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
             normalised_points = model.forward(None)
             train_points = denormalize(normalised_points.detach().cpu().numpy(), picture, normalised=normalised)
             ground_truth_detached = denormalize(ground_truth.detach().cpu().numpy(), picture, normalised=normalised)
-            demo_train(picture, train_points, ground_truth_detached)
+            demo_train(train_points, ground_truth_detached)
 
         if (not exit_codition is None):
             if (abs(model.alpha.item()) > exit_codition and abs(model.delta.item()) > exit_codition):
@@ -104,6 +153,8 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
 
 
 def demo(picture, points):
+    """ plots points on top of picture """
+
     plt.imshow(picture)
     plt.scatter(points[:, 0], points[:, 1])
     plt.xticks([])
@@ -113,36 +164,42 @@ def demo(picture, points):
 
 
 def denormalize(points, picture, normalised=False):
+    """ denormalized if there was normalised to begin with """
+
+    # get ratio
     shape = picture.shape[:-1][::-1]
 
+    # denormalise if normalised=True
     return (points * shape * int(normalised)) + (points * int(not normalised))
 
 
-def main_4(normalised = False):
+def main_4(normalised=False):
+    """ does all experiments of part 4 of the assignment """
+
     data_manager = DataManager("./Results/")
 
     # extract
     picture = plt.imread("./Data/sjors2.jpg")[:, :, :3]
     ground_truth_points = extract_ground_truth(picture, normalised=normalised)
 
-    # 4.1 show ground truth points
+    """ ############ 4.1 show ground truth points ############ """
 
     print("Start part 1")
 
     demo(picture, denormalize(ground_truth_points, picture))
 
-    # 4.2 training on face
+    """ ############ 4.2 training on face ############ """
 
     print("Start part 2")
 
     model, state, losses = train(torch.FloatTensor(ground_truth_points), lr=0.175, steps=1000, lambda_alpha=10000,
-                         lambda_delta=10000, picture=picture, normalised=normalised)
+                                 lambda_delta=10000, picture=picture, normalised=normalised)
 
     normalised_points = model.forward(None)
     actual_points = denormalize(normalised_points.detach().cpu().numpy(), picture, normalised=normalised)
     demo(picture, actual_points)
 
-    # 4.3 hyperparameter tuning
+    """ ############ 4.3 hyperparameter tuning ############ """
 
     print("Start part 3")
 
@@ -153,6 +210,7 @@ def main_4(normalised = False):
     testrange = [0.1, 1, 10, 100, 1000, 10000]
 
     for alpha_reg in testrange:
+
         for delta_reg in testrange:
             print(f"TESTING: alpha_reg = {alpha_reg} and delta_reg = {delta_reg}")
 
@@ -169,4 +227,5 @@ def main_4(normalised = False):
 
 if __name__ == '__main__':
     ensure_current_directory()
+
     main_4()

@@ -5,6 +5,12 @@ from model.data_management import DataManager
 
 
 def plot_mesh(data):
+    """
+    plots mesh of part4 hyperparameter tuning
+
+    :param data:
+    :return:
+    """
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
@@ -22,18 +28,10 @@ def plot_mesh(data):
     Y = np.array(Y)
     Z = np.array(Z)
 
-    # X, Y = np.meshgrid(X, Y)
-
-    # X = np.arange(-5, 5, 0.25)
-    # Y = np.arange(-5, 5, 0.25)
-    # X, Y = np.meshgrid(X, Y)
-    # R = np.sqrt(X ** 2 + Y ** 2)
-    # Z = np.sin(R)
-
     plt.figure(figsize=(100, 100))
 
-    ax.plot_surface(np.array(X).reshape((6,6)), np.array(Y).reshape((6,6)), np.array(Z).reshape((6,6)))
-    ax.plot_wireframe(np.array(X).reshape((6,6)), np.array(Y).reshape((6,6)), np.array(Z).reshape((6,6)), color = "")
+    ax.plot_surface(np.array(X).reshape((6, 6)), np.array(Y).reshape((6, 6)), np.array(Z).reshape((6, 6)))
+    ax.plot_wireframe(np.array(X).reshape((6, 6)), np.array(Y).reshape((6, 6)), np.array(Z).reshape((6, 6)), color="")
     ax.set_xlabel('Alpha-hyper in log_10')
     ax.set_ylabel('Delta-hyper in log10')
     ax.set_title('Final loss of run')

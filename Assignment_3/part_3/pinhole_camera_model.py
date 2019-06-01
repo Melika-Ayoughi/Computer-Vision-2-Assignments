@@ -9,6 +9,7 @@ import math
 
 
 def generate_R(omega, torching=False, device="cpu"):
+
     # convert input from degrees to radians
     omega = omega * (math.pi / 180)
 
@@ -16,9 +17,8 @@ def generate_R(omega, torching=False, device="cpu"):
 
         # get rotation about x-axis
         R_x = torchify_2(
-
             [[1, 0, 0],
-             [0, torch.cos(omega[0]), -torch.sin(omega[0])],
+             [0, torch.cos(omega[0]), -1 * torch.sin(omega[0])],
              [0, torch.sin(omega[0]), torch.cos(omega[0])]
              ], 3, device=device
 
@@ -110,11 +110,11 @@ def generate_P(fov, width, height, near, far, torching=False, device="cpu"):
         l = -t * aspect_ratio
 
         P = torchify_2(
-            [[2 * n / (r - l), 0, 0, 0],
-             [0, 2 * n / (t - b), 0, 0],
-             [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
-             [0, 0, -1, 0]
-             ]
+            [[2 * n / (r - l), 0, (r+l)/(r-l), 0],
+                  [0, 2 * n / (t - b), (t+b)/(t-b), 0],
+                  [0, 0, -(f + n) / (f - n), -2*f*n/(f-n)],
+                  [0, 0, -1, 0]
+                  ]
             , 4, device=device)
 
     else:
@@ -126,38 +126,28 @@ def generate_P(fov, width, height, near, far, torching=False, device="cpu"):
         r = t * aspect_ratio
         l = -t * aspect_ratio
 
-        P = np.array([[2 * n / (r - l), 0, 0, 0],
-                      [0, 2 * n / (t - b), 0, 0],
-                      [(r + l) / (r - l), (t + b) / (t - b), -(f + n) / (f - n), -1],
-                      [0, 0, -(2 * f * n) / (f - n), 0]
-                      ])
+
+        P = np.array([[2 * n / (r - l), 0, (r+l)/(r-l), 0],
+                  [0, 2 * n / (t - b), (t+b)/(t-b), 0],
+                  [0, 0, -(f + n) / (f - n), -2*f*n/(f-n)],
+                  [0, 0, -1, 0]
+                  ])
 
     return P
 
 
-# def generate_V(v_r, v_l, v_t, v_b, torching=False, device="cpu"):
 def generate_V(cx, cy, torching=False, device="cpu"):
     if (torching):
-        #
-        # V = torchify_2(
-        #     [[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-        #      [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-        #      [0, 0, 1 / 2, 1 / 2],
-        #      [0, 0, 0, 1]
-        #      ]
-        #     , 4, device=device)
-
         V = torchify_2([[cx, 0, 0, cx],
                         [0, -cy, 0, cy],
                         [0, 0, 0.5, 0.5],
                         [0, 0, 0, 1]], 4, device=device)
 
-    # else:
-    #     V = np.array([[(v_r - v_l) / 2, 0, 0, (v_r + v_l) / 2],
-    #                   [0, (v_t - v_b) / 2, 0, (v_t + v_b) / 2],
-    #                   [0, 0, 1 / 2, 1 / 2],
-    #                   [0, 0, 0, 1]
-    #                   ])
+    else:
+        V = np.array([[cx, 0, 0, cx],
+                            [0, cy, 0, cy], # changed -cy in second column to cy
+                            [0, 0, 0.5, 0.5],
+                            [0, 0, 0, 1]])
 
     return V
 
@@ -181,6 +171,7 @@ def homogenize(input, torching=False, device="cpu"):
 
 
 def dehomogenize(input, torching=False, device="cpu"):
+
     # get dimesnions
     rows, columns = input.shape
 
@@ -276,7 +267,6 @@ def main_3():
 
     # translation over the z dimension
     t[2] = -400
-    t[0] = -400
 
     # construct rotation matrix and translation vector
     R = generate_R(omega)
@@ -291,9 +281,9 @@ def main_3():
     #################################### 3(a)
 
     # plot point cloud
-    # mesh = Mesh(t_G, mean_tex, triangles)
-    #
-    # mesh_to_png("./Results/debug.png", mesh)
+    mesh = Mesh(t_G, mean_tex, triangles)
+
+    mesh_to_png("./Results/debug.png", mesh)
 
     #################################### 3(b)
 

@@ -7,7 +7,7 @@ import numpy as np
 import trimesh
 import pyrender
 import h5py
-# from skimage.io import imsave
+from skimage.io import imsave
 
 
 def mesh_to_png(file_name, mesh, width=640, height=480, z_camera_translation=400):

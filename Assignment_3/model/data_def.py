@@ -1,5 +1,4 @@
 import numpy as np
-import torch
 from utils.util_functions import torchify
 
 

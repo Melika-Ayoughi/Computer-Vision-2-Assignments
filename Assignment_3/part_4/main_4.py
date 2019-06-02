@@ -89,6 +89,8 @@ def train(ground_truth, lambda_alpha=1.0, lambda_delta=1.0, lr=0.001, steps=2000
                 print("\n\nalpha and delta growing too big, choose different regularisation parameters.\n\n")
                 break
 
+    torch.save(model, "Results/model.pt")
+
     return model, model.state_dict()
 
 

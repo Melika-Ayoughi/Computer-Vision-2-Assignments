@@ -1,0 +1,6 @@
+part_2/__pycache__/*
+part_3/__pycache__/*
+part_4/__pycache__/*
+utils/*
+model/__pycache__/*
+venv/

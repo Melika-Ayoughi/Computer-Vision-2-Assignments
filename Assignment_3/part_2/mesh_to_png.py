@@ -36,7 +36,7 @@ def mesh_to_png(file_name, mesh, width=640, height=480, z_camera_translation=400
     r = pyrender.OffscreenRenderer(width, height)
     color, _ = r.render(scene)
 
-    imsave(file_name, color)
+    # imsave(file_name, color)
 
 
 def plot_PC():

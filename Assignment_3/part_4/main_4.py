@@ -8,7 +8,6 @@ from part_4.plotter import plot_mesh
 
 pdist = torch.nn.PairwiseDistance(p=2)
 
-
 def loss_total(alpha, delta, p, ground_truth, lambda_alpha=1.0, lambda_delta=1.0):
     """
     Combined loss function

@@ -21,7 +21,8 @@ import h5py
 import matplotlib.pylab as plt
 from model.data_def import Mesh, MyPCAModel
 from utils.util_functions import ensure_current_directory
-
+from part_2.mesh_to_png import mesh_to_png
+from part_3.pinhole_camera_model import get_projection
 
 def calculate_G(alpha, delta):
     bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
@@ -49,68 +50,72 @@ def calculate_G(alpha, delta):
 
     return np.concatenate((G, np.ones((len(G), 1))), axis=1)
 
+def bilinear_interpolation(points_2d, picture):
+    mean_texture = np.zeros((points_2d.shape[0], 3))
+    # print(points_2d.shape, frame.shape, points_2d.min(axis=0), points_2d.mean(axis=0), points_2d.max(axis=0))
+
+    # Clip coordinates to be in image...
+    points_2d[:, 0] = np.clip(points_2d[:, 0], 0, picture.shape[1] - 1)
+    points_2d[:, 1] = np.clip(points_2d[:, 1], 0, picture.shape[0] - 1)
+
+    for i in range(points_2d.shape[0]):
+        x1 = points_2d[i, 1]
+        x2 = points_2d[i, 0]
+
+        x2_ceil = np.ceil(x2).astype(int)
+        x2_floor = np.floor(x2).astype(int)
+        x1_ceil = np.ceil(x1).astype(int)
+        x1_floor = np.floor(x1).astype(int)
+
+        if (x1_ceil - x1_floor == 0) or (x2_ceil - x2_floor == 0):
+            continue
+
+        # Interp over columns
+        lower = (x2_ceil - x2) / (x2_ceil - x2_floor) * picture[x1_floor, x2_floor, :] \
+                + (x2 - x2_floor) / (x2_ceil - x2_floor) * picture[x1_floor, x2_ceil, :]
+
+        # Interp over next row and then columns
+        upper = (x2_ceil - x2) / (x2_ceil - x2_floor) * picture[x1_ceil, x2_floor, :] \
+                + (x2 - x2_floor) / (x2_ceil - x2_floor) * picture[x1_ceil, x2_ceil, :]
+
+        intensity = (x1_ceil - x1) / (x1_ceil - x1_floor) * lower \
+                    + (x1 - x1_floor) / (x1_ceil - x1_floor) * upper
+
+        if any(np.isnan(intensity)):
+            continue
+
+        mean_texture[i, :] = intensity
+
+    return mean_texture
+
 def texturing():
 
-    my_model = torch.load("Results/model.pt")
+    # my_model = torch.load("Results/model.pt")
+    picture = plt.imread("./Data/sjors2.jpg")[:, :, :3]
     # landmarks_3d = ?
-
     # alpha, delta = my_model.alpha.item(), my_model.delta.item()
     # w1, w2, w3 = model.omega[0].item(), model.omega[1].item(), model.omega[2].item()
     # t1, t2, t3 = model.tau[0].item(), model.tau[1].item(), model.tau[2].item()
 
-    alpha, delta =my_model.alpha.item(), my_model.delta.item()
-    w1, w2, w3 = model.omega[0].item(), model.omega[1].item(), model.omega[2].item()
-    t1, t2, t3 = model.tau[0].item(), model.tau[1].item(), model.tau[2].item()
+    # these values are taken from main 4
+    alpha, delta = 0.01611, -0.02186
+    w1, w2, w3 = -4.20758, -2.91587, -1.17026
+    t1, t2, t3 = 13.58724, -15.46050, -513.25446
+    t = np.array([t1, t2, t3]).reshape(3, 1)
+    omega = np.array([w1, w2, w3])
 
     bfm = h5py.File("Data/model2017-1_face12_nomouth.h5", 'r')
-    pca_model = MyPCAModel(bfm, 30, 30)  # maybe some other value
+    pca_model = MyPCAModel(bfm, 30, 20)  # maybe some other value
     G = pca_model.generate_point_cloud(alpha, delta)
 
+    p_G = get_projection(G, omega, t)
+
     # plot point cloud
+    mean_tex = bilinear_interpolation(p_G, picture)
+    triangles = np.asarray(bfm['shape/representer/cells'], dtype=np.int32).T
     mesh = Mesh(G, mean_tex, triangles)
-    mesh_to_png("Results/Morphable_Model/pc_" + str(i) + ".png", mesh)
+    mesh_to_png("Results/george.png", mesh)
 
-    # plot point cloud
-    # mesh = Mesh(G, mean_tex, triangles)
-    # mesh_to_png("Results/Morphable_Model/pc_" + str(i) + ".png", mesh)
-
-    # point_cloud_original = calculate_G(alpha, delta)
-
-    # point_cloud = point_cloud_original
-    # if type(point_cloud) is np.ndarray:
-    #     point_cloud = torch.from_numpy(point_cloud).to(T_DTYPE)
-    # point_cloud = do_transform(point_cloud, w1, w2, w3, t)
-    # # point_cloud, p = normalize(point_cloud, *gt_normalize_params, pad=True)
-    #
-    # # We have some error here, we normalize using the own point cloud statistics and then denormalize using the
-    # # gt_normalize_params...
-    # point_cloud, p = normalize(point_cloud)
-    # point_cloud = denormalize(point_cloud[:, 0:3], *gt_normalize_params, pad=True)
-    # # point_cloud = (point_cloud[:, 0:3].t() / point_cloud[:, 2]).t()
-    # point_cloud = point_cloud.clone().detach().numpy()
-    #
-    # mean_tex = bilinear_interp(point_cloud, frame)
-    #
-    # # point_cloud = denormalize(point_cloud, p[0][0:3], p[1][0:3])
-    # # triangles = Delaunay(point_cloud[:, 0:2]).simplices
-    #
-    # im_name = f"./images/texturing.png"
-    #
-    # bfm = h5py.File("./model2017-1_face12_nomouth.h5", 'r')
-    # # mean_tex = np.asarray(bfm['color/model/mean'], dtype=np.float32).reshape((-1, 3))
-    # triangles = np.asarray(bfm['shape/representer/cells'], dtype=np.int32).T
-    #
-    # mesh = Mesh(point_cloud_original[:, 0:3], mean_tex, triangles)
-    # mesh_to_png(im_name, mesh, width=frame.shape[1], height=frame.shape[0])
-    # # mesh_to_png(im_name, mesh)
-    # plt.show()
-    #
-    # plt.imshow(frame)
-    # plt.scatter(point_cloud[:, 0], point_cloud[:, 1])
-    # # landmarks_2d = (landmarks_3d[:, 0:2].t() / landmarks_3d[:, 2]).t()
-    # landmarks_2d = landmarks_3d[:, 0:2]
-    # plt.scatter(landmarks_2d[:, 0], landmarks_2d[:, 1])
-    # plt.show()
 
 if __name__ == '__main__':
     ensure_current_directory()
